@@ -1,0 +1,30 @@
+const tailwindcssVariables = require('../src/index')
+const utils = require('../jest/_utils')(__filename)
+
+it('test', async () => {
+    expect(
+        await utils.diffOnly({
+            purge: [utils.content()],
+            darkMode: false,
+            theme: {
+                variables: {
+                    DEFAULT: {
+                        variable: {
+                            key: 'value'
+                        },
+                    },
+                },
+            },
+            plugins: [tailwindcssVariables],
+        })
+    ).toMatchInlineSnapshot(
+        `
+    "
+
+
+      + :root {
+      +   --variable-key: '1'
+      + }
+  `
+    )
+})
