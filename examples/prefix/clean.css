@@ -1,0 +1,13 @@
+:root {
+  --prefix-sizes-small: 1rem;
+  --prefix-sizes-medium: 2rem;
+  --prefix-sizes-large: 3rem;
+  --prefix-colors-red-50: #ff3232;
+  --prefix-colors-red-500: #ff0000;
+  --prefix-colors-red-900: #d70000
+}
+
+.container {
+  --prefix-sizes-medium: 1.5rem;
+  --prefix-sizes-container: 2rem
+}

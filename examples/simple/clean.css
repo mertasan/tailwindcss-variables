@@ -1,0 +1,13 @@
+:root {
+  --sizes-small: 1rem;
+  --sizes-medium: 2rem;
+  --sizes-large: 3rem;
+  --colors-red-50: #ff3232;
+  --colors-red-500: #ff0000;
+  --colors-red-900: #d70000
+}
+
+.container {
+  --sizes-medium: 1.5rem;
+  --sizes-container: 2rem
+}

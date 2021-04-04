@@ -1,0 +1,23 @@
+:root {
+  --sizes-small: 1rem;
+  --sizes-medium: 2rem;
+  --sizes-large: 3rem;
+  --colors-red-50: #ff3232;
+  --colors-red-500: #ff0000;
+  --colors-red-900: #d70000
+}
+
+.container {
+  --sizes-medium: 1.5rem;
+  --sizes-container: 2rem
+}
+
+:root.dark {
+  --colors-red-50: #c665ff;
+  --colors-red-500: #9433f1;
+  --colors-red-900: #6c0bc9
+}
+
+:root.dark .container {
+  --colors-red-50: #ff0000
+}
