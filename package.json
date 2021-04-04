@@ -8,7 +8,7 @@
   "publishConfig": {
     "access": "public",
     "cache": "cache/.npm",
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
     "test": "jest",
