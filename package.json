@@ -1,12 +1,14 @@
 {
-  "name": "tailwindcss-variables",
+  "name": "@mertasan/tailwindcss-variables",
   "version": "1.0.0",
   "description": "Easily create css variables without the need for a css file!",
   "main": "src/index.js",
   "license": "GPL-3.0-or-later",
   "repository": "https://github.com/mertasan/tailwindcss-variables",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "cache": "cache/.npm",
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "test": "jest",

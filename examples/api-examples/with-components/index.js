@@ -2,7 +2,7 @@ const plugin = require('tailwindcss/plugin')
 const merge = require('lodash/merge')
 const pluginComponents = require('./components')
 const variablesApi = require('../../../api')
-// const variablesApi = require('tailwindcss-variables/api')
+// const variablesApi = require('@mertasan/tailwindcss-variables/api')
 
 /**
  * @typedef  {Object} plugin
