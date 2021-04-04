@@ -77,7 +77,10 @@ const parseVariables = (object, varPrefix) => {
 }
 
 const build = (options, source) => {
-  const varPrefix = formatVariableKey(get(options, 'variablePrefix', '') ?? '')
+  let varPrefix = formatVariableKey(get(options, 'variablePrefix', ''))
+  if (!varPrefix) {
+    varPrefix = ''
+  }
   let componentOptions = {}
   _forEach(toPairs(flattenOptions(source)), ([key, config]) => {
     let block = key === 'DEFAULT' ? `:root` : `${key}`
@@ -93,9 +96,18 @@ const build = (options, source) => {
 }
 
 const darkBuild = (options, darkMode, source) => {
-  const varPrefix = formatVariableKey(get(options, 'variablePrefix', '') ?? '')
-  const darkSelector = get(options, 'darkSelector', '.dark') ?? '.dark'
-  const darkToRoot = get(options, 'darkToRoot', true) ?? true
+  let varPrefix = formatVariableKey(get(options, 'variablePrefix', ''))
+  if (!varPrefix) {
+    varPrefix = ''
+  }
+  let darkSelector = get(options, 'darkSelector', '.dark')
+  if (!darkSelector) {
+    darkSelector = '.dark'
+  }
+  let darkToRoot = get(options, 'darkToRoot', true)
+  if (!darkToRoot) {
+    darkToRoot = true
+  }
 
   let componentOptions = {}
 
