@@ -104,10 +104,7 @@ const darkBuild = (options, darkMode, source) => {
   if (!darkSelector) {
     darkSelector = '.dark'
   }
-  let darkToRoot = get(options, 'darkToRoot', true)
-  if (!darkToRoot) {
-    darkToRoot = true
-  }
+  let darkToRoot = hasOwn(options, 'darkToRoot') ? options.darkToRoot : true
 
   let componentOptions = {}
 
