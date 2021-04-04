@@ -15,11 +15,11 @@ module.exports = plugin.withOptions(
       let darkMode = config('darkMode')
       let variables = merge(
         theme('variables', {}),
-        has(options, 'theme.variables') ? (options.theme.variables(theme) ?? {}) : {}
+        has(options, 'theme.variables') ? (options.theme.variables(theme) ? options.theme.variables(theme) : {}) : {}
       )
       let darkVariables = merge(
         theme('darkVariables', {}),
-        has(options, 'theme.darkVariables') ? (options.theme.darkVariables(theme) ?? {}) : {}
+        has(options, 'theme.darkVariables') ? (options.theme.darkVariables(theme) ? options.theme.darkVariables(theme) : {}) : {}
       )
 
       if (!isEmpty(variables)) {
