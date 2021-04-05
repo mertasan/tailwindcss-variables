@@ -38,9 +38,5 @@ jobs:
 
       - name: Building Examples
         run: npm run build
-        env:
-          CI: true
       - name: Clean CSS styles of the Examples are building
         run: npm run build:clean
-        env:
-          CI: true
