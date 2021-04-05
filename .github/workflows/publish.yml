@@ -16,8 +16,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: https://npm.pkg.github.com/
-
-      - name: Publish
+          
       - run: npm install
       - run: npm publish --access public
         env:
