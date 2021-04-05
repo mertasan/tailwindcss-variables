@@ -1,4 +1,4 @@
-/node_modules
+node_modules/
 /coverage
 /examples
 yarn.lock
@@ -7,4 +7,4 @@ yarn-error.log
 .idea
 .prettierignore
 .run
-cache
+cache/
