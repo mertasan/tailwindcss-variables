@@ -45,8 +45,10 @@ module.exports = {
     }),
   },
   variants: {},
-  plugins: [require('../../src/index')({
-    darkSelector: '.custom-dark-selector',
-    darkToRoot: true
-  })],
+  plugins: [
+    require('../../src/index')({
+      darkSelector: '.custom-dark-selector',
+      darkToRoot: true,
+    }),
+  ],
 }

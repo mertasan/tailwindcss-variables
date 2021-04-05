@@ -10,7 +10,7 @@ const variablesApi = require('../../../api')
  */
 module.exports = plugin.withOptions(
   function (options) {
-    return function ({ addComponents, theme, options, config }) {
+    return function ({addComponents, theme, options, config}) {
       const myVariables = {
         DEFAULT: {
           colors: {

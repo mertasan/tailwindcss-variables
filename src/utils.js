@@ -1,4 +1,3 @@
-const plugin = require('tailwindcss/plugin')
 const merge = require('lodash/merge')
 const fromPairs = require('lodash/fromPairs')
 const toPairs = require('lodash/toPairs')

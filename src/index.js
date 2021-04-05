@@ -3,7 +3,6 @@ const merge = require('lodash/merge')
 const has = require('lodash/has')
 const isEmpty = require('lodash/isEmpty')
 const api = require('./pluginApi')
-const { build, darkBuild } = require('./utils')
 
 /**
  * @typedef  {Object} plugin
@@ -19,7 +18,11 @@ module.exports = plugin.withOptions(
       )
       let darkVariables = merge(
         theme('darkVariables', {}),
-        has(options, 'theme.darkVariables') ? (options.theme.darkVariables(theme) ? options.theme.darkVariables(theme) : {}) : {}
+        has(options, 'theme.darkVariables')
+          ? options.theme.darkVariables(theme)
+            ? options.theme.darkVariables(theme)
+            : {}
+          : {}
       )
 
       if (!isEmpty(variables)) {
@@ -32,11 +35,11 @@ module.exports = plugin.withOptions(
     }
   },
   function (options) {
-    return {
-      theme: {
-        variables: (theme) => ({}),
-        darkVariables: (theme) => ({}),
-      },
-    }
+    // return {
+    //   theme: {
+    //     variables: (theme) => ({}),
+    //     darkVariables: (theme) => ({}),
+    //   },
+    // }
   }
 )

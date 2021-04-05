@@ -13,7 +13,9 @@
   "scripts": {
     "test": "jest",
     "build": "env NODE_ENV=production node scripts/build.js",
-    "build:clean": "env NODE_ENV=production CLEAN=true node scripts/build.js"
+    "build:clean": "env NODE_ENV=production CLEAN=true node scripts/build.js",
+    "style": "eslint .",
+    "posttest": "npm run style"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +23,7 @@
     "lodash": "^4.17.21"
   },
   "peerDependencies": {
-    "postcss": "^8.2.4",
+    "postcss": "^8.2.9",
     "tailwindcss": "^2.0.4"
   },
   "prettier": {
@@ -31,9 +33,14 @@
     "trailingComma": "es5"
   },
   "devDependencies": {
-    "autoprefixer": "10",
-    "jest": "^26.6.0",
-    "postcss": "^8.2.4",
+    "autoprefixer": "^10.2.5",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.23.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "fs-extra": "^9.1.0",
+    "jest": "^26.6.3",
+    "postcss": "^8.2.9",
     "prettier": "^2.2.1",
     "snapshot-diff": "^0.8.1",
     "tailwindcss": "^2.0.4"

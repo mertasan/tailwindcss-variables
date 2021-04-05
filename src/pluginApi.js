@@ -3,13 +3,11 @@ const toPairs = require('lodash/toPairs')
 const merge = require('lodash/merge')
 const isEmpty = require('lodash/isEmpty')
 const _forEach = require('lodash/forEach')
-const set = require('lodash/set')
 const { setVariable, setDarkMediaVariable, setComponent, build, darkBuild, flattenOptions } = require('./utils')
 
-const variables = (variables, options, isDark) => {
+const variables = (variables, options) => {
   let variableList = {}
   let data = build(options, variables)
-  let components = {}
 
   _forEach(data, (value, key) => merge(variableList, setVariable(key, fromPairs(value))))
 
