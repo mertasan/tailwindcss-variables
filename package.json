@@ -14,7 +14,7 @@
     "test": "jest",
     "build": "env NODE_ENV=production node scripts/build.js",
     "build:clean": "env NODE_ENV=production CLEAN=true node scripts/build.js",
-    "style": "eslint .",
+    "style": "./node_modules/.bin/eslint .",
     "posttest": "npm run style",
     "format": "prettier --write ."
   },
