@@ -40,6 +40,8 @@ jobs:
         run: npm run build
       - name: Examples with clean CSS
         run: npm run build:clean
+      - name: Pre-Test
+        run: npm run pretest
       - name: Test
         run: npm run test -- --coverage
         env:
