@@ -3,12 +3,16 @@ name: build
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
+    paths:
+      - 'examples/**'
   pull_request:
     branches: [ master ]
+  release:
+    types: [ published, edited ]
 
 jobs:
   build:
+    if: ${{ github.event_name != 'pull_request' || (github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true) }}
     runs-on: ubuntu-latest
 
     strategy:
