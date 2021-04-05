@@ -25,7 +25,7 @@ test('variable prefix', async () => {
           variablePrefix: '--prefix',
         }),
       ],
-    })
+    }),
   ).toMatchInlineSnapshot(`
     "
 
@@ -66,7 +66,7 @@ test('formatted variable prefix', async () => {
           variablePrefix: '--[hello](_world)1=tail_wind',
         }),
       ],
-    })
+    }),
   ).toMatchInlineSnapshot(`
     "
 

@@ -27,7 +27,9 @@ module.exports = {
     }),
   },
   variants: {},
-  plugins: [require('../../src/index')({
-    variablePrefix: '--prefix'
-  })],
+  plugins: [
+    require('../../src/index')({
+      variablePrefix: '--prefix',
+    }),
+  ],
 }

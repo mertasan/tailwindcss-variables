@@ -35,7 +35,7 @@ test('css selectors', async () => {
               world: '100%',
             },
           },
-          "[type='button'],\n[type='reset']": {
+          '[type=\'button\'],\n[type=\'reset\']': {
             colors: {
               primary: 'blue',
               secondary: 'green',
@@ -44,7 +44,7 @@ test('css selectors', async () => {
         },
       },
       plugins: [tailwindcssVariables],
-    })
+    }),
   ).toMatchInlineSnapshot(`
     "
 

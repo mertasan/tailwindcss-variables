@@ -20,4 +20,5 @@ examples/*
 .run
 .editorconfig
 cache/
-.github
+.github/
+.eslintrc

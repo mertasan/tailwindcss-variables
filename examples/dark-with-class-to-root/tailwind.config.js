@@ -45,7 +45,9 @@ module.exports = {
     }),
   },
   variants: {},
-  plugins: [require('../../src/index')({
-    darkToRoot: true
-  })],
+  plugins: [
+    require('../../src/index')({
+      darkToRoot: true,
+    }),
+  ],
 }

@@ -3,6 +3,7 @@ const utils = require('./util/_utils')(__filename)
 
 test('format variables [special characters must be removed from variable names]', async () => {
   expect(
+    /* eslint-disable camelcase */
     await utils.diffOnly({
       purge: [utils.content()],
       darkMode: false,
@@ -10,14 +11,14 @@ test('format variables [special characters must be removed from variable names]'
         variables: {
           DEFAULT: {
             colors: {
-              "hello[$&+,:;=?@#|'<>.-^*()%!]world": '100%',
+              'hello[$&+,:;=?@#|\'<>.-^*()%!]world': '100%',
               underscore_to_dash: '100%',
               'underscore_to_dash-with-dash': '100%',
               auto_dash: '100%',
             },
           },
-          "[type='button']": {
-            "hello[$&+,:;=?@#|'<>.-^*()%!]world": '100%',
+          '[type=\'button\']': {
+            'hello[$&+,:;=?@#|\'<>.-^*()%!]world': '100%',
             underscore_to_dash: '100%',
             'underscore_to_dash-with-dash': '100%',
             auto_dash: '100%',
@@ -28,7 +29,7 @@ test('format variables [special characters must be removed from variable names]'
         },
       },
       plugins: [tailwindcssVariables],
-    })
+    }),
   ).toMatchInlineSnapshot(`
     "
 

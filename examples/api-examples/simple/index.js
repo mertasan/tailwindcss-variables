@@ -8,8 +8,8 @@ const variablesApi = require('../../../api')
  * @property {function} withOptions
  */
 module.exports = plugin.withOptions(
-  function (options) {
-    return function ({addComponents, theme, options, config}) {
+  function(options) {
+    return function({ addComponents, theme, options, config }) {
       const myVariables = {
         DEFAULT: {
           colors: {
@@ -32,7 +32,7 @@ module.exports = plugin.withOptions(
           darkSelector: null, // default: .dark
           darkToRoot: false, // DEFAULT => :root.dark or .dark
         },
-        theme('myPlugin.variableOptions', {})
+        theme('myPlugin.variableOptions', {}),
       )
 
       addComponents(variablesApi.variables(myVariables, pluginOptions))
@@ -42,7 +42,7 @@ module.exports = plugin.withOptions(
 
     }
   },
-  function (options) {
+  function(options) {
     return {
       // darkMode: 'class', // or media
       theme: {
@@ -53,5 +53,5 @@ module.exports = plugin.withOptions(
         }),
       },
     }
-  }
+  },
 )

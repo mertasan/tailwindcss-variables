@@ -43,7 +43,7 @@ test('nested variables', async () => {
         },
       },
       plugins: [tailwindcssVariables],
-    })
+    }),
   ).toMatchInlineSnapshot(`
     "
 

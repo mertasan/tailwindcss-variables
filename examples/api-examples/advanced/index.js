@@ -10,15 +10,15 @@ const variablesApi = require('../../../api')
  * @property {function} withOptions
  */
 module.exports = plugin.withOptions(
-  function (options) {
-    return function ({ addComponents, theme, options, config }) {
+  function(options) {
+    return function({ addComponents, theme, options, config }) {
       let pluginOptions = merge(
         {
           variablePrefix: '--prefix1',
           darkSelector: null, // default: .dark
           darkToRoot: false, // DEFAULT => :root.dark or .dark
         },
-        theme('myPlugin.variableOptions', {})
+        theme('myPlugin.variableOptions', {}),
       )
 
       let allThemes = pluginThemes(theme)
@@ -33,7 +33,7 @@ module.exports = plugin.withOptions(
       addComponents(variablesApi.getComponents('.form', allComponents))
     }
   },
-  function (options) {
+  function(options) {
     return {
       // darkMode: 'class', // or media
       theme: {
@@ -44,5 +44,5 @@ module.exports = plugin.withOptions(
         }),
       },
     }
-  }
+  },
 )

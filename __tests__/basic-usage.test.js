@@ -28,7 +28,7 @@ test('basic usage', async () => {
         },
       },
       plugins: [tailwindcssVariables],
-    })
+    }),
   ).toMatchInlineSnapshot(`
     "
 

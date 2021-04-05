@@ -14,4 +14,6 @@ install:
   - npm install
 
 script:
+  - npm run posttest
+  - npm run format
   - npm test

@@ -7,7 +7,7 @@ test('simple example with dark mode set to `media`', async () => {
       darkMode: 'media',
       theme: {},
       plugins: [require('../examples/api-examples/simple/index')],
-    })
+    }),
   ).toMatchInlineSnapshot(`
     "
 
@@ -49,7 +49,7 @@ test('simple example with dark mode set to `class`', async () => {
       darkMode: 'class',
       theme: {},
       plugins: [require('../examples/api-examples/simple/index')],
-    })
+    }),
   ).toMatchInlineSnapshot(`
     "
 
@@ -89,7 +89,7 @@ test('with-components example with dark mode set to `class`', async () => {
       darkMode: 'class',
       theme: {},
       plugins: [require('../examples/api-examples/with-components/index')],
-    })
+    }),
   ).toMatchInlineSnapshot(`
     "
 
@@ -141,7 +141,7 @@ test('with-components example with dark mode set to `media`', async () => {
       darkMode: 'media',
       theme: {},
       plugins: [require('../examples/api-examples/with-components/index')],
-    })
+    }),
   ).toMatchInlineSnapshot(`
     "
 
@@ -195,7 +195,7 @@ test('with-themes example with dark mode set to `media`', async () => {
       darkMode: 'media',
       theme: {},
       plugins: [require('../examples/api-examples/with-themes/index')],
-    })
+    }),
   ).toMatchInlineSnapshot(`
     "
 
@@ -237,7 +237,7 @@ test('with-themes example with dark mode set to `class`', async () => {
       darkMode: 'class',
       theme: {},
       plugins: [require('../examples/api-examples/with-themes/index')],
-    })
+    }),
   ).toMatchInlineSnapshot(`
     "
 
@@ -277,7 +277,7 @@ test('advanced example with dark mode set to `media`', async () => {
       darkMode: 'media',
       theme: {},
       plugins: [require('../examples/api-examples/advanced/index')],
-    })
+    }),
   ).toMatchInlineSnapshot(`
     "
 
@@ -331,7 +331,7 @@ test('advanced example with dark mode set to `class`', async () => {
       darkMode: 'class',
       theme: {},
       plugins: [require('../examples/api-examples/advanced/index')],
-    })
+    }),
   ).toMatchInlineSnapshot(`
     "
 

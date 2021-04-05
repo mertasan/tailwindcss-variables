@@ -12,7 +12,7 @@ module.exports = (contentFile) => {
       .then((result) => result.css)
   }
 
-  utils.diffOnly = async function (options = {}) {
+  utils.diffOnly = async function(options = {}) {
     const [before, after] = await Promise.all([utils.run(), utils.run(options)])
 
     return `\n\n${snapshotDiff(before, after, {
@@ -24,7 +24,7 @@ module.exports = (contentFile) => {
       .replace(/@@([^@@]*)@@/g, '\n---\n') // In between @@ signs
       .replace(/[-+] __REMOVE_ME__\n/g, '')
       .replace(/Snapshot Diff:\n/g, '')
-      .replace(/"/g, "'")
+      .replace(/"/g, '\'')
       .split('\n')
       .map((line) => `  ${line}`)
       .join('\n')}\n\n`

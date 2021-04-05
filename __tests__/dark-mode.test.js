@@ -21,7 +21,7 @@ test('only dark variables with default options and `class` mode', async () => {
         },
       },
       plugins: [tailwindcssVariables()],
-    })
+    }),
   ).toMatchInlineSnapshot(`
     "
 
@@ -58,7 +58,7 @@ test('only dark variables with default options and `media` mode', async () => {
         },
       },
       plugins: [tailwindcssVariables()],
-    })
+    }),
   ).toMatchInlineSnapshot(`
     "
 
@@ -102,7 +102,7 @@ test('if the `darkMode` is set to `media`, the `darkSelector` and `darkToRoot` o
           darkToRoot: true,
         }),
       ],
-    })
+    }),
   ).toMatchInlineSnapshot(`
     "
 
@@ -145,7 +145,7 @@ test('only dark variables with darkToRoot option and `class` mode', async () => 
           darkToRoot: true,
         }),
       ],
-    })
+    }),
   ).toMatchInlineSnapshot(`
     "
 
@@ -188,7 +188,7 @@ test('only dark variables with custom options and `class` mode', async () => {
           darkToRoot: true,
         }),
       ],
-    })
+    }),
   ).toMatchInlineSnapshot(`
     "
 
@@ -229,7 +229,7 @@ test('only dark variables with variablePrefix and `media` mode', async () => {
           variablePrefix: '.my-prefix',
         }),
       ],
-    })
+    }),
   ).toMatchInlineSnapshot(`
     "
 
@@ -280,7 +280,7 @@ test('variables and dark variables with default options and `class` mode', async
         },
       },
       plugins: [tailwindcssVariables()],
-    })
+    }),
   ).toMatchInlineSnapshot(`
     "
 
@@ -337,7 +337,7 @@ test('variables and dark variables with default options and `media` mode', async
         },
       },
       plugins: [tailwindcssVariables()],
-    })
+    }),
   ).toMatchInlineSnapshot(`
     "
 
@@ -400,7 +400,7 @@ test('variables and dark variables with custom darkSelector and `class` mode', a
           darkSelector: '.custom-dark-selector',
         }),
       ],
-    })
+    }),
   ).toMatchInlineSnapshot(`
     "
 
@@ -461,7 +461,7 @@ test('variables and dark variables with darkToRoot option and `class` mode', asy
           darkToRoot: true,
         }),
       ],
-    })
+    }),
   ).toMatchInlineSnapshot(`
     "
 
@@ -524,7 +524,7 @@ test('variables and dark variables with custom options and `class` mode', async 
           darkToRoot: true,
         }),
       ],
-    })
+    }),
   ).toMatchInlineSnapshot(`
     "
 
