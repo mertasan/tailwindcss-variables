@@ -15,7 +15,7 @@
     "build": "env NODE_ENV=production node scripts/build.js",
     "build:clean": "env NODE_ENV=production CLEAN=true node scripts/build.js",
     "style": "eslint .",
-    "pretest": "npm run eslint-init && npm run style",
+    "pretest": "npm run style",
     "format": "prettier --write ."
   },
   "keywords": [],
