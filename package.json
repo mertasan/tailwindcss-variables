@@ -11,9 +11,7 @@
   "homepage": "https://github.com/mertasan/tailwindcss-variables",
   "author": "Mert Aşan <mert@yediyuz.com> (https://github.com/mertasan)",
   "publishConfig": {
-    "access": "public",
-    "cache": "cache/.npm",
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "scripts": {
     "test": "jest",
