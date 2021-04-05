@@ -5,6 +5,11 @@
   "main": "src/index.js",
   "license": "GPL-3.0-or-later",
   "repository": "https://github.com/mertasan/tailwindcss-variables",
+  "bugs": {
+    "url": "https://github.com/mertasan/tailwindcss-variables/issues"
+  },
+  "homepage": "https://github.com/mertasan/tailwindcss-variables",
+  "author": "Mert Aşan <mert@yediyuz.com> (https://github.com/mertasan)",
   "publishConfig": {
     "access": "public",
     "cache": "cache/.npm",
@@ -18,8 +23,14 @@
     "pretest": "npm run style",
     "format": "prettier --write ."
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "tailwindcss",
+    "css variables",
+    "tailwind css variables",
+    "tailwindscs css variables",
+    "tailwindscs dark mode",
+    "tailwindscs multi theme"
+  ],
   "dependencies": {
     "lodash": "^4.17.21"
   },
