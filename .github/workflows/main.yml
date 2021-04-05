@@ -36,12 +36,10 @@ jobs:
         env:
           CI: true
 
-      - name: Examples
+      - name: Building Examples
         run: npm run build
-      - name: Examples with clean CSS
+      - name: Clean CSS styles of the Examples are building
         run: npm run build:clean
-      - name: Pre-Test
-        run: npm run pretest
       - name: Test
         run: npm run test -- --coverage
         env:
