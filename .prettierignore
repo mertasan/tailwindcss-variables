@@ -21,4 +21,4 @@ examples/*
 .editorconfig
 cache/
 .github/
-.eslintrc
+.eslintrc.*
