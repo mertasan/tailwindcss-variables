@@ -1,3 +1,4 @@
 /__tests__/util/_utils.js
 *.stub
 .run
+*.md
