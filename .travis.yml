@@ -14,6 +14,7 @@ install:
   - npm install
 
 script:
-  - npm run posttest
+  - npm run eslint-init
+  - npm run pretest
   - npm run format
   - npm test
