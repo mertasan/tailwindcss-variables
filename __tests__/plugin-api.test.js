@@ -5,15 +5,23 @@ test('simple example with dark mode set to `media`', async () => {
     await utils.diffOnly({
       purge: [utils.content()],
       darkMode: 'media',
-      theme: {},
+      theme: {
+        variables: {
+          DEFAULT: {
+            colors: {
+              primary: 'indigo',
+            },
+          },
+        },
+      },
       plugins: [require('../examples/api-examples/simple/index')],
-    }),
+    })
   ).toMatchInlineSnapshot(`
     "
 
       
       + :root {
-      +   --prefix2-colors-primary: black;
+      +   --prefix2-colors-primary: indigo;
       +   --prefix2-colors-secondary: white;
       +   --prefix2-colors-warning: pink
       + }
@@ -47,15 +55,23 @@ test('simple example with dark mode set to `class`', async () => {
     await utils.diffOnly({
       purge: [utils.content()],
       darkMode: 'class',
-      theme: {},
+      theme: {
+        variables: {
+          DEFAULT: {
+            colors: {
+              primary: 'indigo'
+            },
+          },
+        }
+      },
       plugins: [require('../examples/api-examples/simple/index')],
-    }),
+    })
   ).toMatchInlineSnapshot(`
     "
 
       
       + :root {
-      +   --prefix2-colors-primary: black;
+      +   --prefix2-colors-primary: indigo;
       +   --prefix2-colors-secondary: white;
       +   --prefix2-colors-warning: pink
       + }
@@ -72,7 +88,7 @@ test('simple example with dark mode set to `class`', async () => {
       +   --prefix2-colors-warning: pink
       + }
       +
-      + :root.dark .admin {
+      + .dark .admin {
       +   --prefix2-colors-primary: blue;
       +   --prefix2-colors-secondary: green;
       +   --prefix2-colors-warning: gray
@@ -89,7 +105,7 @@ test('with-components example with dark mode set to `class`', async () => {
       darkMode: 'class',
       theme: {},
       plugins: [require('../examples/api-examples/with-components/index')],
-    }),
+    })
   ).toMatchInlineSnapshot(`
     "
 
@@ -112,7 +128,7 @@ test('with-components example with dark mode set to `class`', async () => {
       +   --prefix2-colors-warning: pink;
       + }
       +
-      + :root.dark .admin {
+      + .dark .admin {
       +   --prefix2-colors-primary: blue;
       +   --prefix2-colors-secondary: green;
       +   --prefix2-colors-warning: gray;
@@ -141,7 +157,7 @@ test('with-components example with dark mode set to `media`', async () => {
       darkMode: 'media',
       theme: {},
       plugins: [require('../examples/api-examples/with-components/index')],
-    }),
+    })
   ).toMatchInlineSnapshot(`
     "
 
@@ -195,7 +211,7 @@ test('with-themes example with dark mode set to `media`', async () => {
       darkMode: 'media',
       theme: {},
       plugins: [require('../examples/api-examples/with-themes/index')],
-    }),
+    })
   ).toMatchInlineSnapshot(`
     "
 
@@ -235,15 +251,23 @@ test('with-themes example with dark mode set to `class`', async () => {
     await utils.diffOnly({
       purge: [utils.content()],
       darkMode: 'class',
-      theme: {},
+      theme: {
+        variables: {
+          DEFAULT: {
+            colors: {
+              primary: 'indigo'
+            },
+          },
+        }
+      },
       plugins: [require('../examples/api-examples/with-themes/index')],
-    }),
+    })
   ).toMatchInlineSnapshot(`
     "
 
       
       + :root {
-      +   --prefix2-colors-primary: black;
+      +   --prefix2-colors-primary: indigo;
       +   --prefix2-colors-secondary: white;
       +   --prefix2-colors-warning: indigo
       + }
@@ -260,7 +284,7 @@ test('with-themes example with dark mode set to `class`', async () => {
       +   --prefix2-colors-warning: purple
       + }
       +
-      + :root.dark .admin {
+      + .dark .admin {
       +   --prefix2-colors-primary: green;
       +   --prefix2-colors-secondary: orange;
       +   --prefix2-colors-warning: teal
@@ -275,15 +299,23 @@ test('advanced example with dark mode set to `media`', async () => {
     await utils.diffOnly({
       purge: [utils.content()],
       darkMode: 'media',
-      theme: {},
+      theme: {
+        variables: {
+          DEFAULT: {
+            colors: {
+              primary: 'indigo'
+            },
+          },
+        }
+      },
       plugins: [require('../examples/api-examples/advanced/index')],
-    }),
+    })
   ).toMatchInlineSnapshot(`
     "
 
       
       + :root {
-      +   --prefix2-colors-primary: black;
+      +   --prefix2-colors-primary: indigo;
       +   --prefix2-colors-secondary: white;
       +   --prefix2-colors-warning: indigo;
       + }
@@ -329,15 +361,23 @@ test('advanced example with dark mode set to `class`', async () => {
     await utils.diffOnly({
       purge: [utils.content()],
       darkMode: 'class',
-      theme: {},
+      theme: {
+        variables: {
+          DEFAULT: {
+            colors: {
+              primary: 'indigo'
+            },
+          },
+        }
+      },
       plugins: [require('../examples/api-examples/advanced/index')],
-    }),
+    })
   ).toMatchInlineSnapshot(`
     "
 
       
       + :root {
-      +   --prefix2-colors-primary: black;
+      +   --prefix2-colors-primary: indigo;
       +   --prefix2-colors-secondary: white;
       +   --prefix2-colors-warning: indigo;
       + }
@@ -354,7 +394,7 @@ test('advanced example with dark mode set to `class`', async () => {
       +   --prefix2-colors-warning: purple;
       + }
       +
-      + :root.dark .admin {
+      + .dark .admin {
       +   --prefix2-colors-primary: green;
       +   --prefix2-colors-secondary: orange;
       +   --prefix2-colors-warning: teal;

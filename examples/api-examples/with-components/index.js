@@ -31,7 +31,7 @@ module.exports = plugin.withOptions(
         {
           variablePrefix: '--prefix1',
           darkSelector: null, // default: .dark
-          darkToRoot: false, // DEFAULT => :root.dark or .dark
+          darkToRoot: false, // default: true ( :root.dark or .dark )
         },
         theme('myPlugin.variableOptions', {}),
       )

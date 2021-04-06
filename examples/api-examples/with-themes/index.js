@@ -15,16 +15,16 @@ module.exports = plugin.withOptions(
         {
           variablePrefix: '--prefix1',
           darkSelector: null, // default: .dark
-          darkToRoot: false, // DEFAULT => :root.dark or .dark
+          darkToRoot: false, // default: true ( :root.dark or .dark )
         },
         theme('myPlugin.variableOptions', {}),
       )
 
       let allThemes = pluginThemes(theme)
 
-      addComponents(variablesApi.variables(allThemes.themes, pluginOptions))
+      addComponents(variablesApi.variables(merge(allThemes.themes, theme('variables', {})), pluginOptions))
 
-      addComponents(variablesApi.darkVariables(allThemes.darkThemes, pluginOptions, config('darkMode')))
+      addComponents(variablesApi.darkVariables(merge(allThemes.darkThemes, theme('darkVariables', {})), pluginOptions, config('darkMode')))
     }
   },
   function(options) {

@@ -10,6 +10,7 @@ const variablesApi = require('../../../api')
 module.exports = plugin.withOptions(
   function(options) {
     return function({ addComponents, theme, options, config }) {
+
       const myVariables = {
         DEFAULT: {
           colors: {
@@ -30,15 +31,15 @@ module.exports = plugin.withOptions(
         {
           variablePrefix: '--prefix1',
           darkSelector: null, // default: .dark
-          darkToRoot: false, // DEFAULT => :root.dark or .dark
+          darkToRoot: false, // default: true ( :root.dark or .dark )
         },
         theme('myPlugin.variableOptions', {}),
       )
 
-      addComponents(variablesApi.variables(myVariables, pluginOptions))
+      addComponents(variablesApi.variables(merge(myVariables, theme('variables', {})), pluginOptions))
 
       myVariables.DEFAULT.colors.primary = 'yellow'
-      addComponents(variablesApi.darkVariables(myVariables, pluginOptions, config('darkMode')))
+      addComponents(variablesApi.darkVariables(merge(myVariables, theme('darkVariables', {})), pluginOptions, config('darkMode')))
 
     }
   },
