@@ -30,7 +30,7 @@ grubu belirleyebilmek, plugin API aracılığıyla kendi paketlerinize kolayca e
 | Dil | Dökümantasyon linki |
 | --- | --- |
 | English | [**Documentation**](./README.md) |
-| Turkish | Dokümantasyon |
+| Türkçe | Dokümantasyon |
 
 ## Kurulum
 
