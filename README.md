@@ -4,41 +4,42 @@
 ![Dependencies](https://status.david-dm.org/gh/mertasan/tailwindcss-variables.svg)
 [![license](https://img.shields.io/badge/License-GPLv3-green.svg?label=license)](//github.com/mertasan/tailwindcss-variables/tree/master/LICENSE)
 
-# tailwindcss CSS variables
+# Tailwindcss CSS Variables
 
-Bu eklenti, tailwindcss için CSS değişkenlerini `tailwind.config.js` dosyası aracılığıyla kolayca yapılandırmaya
-olanak sağlar.
+This plugin allows you to configure CSS variables for tailwindcss by enabling the `tailwind.config.js` file.
 
-Kullanım şekli, tailwindcss'in varsayılan yapılandırmaları ile benzer şekildedir. Dark Mode için ayrı değişken
-grubu belirleyebilmek, plugin API aracılığıyla kendi paketlerinize kolayca entegre edebilmek de mümkün.
 
-## Öne çıkan özellikler
+How it works is similar to the tailwindcss' default configirations. It is also possible to define a different variable group for Dark Mode and to integrate it with your packages through plugin API. 
 
-- Değişkenler, tailwindcss renklerini tanımlamak kadar basit.
-- Değişkenleri `:root` ya da custom CSS seçicilere tanımlayabilirsiniz.
-- Değişkenler iç içe geçmiş obje notasyonu (nested object notation) kullanılarak oluşturulabilir.
-- Dark Mode için farklı değişkenler oluşturulabilir.
-- Dark Mode değişkenleri, yapılandırmanızdaki `class` ya da `media` moduna göre otomatik tanımlanır.
-- Yapılandırmadaki `darkMode` ayarı eğer `class` olarak belirtilmiş ise özel seçiciler tanımlanabilir.
-- Plugin API aracılığıyla kendi eklentinizi oluştururken tema yapılandırması yapmanıza olanak sağlar.
-- Değişkenler için prefix tanımlaması yapılabilir. (plugin API için faydalı)
-- Değişkenler, yapılandırma dosyasında veya .css vb. stil dosyalarında kullanılabilir.
-- Çoklu tema gibi gereksinimlerinizi ek bir eklentiye gerek kalmadan kendiniz yapılandırabilirsiniz!
 
-## Dökümantasyonlar
+## Highlighted Features
 
-| Dil | Dökümantasyon linki |
+- Variables are as easy as defining tailwindcss' colors...
+- You can designate the variables to `:root` or custom CSS selectors.
+- Variables can be formed through using nested object notation. 
+- Different variables can be composed for the Dark Mode.
+- Dark Mode variables are set automatically through the `class` or `media` modes on your configuration.
+- If `darkMode` settings are set as `class`, custom selectors can be defined.
+- Enables you to configure themes when you are creating your own plugin through Plugin API. 
+- Prefix can be defined for variables. (Benefits the Plugin API)
+- Variables can be used for the configuration file or .css like style files.
+- You can configure your own needs such as multi-themes without needing an additional plugin! 
+
+
+## Documentation
+
+| Language | Documentation Link|
 | --- | --- |
 | English | [**Documentation**](./README.md) |
-| Türkçe | Dokümantasyon |
+| Turkish | Dokümantasyon |
 
-## Kurulum
+## Installation
 
 ```cli
 npm install -D @mertasan/tailwindcss-variables
 ```
 
-## Basit Kullanım
+## Easy Accessibility 
 
 ```javascript
 // tailwind.config.js
@@ -93,7 +94,7 @@ module.exports = {
 
 ## Dark Mode
 
-### `class` modu ile
+### with the `class` mode
 
 ```javascript
 // tailwind.config.js
@@ -166,15 +167,15 @@ module.exports = {
 }
 ```
 
-#### `darkToRoot` ve `darkSelector` ayarları ile
+#### with the `darkToRoot` and `darkSelector` configurations
 
-Eğer tailwindcss yapılandırmanızda `darkMode: 'class'` olarak tanımlıysa, eklentinin `darkToRoot` ve `darkSelector`
-ayarlarını kullanarak özelleştirebilirsiniz.
+If the `darkMode:`configuration is set as `'class'` in your tailwindcss configuration, you can change and customize the `darkToRoot` and `darkSelector` settings.
 
-| option       	| type   	| default 	| description                                                             	|
+
+| Option       	| Type   	| Default 	| Description                                                             	|
 |--------------	|--------	|---------	|-------------------------------------------------------------------------	|
-| darkSelector 	| string 	| .dark   	| Dark mode için kullanılan CSS seçici.                                   	|
-| darkToRoot   	| bool   	| true    	| `darkSelector` ayarında tanımlanan seçici :root olarak mı kullanılıyor? 	|
+| darkSelector 	| string 	| .dark   	| CSS selector used for Dark mode.                                  	|
+| darkToRoot   	| bool   	| true    	| Does the selector defined as`darkSelector` being used as :root ?  	|
 
 ```javascript
 // tailwind.config.js
@@ -250,7 +251,7 @@ module.exports = {
 }
 ```
 
-### `media` modu ile
+### with the `media` mode
 
 ```javascript
 // tailwind.config.js
@@ -325,7 +326,7 @@ module.exports = {
 }
 ```
 
-## Prefix Kullanımı
+## Using Prefixes
 
 ```javascript
 // tailwind.config.js
@@ -375,7 +376,7 @@ module.exports = {
 }
 ```
 
-## İç içe geçmiş obje notasyonu (Nested)
+## Nested Object Notation
 
 ```javascript
 // tailwind.config.js
@@ -417,24 +418,23 @@ module.exports = {
 ```
 
 
-## Key adlandırma kuralları
+## Rules for Naming Keys
 
-Değişken keyleri yalnızca belirli karakterlere sahip olabilir. Diğer karakterler otomatik olarak temizlenir.
-Objelerde alt tire (_) kullanımı mümkün olduğundan, alt tireler de orta çizgiye (-) dönüştürülür.
+Variable keys can only include designated characters. Other characters will be automatically removed. Because using underscores (_) on objects is allowed, underscores will be transformed into middle dashes (-).
+
 
 Rule:
 ````jsregexp
 /[^a-zA-Z0-9\-]+/gi
 ````
 
-| öncesi        | sonrası |
+| Before        | After |
 |--------------	|--------	|
 | hello[$&+,:;=?@#'<>.-^*()%!]world   | hello-world                     	|
 | hello__world                       	| hello-world   	                  |
 | css_variables_for-tailwindcss   	  | css-variables-for-tailwindcss   	|
 
-İşte bir örnek:
-
+Here's an example:
 ```javascript
 // tailwind.config.js
 
@@ -485,9 +485,9 @@ module.exports = {
 }
 ```
 
-## Kendi eklentileriniz için API örneği
+## API example for your own plugins
 
-- [Ayrıntılı açıklama](#gerçek-kullanım-örneği-detaylı)
+- [Detailed Explanation](#gerçek-kullanım-örneği-detaylı)
 
 ```javascript
 // tailwind.config.js
@@ -547,9 +547,9 @@ module.exports = {
 }
 ```
 
-### API Component helper
+### API Component Helper
 
-tailwindcss-variables plugin API'yi bileşenlerinizi kayıt etmek için de kullanabilirsiniz.
+You can also use tailwindcss-variables plugin API to save your components.
 
 ```javascript
 // tailwind.config.js
@@ -637,27 +637,21 @@ module.exports = {
 }
 ```
 
-## Gerçek kullanım örneği (detaylı)
+## Detailed Authentic Usage Example
 
-**Avantajları neler?**
+**What are the advantages?**
 
-Laravel için bir form oluşturucu (PHP) paketi oluşturduğunuzu hayal edin. Bu durumda özelleştirmeniz gereken
-birçok stil olacağına eminim. Ancak en gerekli olan şeylerden bir tanesi renkler! Bileşenleri kendi belirlediğiniz
-renklerle oluşturursunuz. Elbette bu renkler `vendor:publish` komutu ile kullanıcılar tarafından özelleştirilebilir ama
-bunu herkes için daha basit hale getirebilirsiniz. Kullanıcılar renkleri kendileri yapılandırabilir, isterlerse
-eklentinizi dark mode için yapılandırabilirler. Böylelikle, kullanıcılar bazı basit değişiklikler için
-`.css` veya `.blade.php` dosyalarını özelleştirmek zorunda kalmazlar. Bu sayede eklentinizi güncel şablonlarıyla
-birlikte kullanarak, gelecekteki versiyon güncellemelerine uyum sağlayabilirler. Bu açıklamayı okuduysanız eğer,
-bu eklentininin ortaya çıkma nedenini artık biliyorsunuz demektir. :)
+Imagine you are creating a form builder (PHP) package for Laravel. In this case, I am sure there will be a lot of styles to customize. Nonetheless, one of the most necessary things is the colors! You'll develop the components with the colors you pick out. Of course these colors can be customized with the `vendor:publish` command but you can make it simpler for everyone. Users can customize the colors for their own likings and if they wish they can also configure your extension for the dark mode as well. This way, users don't have to alter the `.css` or `.blade.php` files for some small and simple customizations. Thus, they can use your extension with up to date templates and can adapt to future version updates. If you have read this statement, it means that now you know why this plugin came about. :)
 
 
-**Dezavantajları neler?**
 
-Bir fikriniz varsa eğer, lütfen PR göndermekten çekinmeyin.
+**What are the disadvantages?**
 
-**Bu örnek ile ilgili kaynaklar:**
+If you have any ideas, please don't refrain to send a PR.
 
-- [kaynak](https://github.com/mertasan/tailwindcss-variables/tree/master/examples/api-examples/readme-source)
+**Resources on this example:**
+
+- [Source](https://github.com/mertasan/tailwindcss-variables/tree/master/examples/api-examples/readme-source)
 - [test](https://github.com/mertasan/tailwindcss-variables/tree/master/__tests__/readme.test.js)
 
 **Your own plugin themes:**
@@ -767,35 +761,34 @@ module.exports = {
 }
 ```
 
-Bu örnekteki gibi bir kurgu sayesinde, eklentinizin stilleri için, sizin ek .css dosyaları yayınlamanıza,
-kullanan kişilerin ise paketlerinizi kullanabilmek için stil dosyaları derlemelerine gerek kalmayacak.
+With a setup just like on this example, it won't be necessary to publish extra .css flies for your plugin styles and also, it won't be necessary for the users to sort out your style files to compile your packages. 
 
 
-## Örnekler ve testler
 
-Hem kullanım şekli konusunda yardımcı olması için, hem de sunulan tüm özellikleri test ederek
-doğru çalıştığından emin olmak için örnekler hazırladım.
+## Examples and Tests
+
+I have prepared examples on both helping with the usage and for testing all of the features that's being offered to make sure it works just fine. 
 
 
-| Kaynak | Durum |
+| Source | State |
 | --- | --- |
-| [Örnekler](https://github.com/mertasan/tailwindcss-variables/tree/master/examples/examples) | ![Examples](https://img.shields.io/github/workflow/status/mertasan/tailwindcss-variables/build?label=examples)	|
-| [Plugin API örnekleri](https://github.com/mertasan/tailwindcss-variables/tree/master/examples/api-examples) | ![API Examples](https://img.shields.io/github/workflow/status/mertasan/tailwindcss-variables/build?label=api-examples) |
-| [Testler](https://github.com/mertasan/tailwindcss-variables/tree/master/__tests__) | ![Tests](https://img.shields.io/github/workflow/status/mertasan/tailwindcss-variables/tests?label=tests) |
+| [Examples](https://github.com/mertasan/tailwindcss-variables/tree/master/examples/examples) | ![Examples](https://img.shields.io/github/workflow/status/mertasan/tailwindcss-variables/build?label=examples)	|
+| [Plugin API Examples](https://github.com/mertasan/tailwindcss-variables/tree/master/examples/api-examples) | ![API Examples](https://img.shields.io/github/workflow/status/mertasan/tailwindcss-variables/build?label=api-examples) |
+| [Tests](https://github.com/mertasan/tailwindcss-variables/tree/master/__tests__) | ![Tests](https://img.shields.io/github/workflow/status/mertasan/tailwindcss-variables/tests?label=tests) |
 | [Travis CI](https://travis-ci.com/mertasan/tailwindcss-variables) | ![Tests](https://img.shields.io/travis/mertasan/tailwindcss-variables/master.svg?label=travis-ci) |
 
-> Örneklere ve testlere ait dosyalar pull-request, push, release vb. etkinliklerde otomatik olarak yeniden
-> derlenmektedir. Bu nedenle, örnek dosyalarda `require(../index)` gibi dosya yolları kullanıldı.
-> Örnekleri kullanacaksanız eğer, ilgili yerleri `require('@mertasan/tailwindcss-variables')` şeklinde değiştirmeniz gerekiyor.
+> Documents on examples and tests are re-organized on pull-request, push, release and etc. activities.
+> For this reason, file paths like `require(../index)` have been used on the example files. If you were to use the examples, you need to change the relevant interiors as `require('@mertasan/tailwindcss-variables')`.
+> 
 
 
-## Yardım
+## Help
 
-Lütfen GitHub issues aracılığıyla tüm soru ve sorunlarınızı iletin. Size yardımcı olmaya çalışacağım.
+Please send any questions and issues through GitHub issues. I will try my best to help you.
 
-## Katkı
+## Contribution
 
-Herhangi bir özelliği iyileştirir veya yeni özellikler eklerseniz eğer, lütfen pull-request göndermekten çekinmeyin.
+If you are to improve or/and add new features, please feel free to send pull-requests.
 
 ## License
 
