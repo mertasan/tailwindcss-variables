@@ -6,32 +6,31 @@
 
 # Tailwindcss CSS Variables
 
-This plugin allows you to configure CSS variables for tailwindcss by enabling the `tailwind.config.js` file.
+This plugin allows you to configure CSS variables in the `tailwind.config.js`
 
 
-How it works is similar to the tailwindcss' default configirations. It is also possible to define a different variable group for Dark Mode and to integrate it with your packages through plugin API. 
+Similar to the tailwindcss configurations you are used to. It is also possible to define a different variable group for Dark Mode and to integrate it with your packages through plugin API. 
 
 
-## Highlighted Features
+## Highlights
 
-- Variables are as easy as defining tailwindcss' colors...
+- Variables are as easy as defining tailwindcss colors...
 - You can designate the variables to `:root` or custom CSS selectors.
 - Variables can be formed through using nested object notation. 
 - Different variables can be composed for the Dark Mode.
 - Dark Mode variables are set automatically through the `class` or `media` modes on your configuration.
-- If `darkMode` settings are set as `class`, custom selectors can be defined.
-- Enables you to configure themes when you are creating your own plugin through Plugin API. 
-- Prefix can be defined for variables. (Benefits the Plugin API)
-- Variables can be used for the configuration file or .css like style files.
+- If `darkMode` config are set as `class`, custom dark selector can be defined.
+- It allows you to add custom themes while creating your own plugin via the plugin API. 
+- Prefix can be defined for variables. (It is useful when using the plugin API)
 - You can configure your own needs such as multi-themes without needing an additional plugin! 
 
 
 ## Documentation
 
-| Language | Documentation Link|
+| Language | Documentation link|
 | --- | --- |
-| English | [**Documentation**](./README.md) |
-| Turkish | Dokümantasyon |
+| English | Documentation |
+| Turkish | [**Dökümantasyon**](./README.tr.md) |
 
 ## Installation
 
@@ -39,7 +38,7 @@ How it works is similar to the tailwindcss' default configirations. It is also p
 npm install -D @mertasan/tailwindcss-variables
 ```
 
-## Easy Accessibility 
+## Usage 
 
 ```javascript
 // tailwind.config.js
@@ -169,7 +168,7 @@ module.exports = {
 
 #### with the `darkToRoot` and `darkSelector` configurations
 
-If the `darkMode:`configuration is set as `'class'` in your tailwindcss configuration, you can change and customize the `darkToRoot` and `darkSelector` settings.
+If the `darkMode`configuration is set as `'class'` in your tailwindcss configuration, you can change and customize the `darkToRoot` and `darkSelector` settings.
 
 
 | Option       	| Type   	| Default 	| Description                                                             	|
@@ -326,7 +325,7 @@ module.exports = {
 }
 ```
 
-## Using Prefixes
+## Prefix
 
 ```javascript
 // tailwind.config.js
@@ -376,7 +375,7 @@ module.exports = {
 }
 ```
 
-## Nested Object Notation
+## Nested object notation
 
 ```javascript
 // tailwind.config.js
@@ -418,7 +417,7 @@ module.exports = {
 ```
 
 
-## Rules for Naming Keys
+## Rules for keys of variables
 
 Variable keys can only include designated characters. Other characters will be automatically removed. Because using underscores (_) on objects is allowed, underscores will be transformed into middle dashes (-).
 
@@ -547,9 +546,9 @@ module.exports = {
 }
 ```
 
-### API Component Helper
+### API component helper
 
-You can also use tailwindcss-variables plugin API to save your components.
+You can also use tailwindcss-variables plugin API to register your components.
 
 ```javascript
 // tailwind.config.js
@@ -637,11 +636,11 @@ module.exports = {
 }
 ```
 
-## Detailed Authentic Usage Example
+## Detailed example of the API
 
 **What are the advantages?**
 
-Imagine you are creating a form builder (PHP) package for Laravel. In this case, I am sure there will be a lot of styles to customize. Nonetheless, one of the most necessary things is the colors! You'll develop the components with the colors you pick out. Of course these colors can be customized with the `vendor:publish` command but you can make it simpler for everyone. Users can customize the colors for their own likings and if they wish they can also configure your extension for the dark mode as well. This way, users don't have to alter the `.css` or `.blade.php` files for some small and simple customizations. Thus, they can use your extension with up to date templates and can adapt to future version updates. If you have read this statement, it means that now you know why this plugin came about. :)
+Imagine you are creating a form builder (PHP) package for Laravel. In this case, I am sure there will be a lot of styles to customize. Nonetheless, one of the most necessary things is the colors! You'll develop the components with the colors you pick out. Of course these colors can be customized with the `vendor:publish` command but you can make it simpler for everyone. Users can customize the colors for their own likings and if they wish they can also configure your plugin for the dark mode as well. This way, users don't have to alter the `.css` or `.blade.php` files for some small and simple customizations. Thus, they can use your extension with up to date templates and can adapt to future version updates. If you have read this statement, it means that now you know why this plugin came about. :)
 
 
 
@@ -761,11 +760,11 @@ module.exports = {
 }
 ```
 
-With a setup just like on this example, it won't be necessary to publish extra .css flies for your plugin styles and also, it won't be necessary for the users to sort out your style files to compile your packages. 
+Based on these examples, it won't be necessary to publish extra .css flies for your plugin styles and also, it won't be necessary for the users to sort out your style files to compile your packages. 
 
 
 
-## Examples and Tests
+## Examples and tests
 
 I have prepared examples on both helping with the usage and for testing all of the features that's being offered to make sure it works just fine. 
 
@@ -777,12 +776,12 @@ I have prepared examples on both helping with the usage and for testing all of t
 | [Tests](https://github.com/mertasan/tailwindcss-variables/tree/master/__tests__) | ![Tests](https://img.shields.io/github/workflow/status/mertasan/tailwindcss-variables/tests?label=tests) |
 | [Travis CI](https://travis-ci.com/mertasan/tailwindcss-variables) | ![Tests](https://img.shields.io/travis/mertasan/tailwindcss-variables/master.svg?label=travis-ci) |
 
-> Documents on examples and tests are re-organized on pull-request, push, release and etc. activities.
-> For this reason, file paths like `require(../index)` have been used on the example files. If you were to use the examples, you need to change the relevant interiors as `require('@mertasan/tailwindcss-variables')`.
+> Documents on examples and tests are re-organized on pull-request, push, release and etc. events.
+> For this reason, file paths like `require(../index)` have been used on the example files. If you were to use the examples, you need to change the relevant lines as `require('@mertasan/tailwindcss-variables')`.
 > 
 
 
-## Help
+## If You Need Help
 
 Please send any questions and issues through GitHub issues. I will try my best to help you.
 
