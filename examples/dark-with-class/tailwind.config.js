@@ -45,5 +45,9 @@ module.exports = {
     }),
   },
   variants: {},
-  plugins: [require('../../src/index')],
+  plugins: [
+    require('../../src/index')({
+      darkToRoot: false,
+    }),
+  ],
 }
