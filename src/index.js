@@ -1,6 +1,4 @@
 const plugin = require('tailwindcss/plugin')
-const merge = require('lodash/merge')
-const has = require('lodash/has')
 const isEmpty = require('lodash/isEmpty')
 const api = require('./pluginApi')
 
