@@ -118,7 +118,7 @@ const darkBuild = (options, darkMode, source) => {
       }
     } else {
       if (darkMode === 'class') {
-        block = `:root${darkSelector} ${key}`
+        block = darkToRoot ? `:root${darkSelector} ${key}` : `${darkSelector} ${key}`
       } else {
         block = `${key}`
       }
