@@ -37,7 +37,7 @@ module.exports = (contentFile) => {
 
     let file = filename ? filename : contentFile
 
-    return path.resolve(__dirname, '../__tests__/' + path.parse(file).name + '.' + ext)
+    return path.resolve(__dirname, '../' + path.parse(file).name + '.' + ext)
   }
 
   return utils
