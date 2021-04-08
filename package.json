@@ -25,9 +25,9 @@
     "tailwindcss",
     "css variables",
     "tailwind css variables",
-    "tailwindscs css variables",
-    "tailwindscs dark mode",
-    "tailwindscs multi theme"
+    "tailwindcss css variables",
+    "tailwindcss dark mode",
+    "tailwindcss multi theme"
   ],
   "dependencies": {
     "lodash": "^4.17.21"
