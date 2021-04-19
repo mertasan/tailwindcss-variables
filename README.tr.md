@@ -160,7 +160,7 @@ module.exports = {
 :root.dark {
   --colors-red-50: blue
 }
-+
+
 :root.dark .container {
   --colors-red-50: green
 }
