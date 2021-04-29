@@ -4,7 +4,7 @@
 ![Dependencies](https://status.david-dm.org/gh/mertasan/tailwindcss-variables.svg)
 [![license](https://img.shields.io/badge/License-GPLv3-green.svg?label=license)](//github.com/mertasan/tailwindcss-variables/tree/master/LICENSE)
 
-# tailwindcss CSS variables
+# Tailwind CSS Variables
 
 Bu eklenti, tailwindcss için CSS değişkenlerini `tailwind.config.js` dosyası aracılığıyla kolayca yapılandırmaya
 olanak sağlar.
