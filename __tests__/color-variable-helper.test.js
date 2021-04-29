@@ -17,32 +17,48 @@ test('colorVariable helper', async () => {
           primary: colorVariable('--colors-primary'),
           secondary: colorVariable('var(--colors-secondary)'),
           gray: 'var(--colors-gray)',
+          white: '#ffffff',
         },
         variables: {
           DEFAULT: {
             colors: {
-              primary: '#ffffff',
+              primary: '#ff0',
               secondary: '#000000',
               gray: '#6B7280',
+            },
+            sizes: {
+              small: '10px',
+              medium: '2rem',
+              large: '100%',
             },
           },
         },
       },
-      plugins: [tailwindcssVariables],
+      plugins: [
+        tailwindcssVariables({
+          colorVariables: true,
+        }),
+      ],
     })
   ).toMatchInlineSnapshot(`
     "
 
       
       + :root {
-      +   --colors-primary: #ffffff;
+      +   --colors-primary: #ff0;
       +   --colors-secondary: #000000;
-      +   --colors-gray: #6B7280
+      +   --colors-gray: #6B7280;
+      +   --colors-primary-rgb: 255,255,0;
+      +   --colors-secondary-rgb: 0,0,0;
+      +   --colors-gray-rgb: 107,114,128;
+      +   --sizes-small: 10px;
+      +   --sizes-medium: 2rem;
+      +   --sizes-large: 100%
       + }
       +
       + .text-primary {
       +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-primary), var(--tw-text-opacity))
+      +   color: rgba(var(--colors-primary-rgb), var(--tw-text-opacity))
       + }
       +
       + .text-opacity-50 {
@@ -51,11 +67,16 @@ test('colorVariable helper', async () => {
       +
       + .bg-secondary {
       +   --tw-bg-opacity: 1;
-      +   background-color: rgba(var(--colors-secondary), var(--tw-bg-opacity))
+      +   background-color: rgba(var(--colors-secondary-rgb), var(--tw-bg-opacity))
       + }
       +
       + .bg-gray {
       +   background-color: var(--colors-gray)
+      + }
+      +
+      + .bg-white {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(255, 255, 255, var(--tw-bg-opacity))
       + }
       +
       + .bg-opacity-50 {

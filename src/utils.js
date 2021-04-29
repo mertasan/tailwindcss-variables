@@ -8,6 +8,9 @@ const isPlainObject = require('lodash/isPlainObject')
 const hasOwn = require('lodash/has')
 const _forEach = require('lodash/forEach')
 const _replace = require('lodash/replace')
+const startsWith = require('lodash/startsWith')
+const trimStart = require('lodash/trimStart')
+const trimEnd = require('lodash/trimEnd')
 const get = require('lodash/get')
 
 const setComponent = (component, modifier, options) => {
@@ -75,8 +78,50 @@ const parseVariables = (object, varPrefix) => {
   return results
 }
 
+const hexToRGB = (key, h) => {
+  if (startsWith(h, 'rgba') || !startsWith(h, '#')) {
+    return [key, h]
+  } else if (startsWith(h, 'rgb')) {
+    h = trimStart(h, 'rgb(')
+    h = trimEnd(h, ')')
+  }
+
+  let r = 0,
+    g = 0,
+    b = 0
+
+  // 3 digits
+  if (h.length === 4) {
+    r = '0x' + h[1] + h[1]
+    g = '0x' + h[2] + h[2]
+    b = '0x' + h[3] + h[3]
+
+    // 6 digits
+  } else if (h.length === 7) {
+    r = '0x' + h[1] + h[2]
+    g = '0x' + h[3] + h[4]
+    b = '0x' + h[5] + h[6]
+  }
+
+  return [key + '-rgb', '' + +r + ',' + +g + ',' + +b + '']
+}
+
+const setColorVariables = (source) => {
+  return merge(
+    source,
+    ...toPairs(source).map(([keys, value]) => {
+      const flattenValue = isPlainObject(value) ? setColorVariables(value) : value
+      return fromPairs(keys.split(', ').map((key) => hexToRGB(key, flattenValue)))
+    })
+  )
+}
+
 const build = (options, source) => {
   let varPrefix = formatVariableKey(get(options, 'variablePrefix', ''))
+  let colorVariables = get(options, 'colorVariables', false)
+  if (colorVariables) {
+    source = setColorVariables(source)
+  }
   if (!varPrefix) {
     varPrefix = ''
   }
@@ -98,6 +143,10 @@ const darkBuild = (options, darkMode, source) => {
   let varPrefix = formatVariableKey(get(options, 'variablePrefix', ''))
   if (!varPrefix) {
     varPrefix = ''
+  }
+  let colorVariables = get(options, 'colorVariables', false)
+  if (colorVariables) {
+    source = setColorVariables(source)
   }
   let darkSelector = get(options, 'darkSelector', '.dark')
   if (!darkSelector) {

@@ -506,7 +506,7 @@ module.exports = {
     variables: {
       DEFAULT: {
         colors: {
-          primary: '#ffffff',
+          primary: '#ff0',
           secondary: '#000000',
           gray: '#6B7280'
         },
@@ -515,7 +515,9 @@ module.exports = {
     },
   },
   plugins: [
-    require('@mertasan/tailwindcss-variables')
+    require('@mertasan/tailwindcss-variables'){
+      colorVariables: true
+    }
   ]
 }
 ```
@@ -524,19 +526,22 @@ module.exports = {
 
 ```css
 :root {
-   --colors-primary: #ffffff;
-   --colors-secondary: #000000;
-   --colors-gray: #6B7280
+  --colors-primary: #ff0;
+  --colors-secondary: #000000;
+  --colors-gray: #6B7280;
+  --colors-primary-rgb: 255,255,0;
+  --colors-secondary-rgb: 0,0,0;
+  --colors-gray-rgb: 107,114,128
 }
 
 .text-primary {
   --tw-text-opacity: 1;
-  color: rgba(var(--colors-primary), var(--tw-text-opacity))
+  color: rgba(var(--colors-primary-rgb), var(--tw-text-opacity))
 }
 
 .bg-secondary {
   --tw-bg-opacity: 1;
-  background-color: rgba(var(--colors-secondary), var(--tw-bg-opacity))
+  background-color: rgba(var(--colors-secondary-rgb), var(--tw-bg-opacity))
 }
 
 .bg-gray {
