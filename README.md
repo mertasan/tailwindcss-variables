@@ -38,6 +38,9 @@ Similar to the tailwindcss configurations you are used to. It is also possible t
 npm install -D @mertasan/tailwindcss-variables
 ```
 
+## Playground
+Simple example: https://play.tailwindcss.com/og38aGxa8a
+
 ## Usage
 
 ```javascript

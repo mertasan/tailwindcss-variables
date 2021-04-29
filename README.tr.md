@@ -38,6 +38,9 @@ grubu belirleyebilmek, plugin API aracılığıyla kendi paketlerinize kolayca e
 npm install -D @mertasan/tailwindcss-variables
 ```
 
+## Canlı önizleme
+Basit bir örnek: https://play.tailwindcss.com/og38aGxa8a
+
 ## Basit Kullanım
 
 ```javascript
