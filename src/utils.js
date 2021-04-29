@@ -78,12 +78,21 @@ const parseVariables = (object, varPrefix) => {
   return results
 }
 
+const RGBAtoRGB = (rgba) => {
+  rgba = trimStart(rgba, 'rgba(')
+  rgba = trimEnd(rgba, ')')
+  return rgba.substring(0, rgba.lastIndexOf(','))
+}
+
 const hexToRGB = (key, h) => {
-  if (startsWith(h, 'rgba') || !startsWith(h, '#')) {
-    return [key, h]
+  if (startsWith(h, 'rgba')) {
+    return [key + '-rgb', RGBAtoRGB(h)]
   } else if (startsWith(h, 'rgb')) {
     h = trimStart(h, 'rgb(')
     h = trimEnd(h, ')')
+    return [key + '-rgb', h]
+  } else if (!startsWith(h, '#')) {
+    return [key, h]
   }
 
   let r = 0,
