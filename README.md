@@ -4,7 +4,7 @@
 ![Dependencies](https://status.david-dm.org/gh/mertasan/tailwindcss-variables.svg)
 [![license](https://img.shields.io/badge/License-GPLv3-green.svg?label=license)](//github.com/mertasan/tailwindcss-variables/tree/master/LICENSE)
 
-# Tailwindcss CSS Variables
+# Tailwind CSS Variables
 
 This plugin allows you to configure CSS variables in the `tailwind.config.js`
 
