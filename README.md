@@ -9,20 +9,20 @@
 This plugin allows you to configure CSS variables in the `tailwind.config.js`
 
 
-Similar to the tailwindcss configurations you are used to. It is also possible to define a different variable group for Dark Mode and to integrate it with your packages through plugin API. 
+Similar to the tailwindcss configurations you are used to. It is also possible to define a different variable group for Dark Mode and to integrate it with your packages through plugin API.
 
 
 ## Highlights
 
 - Variables are as easy as defining tailwindcss colors...
 - You can designate the variables to `:root` or custom CSS selectors.
-- Variables can be formed through using nested object notation. 
+- Variables can be formed through using nested object notation.
 - Different variables can be composed for the Dark Mode.
 - Dark Mode variables are set automatically through the `class` or `media` modes on your configuration.
 - If `darkMode` config are set as `class`, custom dark selector can be defined.
-- It allows you to add custom themes while creating your own plugin via the plugin API. 
+- It allows you to add custom themes while creating your own plugin via the plugin API.
 - Prefix can be defined for variables. (It is useful when using the plugin API)
-- You can configure your own needs such as multi-themes without needing an additional plugin! 
+- You can configure your own needs such as multi-themes without needing an additional plugin!
 
 
 ## Documentation
@@ -38,7 +38,7 @@ Similar to the tailwindcss configurations you are used to. It is also possible t
 npm install -D @mertasan/tailwindcss-variables
 ```
 
-## Usage 
+## Usage
 
 ```javascript
 // tailwind.config.js
@@ -484,6 +484,66 @@ module.exports = {
 }
 ```
 
+## Helpers
+
+### `colorVariable()`
+
+You can use the `colorVariable` helper to add `text-opacity` or `bg-opacity` to the variables for which colors are defined.
+
+
+```javascript
+// tailwind.config.js
+
+const colorVariable = require('@mertasan/tailwindcss-variables/colorVariable')
+
+module.exports = {
+  theme: {
+    colors: {
+      primary: colorVariable('--colors-primary'),
+      secondary: colorVariable('var(--colors-secondary)'), // or
+      gray: 'var(--colors-gray)', // or default usage
+    },
+    variables: {
+      DEFAULT: {
+        colors: {
+          primary: '#ffffff',
+          secondary: '#000000',
+          gray: '#6B7280'
+        },
+      },
+      },
+    },
+  },
+  plugins: [
+    require('@mertasan/tailwindcss-variables')
+  ]
+}
+```
+
+**Output:**
+
+```css
+:root {
+   --colors-primary: #ffffff;
+   --colors-secondary: #000000;
+   --colors-gray: #6B7280
+}
+
+.text-primary {
+  --tw-text-opacity: 1;
+  color: rgba(var(--colors-primary), var(--tw-text-opacity))
+}
+
+.bg-secondary {
+  --tw-bg-opacity: 1;
+  background-color: rgba(var(--colors-secondary), var(--tw-bg-opacity))
+}
+
+.bg-gray {
+  background-color: var(--colors-gray)
+}
+```
+
 ## API example for your own plugins
 
 - [Detailed Explanation](#gerçek-kullanım-örneği-detaylı)
@@ -760,13 +820,13 @@ module.exports = {
 }
 ```
 
-Based on these examples, it won't be necessary to publish extra .css flies for your plugin styles and also, it won't be necessary for the users to sort out your style files to compile your packages. 
+Based on these examples, it won't be necessary to publish extra .css flies for your plugin styles and also, it won't be necessary for the users to sort out your style files to compile your packages.
 
 
 
 ## Examples and tests
 
-I have prepared examples on both helping with the usage and for testing all of the features that's being offered to make sure it works just fine. 
+I have prepared examples on both helping with the usage and for testing all of the features that's being offered to make sure it works just fine.
 
 
 | Source | State |
@@ -778,7 +838,7 @@ I have prepared examples on both helping with the usage and for testing all of t
 
 > Documents on examples and tests are re-organized on pull-request, push, release and etc. events.
 > For this reason, file paths like `require(../index)` have been used on the example files. If you were to use the examples, you need to change the relevant lines as `require('@mertasan/tailwindcss-variables')`.
-> 
+>
 
 
 ## If You Need Help

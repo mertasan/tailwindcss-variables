@@ -485,6 +485,66 @@ module.exports = {
 }
 ```
 
+## Yardımcı Fonksiyonlar (Helpers)
+
+### `colorVariable()`
+
+Renk değişkenlerini `colorVariable` helper fonksiyonunu kullanarak tanımlamanız halinde, renkleri `text-opacity` ya da `bg-opacity` gibi
+ek classlar ile uyumlu hale getirmeniz mümkün.
+
+```javascript
+// tailwind.config.js
+
+const colorVariable = require('@mertasan/tailwindcss-variables/colorVariable')
+
+module.exports = {
+  theme: {
+    colors: {
+      primary: colorVariable('--colors-primary'),
+      secondary: colorVariable('var(--colors-secondary)'), // veya
+      gray: 'var(--colors-gray)', // varsayılan kullanım şekli
+    },
+    variables: {
+      DEFAULT: {
+        colors: {
+          primary: '#ffffff',
+          secondary: '#000000',
+          gray: '#6B7280'
+        },
+      },
+      },
+    },
+  },
+  plugins: [
+    require('@mertasan/tailwindcss-variables')
+  ]
+}
+```
+
+**Output:**
+
+```css
+:root {
+   --colors-primary: #ffffff;
+   --colors-secondary: #000000;
+   --colors-gray: #6B7280
+}
+
+.text-primary {
+  --tw-text-opacity: 1;
+  color: rgba(var(--colors-primary), var(--tw-text-opacity))
+}
+
+.bg-secondary {
+  --tw-bg-opacity: 1;
+  background-color: rgba(var(--colors-secondary), var(--tw-bg-opacity))
+}
+
+.bg-gray {
+  background-color: var(--colors-gray)
+}
+```
+
 ## Kendi eklentileriniz için API örneği
 
 - [Ayrıntılı açıklama](#gerçek-kullanım-örneği-detaylı)
