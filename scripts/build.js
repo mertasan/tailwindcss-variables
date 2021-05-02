@@ -39,6 +39,7 @@ Promise.all([
   buildDistFile('examples/dark-with-class', 'Examples -> dark-with-class'),
   buildDistFile('examples/dark-with-class-to-root', 'Examples -> dark-with-class-to-root'),
   buildDistFile('examples/dark-with-media', 'Examples -> dark-with-media'),
+  buildDistFile('examples/color-variable-helper', 'Examples -> color-variable-helper'),
 ]).then(() => {
   console.log('Finished building.')
 })
