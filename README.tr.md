@@ -388,11 +388,14 @@ module.exports = {
     variables: {
       DEFAULT: {
         sizes: {
+          DEFAULT: '1px',
           small: '1rem',
           admin: {
+            DEFAULT: '2px',
             buttons: {
               colors: {
                 red: {
+                  DEFAULT: '#ffffff',
                   500: '#ff0000',
                   600: '#e60000',
                 }
@@ -409,13 +412,14 @@ module.exports = {
 }
 ```
 
-**Output:**
-
 ```css
 :root {
+  --sizes: 1px;
   --sizes-small: 1rem;
+  --sizes-admin: 2px;
   --sizes-admin-buttons-colors-red-500: #ff0000;
-  --sizes-admin-buttons-colors-red-600: #e60000
+  --sizes-admin-buttons-colors-red-600: #e60000;
+  --sizes-admin-buttons-colors-red: #ffffff
 }
 ```
 
@@ -427,7 +431,7 @@ Objelerde alt tire (_) kullanımı mümkün olduğundan, alt tireler de orta çi
 
 Rule:
 ````jsregexp
-/[^a-zA-Z0-9\-]+/gi
+/[^a-z0-9\-]+/gi
 ````
 
 | öncesi        | sonrası |

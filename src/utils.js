@@ -39,7 +39,11 @@ const flattenOptions = (options) => {
 }
 
 const formatVariableKey = (key) => {
-  return key.replace(/_/g, '-').replace(/[^a-zA-Z0-9\-]+/gi, '')
+  if (key === 'DEFAULT') {
+    return ''
+  }
+  key = key.toLowerCase()
+  return key.replace(/_/g, '-').replace(/[^a-z0-9\-]+/gi, '')
 }
 
 const splitVars = (source) => {
@@ -65,10 +69,11 @@ const parseVariables = (object, varPrefix) => {
   function recurse(object, varPrefix) {
     for (let key in object) {
       let pre = _replace(varPrefix === undefined ? '' : varPrefix + '-', '---', '--')
+      let formattedKey = formatVariableKey(key)
       if (hasOwn(object, key) && isPlainObject(object[key])) {
-        newObject = recurse(object[key], pre + formatVariableKey(key))
+        newObject = recurse(object[key], formattedKey ? pre + formattedKey : pre.slice(0, -1))
       } else {
-        newObject[pre + formatVariableKey(key)] = object[key]
+        newObject[formattedKey ? pre + formattedKey : pre.slice(0, -1)] = object[key]
       }
     }
     return newObject
