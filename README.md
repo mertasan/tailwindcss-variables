@@ -9,7 +9,7 @@
 This plugin allows you to configure CSS variables in the `tailwind.config.js`
 
 
-Similar to the tailwindcss configurations you are used to. It is also possible to define a different variable group for Dark Mode and to integrate it with your packages through plugin API.
+Similar to the tailwindcss configurations you are used to. It is also possible to define a different variable group for Dark Mode and to integrate it with your plugins through plugin API.
 
 
 ## Highlights
