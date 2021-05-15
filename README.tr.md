@@ -10,7 +10,7 @@ Bu eklenti, tailwindcss için CSS değişkenlerini `tailwind.config.js` dosyası
 olanak sağlar.
 
 Kullanım şekli, tailwindcss'in varsayılan yapılandırmaları ile benzer şekildedir. Dark Mode için ayrı değişken
-grubu belirleyebilmek, plugin API aracılığıyla kendi paketlerinize kolayca entegre edebilmek de mümkün.
+grubu belirleyebilmek, plugin API aracılığıyla kendi eklentilerinize kolayca entegre edebilmek de mümkün.
 
 ## Öne çıkan özellikler
 
