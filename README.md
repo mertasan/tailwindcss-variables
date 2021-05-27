@@ -357,7 +357,7 @@ module.exports = {
   },
   plugins: [
     require('@mertasan/tailwindcss-variables')({
-      variablPrefix: '--admin'
+      variablePrefix: '--admin'
     })
   ]
 }
