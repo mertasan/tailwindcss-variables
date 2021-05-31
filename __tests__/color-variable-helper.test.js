@@ -18,6 +18,10 @@ test('colorVariable helper', async () => {
           secondary: colorVariable('var(--colors-secondary)'), // HEX (6 digits)
           white: '#ffffff', // no variable
           blue: colorVariable('var(--colors-blue)'), // RGB
+          yellow: {
+            400: colorVariable('var(--colors-yellow-400)'), // RGB
+            DEFAULT: colorVariable('var(--colors-yellow)'), // RGB
+          },
           red: {
             400: colorVariable('var(--colors-red-400)'), // RGBA
             500: colorVariable('var(--colors-red-500)'), // RGBA
@@ -38,6 +42,10 @@ test('colorVariable helper', async () => {
                 500: 'rgba(254,0,0,1)',
               },
               green: 'rgb(0,255,0)',
+              yellow: {
+                400: 'rgb(255,255,0)',
+                DEFAULT: 'rgb(255,255,0)',
+              },
             },
             sizes: {
               small: '10px',
@@ -67,6 +75,10 @@ test('colorVariable helper', async () => {
       +   --colors-red-400-rgb: 254,0,0;
       +   --colors-red-500-rgb: 254,0,0;
       +   --colors-green: rgb(0,255,0);
+      +   --colors-yellow-400: rgb(255,255,0);
+      +   --colors-yellow: rgb(255,255,0);
+      +   --colors-yellow-400-rgb: 255,255,0;
+      +   --colors-yellow-rgb: 255,255,0;
       +   --colors-primary-rgb: 255,255,0;
       +   --colors-secondary-rgb: 0,0,0;
       +   --colors-gray-rgb: 107,114,128;
@@ -99,6 +111,11 @@ test('colorVariable helper', async () => {
       + .bg-white {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(255, 255, 255, var(--tw-bg-opacity))
+      + }
+      +
+      + .bg-yellow {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-yellow-rgb), var(--tw-bg-opacity))
       + }
       +
       + .bg-red-400 {

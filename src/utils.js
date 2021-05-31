@@ -89,13 +89,21 @@ const RGBAtoRGB = (rgba) => {
   return rgba.substring(0, rgba.lastIndexOf(','))
 }
 
+const getRGBKey = (key) => {
+  if (key === 'DEFAULT') {
+    return 'rgb'
+  } else {
+    return key + '-rgb'
+  }
+}
+
 const hexToRGB = (key, h) => {
   if (startsWith(h, 'rgba')) {
-    return [key + '-rgb', RGBAtoRGB(h)]
+    return [getRGBKey(key), RGBAtoRGB(h)]
   } else if (startsWith(h, 'rgb')) {
     h = trimStart(h, 'rgb(')
     h = trimEnd(h, ')')
-    return [key + '-rgb', h]
+    return [getRGBKey(key), h]
   } else if (!startsWith(h, '#')) {
     return [key, h]
   }
@@ -117,7 +125,7 @@ const hexToRGB = (key, h) => {
     b = '0x' + h[5] + h[6]
   }
 
-  return [key + '-rgb', '' + +r + ',' + +g + ',' + +b + '']
+  return [getRGBKey(key), '' + +r + ',' + +g + ',' + +b + '']
 }
 
 const setColorVariables = (source) => {
