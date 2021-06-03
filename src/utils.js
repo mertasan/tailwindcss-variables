@@ -43,7 +43,10 @@ const formatVariableKey = (key) => {
     return ''
   }
   key = key.toLowerCase()
-  return key.replace(/_/g, '-').replace(/[^a-z0-9\-]+/gi, '')
+  return key
+    .replace(/_/g, '-')
+    .replace(/[^a-z0-9\-]+/gi, '')
+    .replace('---', '--')
 }
 
 const splitVars = (source) => {
@@ -89,7 +92,10 @@ const RGBAtoRGB = (rgba) => {
   return rgba.substring(0, rgba.lastIndexOf(','))
 }
 
-const getRGBKey = (key) => {
+const getRGBKey = (key, forceRGB) => {
+  if (forceRGB) {
+    return key
+  }
   if (key === 'DEFAULT') {
     return 'rgb'
   } else {
@@ -97,13 +103,13 @@ const getRGBKey = (key) => {
   }
 }
 
-const hexToRGB = (key, h) => {
+const hexToRGB = (key, h, forceRGB) => {
   if (startsWith(h, 'rgba')) {
-    return [getRGBKey(key), RGBAtoRGB(h)]
+    return [getRGBKey(key, forceRGB), RGBAtoRGB(h)]
   } else if (startsWith(h, 'rgb')) {
     h = trimStart(h, 'rgb(')
     h = trimEnd(h, ')')
-    return [getRGBKey(key), h]
+    return [getRGBKey(key, forceRGB), h]
   } else if (!startsWith(h, '#')) {
     return [key, h]
   }
@@ -125,15 +131,15 @@ const hexToRGB = (key, h) => {
     b = '0x' + h[5] + h[6]
   }
 
-  return [getRGBKey(key), '' + +r + ',' + +g + ',' + +b + '']
+  return [getRGBKey(key, forceRGB), '' + +r + ',' + +g + ',' + +b + '']
 }
 
-const setColorVariables = (source) => {
+const setColorVariables = (source, forceRGB) => {
   return merge(
     source,
     ...toPairs(source).map(([keys, value]) => {
-      const flattenValue = isPlainObject(value) ? setColorVariables(value) : value
-      return fromPairs(keys.split(', ').map((key) => hexToRGB(key, flattenValue)))
+      const flattenValue = isPlainObject(value) ? setColorVariables(value, forceRGB) : value
+      return fromPairs(keys.split(', ').map((key) => hexToRGB(key, flattenValue, forceRGB)))
     })
   )
 }
@@ -141,8 +147,10 @@ const setColorVariables = (source) => {
 const build = (options, source) => {
   let varPrefix = formatVariableKey(get(options, 'variablePrefix', ''))
   let colorVariables = get(options, 'colorVariables', false)
+  let forceRGB = get(options, 'forceRGB', false)
+
   if (colorVariables) {
-    source = setColorVariables(source)
+    source = setColorVariables(source, forceRGB)
   }
   if (!varPrefix) {
     varPrefix = ''
@@ -167,8 +175,9 @@ const darkBuild = (options, darkMode, source) => {
     varPrefix = ''
   }
   let colorVariables = get(options, 'colorVariables', false)
+  let forceRGB = get(options, 'forceRGB', false)
   if (colorVariables) {
-    source = setColorVariables(source)
+    source = setColorVariables(source, forceRGB)
   }
   let darkSelector = get(options, 'darkSelector', '.dark')
   if (!darkSelector) {
