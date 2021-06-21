@@ -27,7 +27,9 @@ module.exports = plugin.withOptions(
   (options) => ({
     theme: {
       extend: {
-        colors: has(options, 'extendColors') ? convertColorVariables(options.extendColors) : {},
+        colors: has(options, 'extendColors')
+          ? convertColorVariables(options.extendColors, options.forceRGB ? options.forceRGB : false)
+          : {},
       },
     },
   })

@@ -21,12 +21,14 @@ const colorVariable = (variable, forceRGB) => {
   }
 }
 
-const setColorVariable = (color) => {
-  return startsWith(color, 'var') ? colorVariable(color, true) : color
+const setColorVariable = (color, forceRGB) => {
+  return startsWith(color, 'var') ? colorVariable(color, forceRGB) : color
 }
-const convertColorVariables = (colors) => {
+const convertColorVariables = (colors, forceRGB) => {
   return mapValues(colors, (color) =>
-    isPlainObject(color) ? mapValues(color, (subColor) => setColorVariable(subColor)) : setColorVariable(color)
+    isPlainObject(color)
+      ? mapValues(color, (subColor) => setColorVariable(subColor, forceRGB))
+      : setColorVariable(color, forceRGB)
   )
 }
 
