@@ -370,3 +370,241 @@ test('forceRGB option with extendColors', async () => {
     "
   `)
 })
+
+test('extendColors (readme)', async () => {
+  expect(
+    await utils.diffOnly({
+      corePlugins: ['textColor', 'textOpacity', 'backgroundColor', 'backgroundOpacity'],
+      purge: {
+        enabled: true,
+        content: [utils.content()],
+      },
+
+      darkMode: false,
+      theme: {
+        screens: false,
+        colors: {
+          white: '#fff',
+          green: 'var(--colors-green)',
+        },
+
+        variables: {
+          DEFAULT: {
+            colors: {
+              blue: '#0065ff',
+              red: '#ff0000',
+              green: '#11ff00',
+            },
+          },
+        },
+      },
+
+      plugins: [
+        tailwindcssVariables({
+          colorVariables: true,
+          extendColors: {
+            blue: 'var(--colors-blue)',
+            red: 'var(--colors-red)',
+          },
+        }),
+      ],
+    })
+  ).toMatchInlineSnapshot(`
+    "
+
+      
+      + :root {
+      +   --colors-blue: #0065ff;
+      +   --colors-red: #ff0000;
+      +   --colors-green: #11ff00;
+      +   --colors-blue-rgb: 0,101,255;
+      +   --colors-red-rgb: 255,0,0;
+      +   --colors-green-rgb: 17,255,0
+      + }
+      +
+      + .text-white {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(255, 255, 255, var(--tw-text-opacity))
+      + }
+      +
+      + .text-green {
+      +   color: var(--colors-green)
+      + }
+      +
+      + .text-red {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-red-rgb), var(--tw-text-opacity))
+      + }
+      +
+      + .text-opacity-50 {
+      +   --tw-text-opacity: 0.5
+      + }
+      +
+      + .bg-white {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(255, 255, 255, var(--tw-bg-opacity))
+      + }
+      +
+      + .bg-green {
+      +   background-color: var(--colors-green)
+      + }
+      +
+      + .bg-red {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-red-rgb), var(--tw-bg-opacity))
+      + }
+      +
+      + .bg-opacity-50 {
+      +   --tw-bg-opacity: 0.5
+      + }
+
+    "
+  `)
+})
+
+test('forceRGB for docs', async () => {
+  expect(
+    await utils.diffOnly({
+      corePlugins: ['textColor', 'textOpacity', 'backgroundColor', 'backgroundOpacity'],
+      purge: {
+        enabled: true,
+        content: [utils.content()],
+      },
+
+      darkMode: false,
+      theme: {
+        screens: false,
+        colors: {
+          white: '#fff',
+          green: colorVariable('var(--colors-green)', true),
+        },
+
+        variables: {
+          DEFAULT: {
+            colors: {
+              green: '#11ff00',
+            },
+          },
+        },
+      },
+
+      plugins: [
+        tailwindcssVariables({
+          colorVariables: true,
+          forceRGB: true,
+        }),
+      ],
+    })
+  ).toMatchInlineSnapshot(`
+    "
+
+      
+      + :root {
+      +   --colors-green: 17,255,0
+      + }
+      +
+      + .text-white {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(255, 255, 255, var(--tw-text-opacity))
+      + }
+      +
+      + .text-green {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-green), var(--tw-text-opacity))
+      + }
+      +
+      + .text-opacity-50 {
+      +   --tw-text-opacity: 0.5
+      + }
+      +
+      + .bg-white {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(255, 255, 255, var(--tw-bg-opacity))
+      + }
+      +
+      + .bg-green {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-green), var(--tw-bg-opacity))
+      + }
+      +
+      + .bg-opacity-50 {
+      +   --tw-bg-opacity: 0.5
+      + }
+
+    "
+  `)
+})
+
+test('forceRGB (disabled) for docs', async () => {
+  expect(
+    await utils.diffOnly({
+      corePlugins: ['textColor', 'textOpacity', 'backgroundColor', 'backgroundOpacity'],
+      purge: {
+        enabled: true,
+        content: [utils.content()],
+      },
+
+      darkMode: false,
+      theme: {
+        screens: false,
+        colors: {
+          white: '#fff',
+          green: colorVariable('var(--colors-green)'),
+        },
+
+        variables: {
+          DEFAULT: {
+            colors: {
+              green: '#11ff00',
+            },
+          },
+        },
+      },
+
+      plugins: [
+        tailwindcssVariables({
+          colorVariables: true,
+          forceRGB: false,
+        }),
+      ],
+    })
+  ).toMatchInlineSnapshot(`
+    "
+
+      
+      + :root {
+      +   --colors-green: #11ff00;
+      +   --colors-green-rgb: 17,255,0
+      + }
+      +
+      + .text-white {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(255, 255, 255, var(--tw-text-opacity))
+      + }
+      +
+      + .text-green {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-green-rgb), var(--tw-text-opacity))
+      + }
+      +
+      + .text-opacity-50 {
+      +   --tw-text-opacity: 0.5
+      + }
+      +
+      + .bg-white {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(255, 255, 255, var(--tw-bg-opacity))
+      + }
+      +
+      + .bg-green {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-green-rgb), var(--tw-bg-opacity))
+      + }
+      +
+      + .bg-opacity-50 {
+      +   --tw-bg-opacity: 0.5
+      + }
+
+    "
+  `)
+})

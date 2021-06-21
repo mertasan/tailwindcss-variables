@@ -77,12 +77,12 @@ test('extendColors', async () => {
       +
       + .text-red-400 {
       +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-red-400), var(--tw-text-opacity))
+      +   color: rgba(var(--colors-red-400-rgb), var(--tw-text-opacity))
       + }
       +
       + .text-red-500 {
       +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-red-500), var(--tw-text-opacity))
+      +   color: rgba(var(--colors-red-500-rgb), var(--tw-text-opacity))
       + }
       +
       + .text-red-600 {
@@ -95,7 +95,7 @@ test('extendColors', async () => {
       +
       + .text-red {
       +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-red), var(--tw-text-opacity))
+      +   color: rgba(var(--colors-red-rgb), var(--tw-text-opacity))
       + }
       +
       + .text-black {
@@ -105,7 +105,7 @@ test('extendColors', async () => {
       +
       + .text-white {
       +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-white), var(--tw-text-opacity))
+      +   color: rgba(var(--colors-white-rgb), var(--tw-text-opacity))
       + }
       +
       + .text-opacity-50 {
@@ -114,12 +114,12 @@ test('extendColors', async () => {
       +
       + .bg-red-400 {
       +   --tw-bg-opacity: 1;
-      +   background-color: rgba(var(--colors-red-400), var(--tw-bg-opacity))
+      +   background-color: rgba(var(--colors-red-400-rgb), var(--tw-bg-opacity))
       + }
       +
       + .bg-red-500 {
       +   --tw-bg-opacity: 1;
-      +   background-color: rgba(var(--colors-red-500), var(--tw-bg-opacity))
+      +   background-color: rgba(var(--colors-red-500-rgb), var(--tw-bg-opacity))
       + }
       +
       + .bg-red-600 {
@@ -132,7 +132,7 @@ test('extendColors', async () => {
       +
       + .bg-red {
       +   --tw-bg-opacity: 1;
-      +   background-color: rgba(var(--colors-red), var(--tw-bg-opacity))
+      +   background-color: rgba(var(--colors-red-rgb), var(--tw-bg-opacity))
       + }
       +
       + .bg-black {
@@ -142,7 +142,7 @@ test('extendColors', async () => {
       +
       + .bg-white {
       +   --tw-bg-opacity: 1;
-      +   background-color: rgba(var(--colors-white), var(--tw-bg-opacity))
+      +   background-color: rgba(var(--colors-white-rgb), var(--tw-bg-opacity))
       + }
       +
       + .bg-opacity-50 {
@@ -289,6 +289,206 @@ test('extendColors with forceRGB', async () => {
       + .bg-white {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-white), var(--tw-bg-opacity))
+      + }
+      +
+      + .bg-opacity-50 {
+      +   --tw-bg-opacity: 0.5
+      + }
+
+    "
+  `)
+})
+
+test('extendColors (readme)', async () => {
+  expect(
+    await utils.diffOnly({
+      corePlugins: ['textColor', 'textOpacity', 'backgroundColor', 'backgroundOpacity'],
+      purge: {
+        enabled: true,
+        content: [utils.content()],
+      },
+
+      darkMode: false,
+      theme: {
+        screens: false,
+        colors: {
+          white: '#fff',
+          green: 'var(--colors-green)',
+        },
+
+        variables: {
+          DEFAULT: {
+            colors: {
+              blue: '#0065ff',
+              red: '#ff0000',
+              green: '#11ff00',
+            },
+          },
+        },
+      },
+
+      plugins: [
+        tailwindcssVariables({
+          colorVariables: true,
+          extendColors: {
+            blue: 'var(--colors-blue)',
+            red: 'var(--colors-red)',
+          },
+        }),
+      ],
+    })
+  ).toMatchInlineSnapshot(`
+    "
+
+      
+      + :root {
+      +   --colors-blue: #0065ff;
+      +   --colors-red: #ff0000;
+      +   --colors-green: #11ff00;
+      +   --colors-blue-rgb: 0,101,255;
+      +   --colors-red-rgb: 255,0,0;
+      +   --colors-green-rgb: 17,255,0
+      + }
+      +
+      + .text-white {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(255, 255, 255, var(--tw-text-opacity))
+      + }
+      +
+      + .text-green {
+      +   color: var(--colors-green)
+      + }
+      +
+      + .text-blue {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-blue-rgb), var(--tw-text-opacity))
+      + }
+      +
+      + .text-red {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-red-rgb), var(--tw-text-opacity))
+      + }
+      +
+      + .text-opacity-50 {
+      +   --tw-text-opacity: 0.5
+      + }
+      +
+      + .bg-white {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(255, 255, 255, var(--tw-bg-opacity))
+      + }
+      +
+      + .bg-green {
+      +   background-color: var(--colors-green)
+      + }
+      +
+      + .bg-blue {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-blue-rgb), var(--tw-bg-opacity))
+      + }
+      +
+      + .bg-red {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-red-rgb), var(--tw-bg-opacity))
+      + }
+      +
+      + .bg-opacity-50 {
+      +   --tw-bg-opacity: 0.5
+      + }
+
+    "
+  `)
+})
+
+test('extendColors with forceRGB (readme)', async () => {
+  expect(
+    await utils.diffOnly({
+      corePlugins: ['textColor', 'textOpacity', 'backgroundColor', 'backgroundOpacity'],
+      purge: {
+        enabled: true,
+        content: [utils.content()],
+      },
+
+      darkMode: false,
+      theme: {
+        screens: false,
+        colors: {
+          white: '#fff',
+          green: 'var(--colors-green)',
+        },
+
+        variables: {
+          DEFAULT: {
+            colors: {
+              blue: '#0065ff',
+              red: '#ff0000',
+              green: '#11ff00',
+            },
+          },
+        },
+      },
+
+      plugins: [
+        tailwindcssVariables({
+          colorVariables: true,
+          forceRGB: true,
+          extendColors: {
+            blue: 'var(--colors-blue)',
+            red: 'var(--colors-red)',
+          },
+        }),
+      ],
+    })
+  ).toMatchInlineSnapshot(`
+    "
+
+      
+      + :root {
+      +   --colors-blue: 0,101,255;
+      +   --colors-red: 255,0,0;
+      +   --colors-green: 17,255,0
+      + }
+      +
+      + .text-white {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(255, 255, 255, var(--tw-text-opacity))
+      + }
+      +
+      + .text-green {
+      +   color: var(--colors-green)
+      + }
+      +
+      + .text-blue {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-blue), var(--tw-text-opacity))
+      + }
+      +
+      + .text-red {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-red), var(--tw-text-opacity))
+      + }
+      +
+      + .text-opacity-50 {
+      +   --tw-text-opacity: 0.5
+      + }
+      +
+      + .bg-white {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(255, 255, 255, var(--tw-bg-opacity))
+      + }
+      +
+      + .bg-green {
+      +   background-color: var(--colors-green)
+      + }
+      +
+      + .bg-blue {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-blue), var(--tw-bg-opacity))
+      + }
+      +
+      + .bg-red {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-red), var(--tw-bg-opacity))
       + }
       +
       + .bg-opacity-50 {
