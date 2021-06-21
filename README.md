@@ -634,6 +634,243 @@ module.exports = {
 }
 ```
 
+
+
+### forceRGB
+
+If `forceRGB` is set to `true`, no additional variables are created.
+
+#### Before
+
+```javascript
+// tailwind.config.js
+
+const colorVariable = require('@mertasan/tailwindcss-variables/colorVariable')
+
+module.exports = {
+  theme: {
+    screens: false,
+    colors: {
+      green: colorVariable('var(--colors-green)'),
+    },
+    variables: {
+      DEFAULT: {
+        colors: {
+          green: '#11ff00',
+        },
+      },
+    },
+  },
+  plugins: [
+    require('@mertasan/tailwindcss-variables'){
+      colorVariables: true,
+    }
+  ]
+}
+```
+
+**Output:**
+
+```css
+:root {
+  --colors-green: #11ff00;
+  --colors-green-rgb: 17,255,0
+}
+
+.text-green {
+  --tw-text-opacity: 1;
+  color: rgba(var(--colors-green-rgb), var(--tw-text-opacity))
+}
+```
+
+#### After
+
+```javascript
+// tailwind.config.js
+
+const colorVariable = require('@mertasan/tailwindcss-variables/colorVariable')
+
+module.exports = {
+  theme: {
+    screens: false,
+    colors: {
+      green: colorVariable('var(--colors-green)', true),
+    },
+    variables: {
+      DEFAULT: {
+        colors: {
+          green: '#11ff00',
+        },
+      },
+    },
+  },
+  plugins: [
+    require('@mertasan/tailwindcss-variables'){
+      colorVariables: true,
+      forceRGB: true,
+    }
+  ]
+}
+```
+
+**Output:**
+
+```css
+:root {
+  --colors-green: #11ff00;
+}
+
+.text-green {
+  --tw-text-opacity: 1;
+  color: rgba(var(--colors-green), var(--tw-text-opacity))
+}
+```
+
+
+### extendColors for colorVariable
+
+Instead of using each of the colors between the variables as `colorVariable('var(--colors-red-500)')`,
+You can define colors in the `extendColors` option.
+
+**Example:**
+
+```javascript
+// tailwind.config.js
+
+module.exports = {
+  theme: {
+    screens: false,
+    colors: {
+      white: '#fff',
+      green: 'var(--colors-green)',
+    },
+    variables: {
+      DEFAULT: {
+        colors: {
+          blue: '#0065ff',
+          red: '#ff0000',
+          green: '#11ff00',
+        },
+      },
+    },
+  },
+  plugins: [
+    require('@mertasan/tailwindcss-variables'){
+      colorVariables: true,
+      extendColors: {
+        blue: 'var(--colors-blue)',
+        red: 'var(--colors-red)',
+      }
+    }
+  ]
+}
+```
+
+**Output:**
+
+```css
+:root {
+  --colors-blue: #0065ff;
+  --colors-red: #ff0000;
+  --colors-green: #11ff00;
+  --colors-blue-rgb: 0,101,255;
+  --colors-red-rgb: 255,0,0;
+  --colors-green-rgb: 17,255,0
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity))
+}
+
+.text-green {
+  color: var(--colors-green)
+}
+
+.text-blue {
+  --tw-text-opacity: 1;
+  color: rgba(var(--colors-blue-rgb), var(--tw-text-opacity))
+}
+
+.text-red {
+  --tw-text-opacity: 1;
+  color: rgba(var(--colors-red-rgb), var(--tw-text-opacity))
+}
+
+.text-opacity-50 {
+  --tw-text-opacity: 0.5
+}
+```
+
+
+**Example 2 - Using with [forceRGB](#forcergb):**
+
+```javascript
+// tailwind.config.js
+
+module.exports = {
+  theme: {
+    screens: false,
+    colors: {
+      white: '#fff',
+      green: 'var(--colors-green)',
+    },
+    variables: {
+      DEFAULT: {
+        colors: {
+          blue: '#0065ff',
+          red: '#ff0000',
+          green: '#11ff00',
+        },
+      },
+    },
+  },
+  plugins: [
+    require('@mertasan/tailwindcss-variables'){
+      colorVariables: true,
+      forceRGB: true,
+      extendColors: {
+        blue: 'var(--colors-blue)',
+        red: 'var(--colors-red)',
+      }
+    }
+  ]
+}
+```
+
+**Output:**
+
+```css
+:root {
+  --colors-blue: 0,101,255;
+  --colors-red: 255,0,0;
+  --colors-green: 17,255,0
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity))
+}
+
+.text-green {
+  color: var(--colors-green)
+}
+
+.text-blue {
+  --tw-text-opacity: 1;
+  color: rgba(var(--colors-blue), var(--tw-text-opacity))
+}
+
+.text-red {
+  --tw-text-opacity: 1;
+  color: rgba(var(--colors-red), var(--tw-text-opacity))
+}
+
+.text-opacity-50 {
+  --tw-text-opacity: 0.5
+}
+```
+
 ## API example for your own plugins
 
 - [Detailed Explanation](#gerçek-kullanım-örneği-detaylı)
