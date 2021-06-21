@@ -20,7 +20,6 @@ test('extendColors', async () => {
             700: 'var(--colors-red-700)',
           },
         },
-
         variables: {
           DEFAULT: {
             colors: {
