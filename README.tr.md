@@ -729,7 +729,7 @@ module.exports = {
 
 ### colorVariable için extendColors
 
-Değişkenler arasındaki renklerin her birisini `colorVariable('var(--colors-red-500)')` şeklinde kullanmak yerine,
+Değişkenler arasındaki renklerin her birisini `colorVariable('var(--colors-red)')` şeklinde kullanmak yerine,
 renkleri `extendColors` kısmında tanımlayabilirsiniz.
 
 **Örnek:**

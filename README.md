@@ -729,7 +729,7 @@ module.exports = {
 
 ### extendColors for colorVariable
 
-Instead of using each of the colors between the variables as `colorVariable('var(--colors-red-500)')`,
+Instead of using each of the colors between the variables as `colorVariable('var(--colors-red)')`,
 You can define colors in the `extendColors` option.
 
 **Example:**
