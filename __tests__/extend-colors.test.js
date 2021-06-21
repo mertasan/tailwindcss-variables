@@ -1,6 +1,5 @@
 const tailwindcssVariables = require('../src/index')
 const utils = require('./util/_utils')(__filename)
-const colorVariable = require('../colorVariable')
 
 test('extendColors', async () => {
   expect(
