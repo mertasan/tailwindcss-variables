@@ -1,6 +1,6 @@
 {
   "name": "@mertasan/tailwindcss-variables",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Easily create css variables without the need for a css file!",
   "main": "src/index.js",
   "license": "GPL-3.0-or-later",
