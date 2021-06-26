@@ -49,8 +49,8 @@
     "tailwindcss": "^2.2.4"
   },
   "peerDependencies": {
-    "autoprefixer": "^9.8.6",
-    "postcss": "^7.0.36",
+    "autoprefixer": ">=9.8.0",
+    "postcss": ">=7.0.30",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.4"
   },
   "prettier": {
