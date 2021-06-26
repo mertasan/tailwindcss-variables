@@ -1,6 +1,6 @@
 {
   "name": "@mertasan/tailwindcss-variables",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "Easily create css variables without the need for a css file!",
   "main": "src/index.js",
   "license": "GPL-3.0-or-later",
@@ -15,6 +15,7 @@
   },
   "scripts": {
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "build": "env NODE_ENV=production node scripts/build.js",
     "build:clean": "env NODE_ENV=production CLEAN=true node scripts/build.js",
     "style": "eslint .",
@@ -80,19 +81,21 @@
       "<rootDir>/__tests__/**/*.test.js"
     ],
     "collectCoverageFrom": [
-      "<rootDir>/__tests__/**/*.js"
-    ],
-    "coveragePathIgnorePatterns": [
-      "<rootDir>/__tests__/util/"
+      "src/**/*.js",
+      "!**/node_modules/**"
     ],
     "testPathIgnorePatterns": [
       "<rootDir>/__tests__/util/"
+    ],
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "html"
     ]
   },
   "browserslist": [
     "> 1%",
     "not edge <= 18",
-    "not safari <= 13",
     "not ie 11",
     "not op_mini all"
   ],
