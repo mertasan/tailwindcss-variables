@@ -34,7 +34,7 @@ const getComponents = (selector, components) => {
   let componentList = {}
   selector = isEmpty(selector) ? '' : selector
   toPairs(flattenOptions(components)).forEach(([key, config]) => {
-    const modifier = key === 'DEFAULT' ? '' : `-${key}`
+    const modifier = key === 'DEFAULT' ? '' : isEmpty(selector) ? `${key}` : `-${key}`
     toPairs(config)
       .filter(([, options]) => !isEmpty(options))
       .forEach(([subKey, options]) => merge(componentList, setComponent(selector, modifier, options)))
