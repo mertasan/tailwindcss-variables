@@ -717,7 +717,7 @@ module.exports = {
 
 ```css
 :root {
-  --colors-green: #11ff00;
+  --colors-green: 17,255,0;
 }
 
 .text-green {
