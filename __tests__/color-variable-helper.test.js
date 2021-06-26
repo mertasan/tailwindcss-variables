@@ -147,3 +147,151 @@ test('colorVariable helper', async () => {
     "
   `)
 })
+
+test('colorVariable with gradient color stops', async () => {
+  expect(
+    await utils.diffOnly({
+      corePlugins: ['textColor', 'textOpacity', 'gradientColorStops'],
+      purge: {
+        enabled: true,
+        content: [utils.content()],
+      },
+
+      darkMode: false,
+      theme: {
+        screens: false,
+        colors: {
+          red: {
+            400: colorVariable('var(--colors-red-400)'), // RGBA
+            500: colorVariable('var(--colors-red-500)'), // RGBA
+            600: colorVariable('var(--colors-red-600)'), // HEX
+          },
+        },
+
+        variables: {
+          DEFAULT: {
+            colors: {
+              red: {
+                400: 'rgba(254,0,0,1)',
+                500: 'rgba(254,0,0,0.5)',
+                600: '#a20606',
+              },
+            },
+          },
+        },
+      },
+
+      plugins: [
+        tailwindcssVariables({
+          colorVariables: true,
+        }),
+      ],
+    })
+  ).toMatchInlineSnapshot(`
+    "
+
+      
+      + :root {
+      +   --colors-red-400: rgba(254,0,0,1);
+      +   --colors-red-500: rgba(254,0,0,0.5);
+      +   --colors-red-600: #a20606;
+      +   --colors-red-400-rgb: 254,0,0;
+      +   --colors-red-500-rgb: 254,0,0;
+      +   --colors-red-600-rgb: 162,6,6
+      + }
+      +
+      + .text-opacity-50 {
+      +   --tw-text-opacity: 0.5
+      + }
+      +
+      + .from-red-400 {
+      +   --tw-gradient-from: rgb(var(--colors-red-400-rgb));
+      +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-400-rgb), 0))
+      + }
+      +
+      + .from-red-500 {
+      +   --tw-gradient-from: rgb(var(--colors-red-500-rgb));
+      +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-500-rgb), 0))
+      + }
+      +
+      + .from-red-600 {
+      +   --tw-gradient-from: rgb(var(--colors-red-600-rgb));
+      +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-600-rgb), 0))
+      + }
+
+    "
+  `)
+})
+
+test('colorVariable with gradient color stops (forceRGB)', async () => {
+  expect(
+    await utils.diffOnly({
+      corePlugins: ['textColor', 'textOpacity', 'gradientColorStops'],
+      purge: {
+        enabled: true,
+        content: [utils.content()],
+      },
+
+      darkMode: false,
+      theme: {
+        screens: false,
+        colors: {
+          red: {
+            400: colorVariable('var(--colors-red-400)', true), // RGBA
+            500: colorVariable('var(--colors-red-500)', true), // RGBA
+            600: colorVariable('var(--colors-red-600)', true), // HEX
+          },
+        },
+
+        variables: {
+          DEFAULT: {
+            colors: {
+              red: {
+                400: 'rgba(254,0,0,1)',
+                500: 'rgba(254,0,0,0.5)',
+                600: '#a20606',
+              },
+            },
+          },
+        },
+      },
+
+      plugins: [
+        tailwindcssVariables({
+          colorVariables: true,
+          forceRGB: true,
+        }),
+      ],
+    })
+  ).toMatchInlineSnapshot(`
+    "
+
+      
+      + :root {
+      +   --colors-red-400: 254,0,0;
+      +   --colors-red-500: 254,0,0;
+      +   --colors-red-600: 162,6,6
+      + }
+      +
+      + .text-opacity-50 {
+      +   --tw-text-opacity: 0.5
+      + }
+      +
+      + .from-red-400 {
+      +   --tw-gradient-from: rgb(var(--colors-red-400));
+      +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-400), 0))
+      + }
+      +
+      + .from-red-500 {
+      +   --tw-gradient-from: rgb(var(--colors-red-500));
+      +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-500), 0))
+      + }
+      +
+      + .from-red-600 {
+      +   --tw-gradient-from: rgb(var(--colors-red-600));
+      +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-600), 0))
+      + }
+
+    "
+  `)
+})
