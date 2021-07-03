@@ -540,9 +540,9 @@ module.exports = {
     },
   },
   plugins: [
-    require('@mertasan/tailwindcss-variables'){
+    require('@mertasan/tailwindcss-variables')({
       colorVariables: true
-    }
+    })
   ]
 }
 ```
@@ -662,9 +662,9 @@ module.exports = {
     },
   },
   plugins: [
-    require('@mertasan/tailwindcss-variables'){
+    require('@mertasan/tailwindcss-variables')({
       colorVariables: true,
-    }
+    })
   ]
 }
 ```
@@ -705,10 +705,10 @@ module.exports = {
     },
   },
   plugins: [
-    require('@mertasan/tailwindcss-variables'){
+    require('@mertasan/tailwindcss-variables')({
       colorVariables: true,
       forceRGB: true,
-    }
+    })
   ]
 }
 ```
@@ -755,13 +755,13 @@ module.exports = {
     },
   },
   plugins: [
-    require('@mertasan/tailwindcss-variables'){
+    require('@mertasan/tailwindcss-variables')({
       colorVariables: true,
       extendColors: {
         blue: 'var(--colors-blue)',
         red: 'var(--colors-red)',
       }
-    }
+    })
   ]
 }
 ```
@@ -826,14 +826,14 @@ module.exports = {
     },
   },
   plugins: [
-    require('@mertasan/tailwindcss-variables'){
+    require('@mertasan/tailwindcss-variables')({
       colorVariables: true,
       forceRGB: true,
       extendColors: {
         blue: 'var(--colors-blue)',
         red: 'var(--colors-red)',
       }
-    }
+    })
   ]
 }
 ```
