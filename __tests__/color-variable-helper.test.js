@@ -148,6 +148,171 @@ test('colorVariable helper', async () => {
   `)
 })
 
+test('colorVariable - background and text color', async () => {
+  expect(
+    await utils.diffOnly({
+      corePlugins: ['textColor', 'textOpacity', 'backgroundColor', 'backgroundOpacity'],
+      purge: {
+        enabled: true,
+        content: [utils.content()],
+      },
+      darkMode: false,
+      theme: {
+        screens: false,
+        colors: {
+          indigo: {
+            400: colorVariable('var(--colors-indigo-400)', true), // RGBA
+            500: colorVariable('var(--colors-indigo-500)', true), // RGBA
+            600: colorVariable('var(--colors-indigo-600)', true), // HEX
+          },
+        },
+        variables: {
+          DEFAULT: {
+            colors: {
+              indigo: {
+                400: 'rgba(254,0,0,1)',
+                500: 'rgba(254,0,0,0.5)',
+                600: '#a20606',
+              },
+            },
+          },
+        },
+
+        plugins: [
+          tailwindcssVariables({
+            colorVariables: true,
+            forceRGB: true,
+          }),
+        ],
+      },
+    })
+  ).toMatchInlineSnapshot(`
+    "
+
+      
+      + .text-indigo-400 {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-indigo-400), var(--tw-text-opacity))
+      + }
+      +
+      + .text-indigo-500 {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-indigo-500), var(--tw-text-opacity))
+      + }
+      +
+      + .text-indigo-600 {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-indigo-600), var(--tw-text-opacity))
+      + }
+      +
+      + .text-opacity-50 {
+      +   --tw-text-opacity: 0.5
+      + }
+      +
+      + .bg-indigo-400 {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-indigo-400), var(--tw-bg-opacity))
+      + }
+      +
+      + .bg-indigo-500 {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-indigo-500), var(--tw-bg-opacity))
+      + }
+      +
+      + .bg-indigo-600 {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-indigo-600), var(--tw-bg-opacity))
+      + }
+      +
+      + .bg-opacity-50 {
+      +   --tw-bg-opacity: 0.5
+      + }
+
+    "
+  `)
+})
+
+/**
+ * a --tw-bg-opacity must be added to the colors even if the bg-opacity-100 class is not present.
+ */
+test('colorVariable - background and text color 2', async () => {
+  expect(
+    await utils.diffOnly({
+      corePlugins: ['textColor', 'textOpacity', 'backgroundColor', 'backgroundOpacity'],
+      purge: {
+        enabled: true,
+        content: [utils.content('color-variable-helper2')],
+      },
+
+      darkMode: false,
+      theme: {
+        screens: false,
+        colors: {
+          indigo: {
+            400: colorVariable('var(--colors-indigo-400)', true), // RGBA
+            500: colorVariable('var(--colors-indigo-500)', true), // RGBA
+            600: colorVariable('var(--colors-indigo-600)', true), // HEX
+          },
+        },
+
+        variables: {
+          DEFAULT: {
+            colors: {
+              indigo: {
+                400: 'rgba(254,0,0,1)',
+                500: 'rgba(254,0,0,0.5)',
+                600: '#a20606',
+              },
+            },
+          },
+        },
+
+        plugins: [
+          tailwindcssVariables({
+            colorVariables: true,
+            forceRGB: true,
+          }),
+        ],
+      },
+    })
+  ).toMatchInlineSnapshot(`
+    "
+
+      
+      + .text-indigo-400 {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-indigo-400), var(--tw-text-opacity))
+      + }
+      +
+      + .text-indigo-500 {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-indigo-500), var(--tw-text-opacity))
+      + }
+      +
+      + .text-indigo-600 {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-indigo-600), var(--tw-text-opacity))
+      + }
+      +
+      + .bg-indigo-400 {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-indigo-400), var(--tw-bg-opacity))
+      + }
+      +
+      + .bg-indigo-500 {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-indigo-500), var(--tw-bg-opacity))
+      + }
+      +
+      + .bg-indigo-600 {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-indigo-600), var(--tw-bg-opacity))
+      + }
+
+    "
+  `)
+})
+
 test('colorVariable with gradient color stops', async () => {
   expect(
     await utils.diffOnly({
