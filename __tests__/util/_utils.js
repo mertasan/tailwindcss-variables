@@ -7,12 +7,12 @@ module.exports = (contentFile) => {
   let utils = {}
 
   utils.run = (config = {}) => {
-    return postcss([tailwind({ corePlugins: [], ...config })])
-      .process(['@tailwind base;', '@tailwind components;', '@tailwind utilities;'].join('\n'), { from: undefined })
+    return postcss([tailwind({corePlugins: [], ...config})])
+      .process(['@tailwind base;', '@tailwind components;', '@tailwind utilities;'].join('\n'), {from: undefined})
       .then((result) => result.css)
   }
 
-  utils.diffOnly = async function(options = {}) {
+  utils.diffOnly = async function (options = {}) {
     const [before, after] = await Promise.all([utils.run(), utils.run(options)])
 
     return `\n\n${snapshotDiff(before, after, {
@@ -35,9 +35,11 @@ module.exports = (contentFile) => {
       ext = 'html'
     }
 
-    let file = filename ? filename : contentFile
-
-    return path.resolve(__dirname, '../' + path.parse(file).name + '.' + ext)
+    if (filename) {
+      return path.resolve(__dirname, '../' + path.parse(filename).name + '.test.' + ext)
+    } else {
+      return path.resolve(__dirname, '../' + path.parse(contentFile).name + '.' + ext)
+    }
   }
 
   return utils
