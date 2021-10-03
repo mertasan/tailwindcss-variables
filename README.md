@@ -1,6 +1,5 @@
 ![Tests](https://img.shields.io/github/workflow/status/mertasan/tailwindcss-variables/tests?label=tests)
 [![Examples](https://img.shields.io/github/workflow/status/mertasan/tailwindcss-variables/build?label=examples)](https://github.com/mertasan/tailwindcss-variables/tree/master/examples)
-![Dependencies](https://status.david-dm.org/gh/mertasan/tailwindcss-variables.svg)
 ![npm](https://img.shields.io/npm/dt/@mertasan/tailwindcss-variables)
 [![license](https://img.shields.io/badge/License-GPLv3-green.svg?label=license)](//github.com/mertasan/tailwindcss-variables/tree/master/LICENSE)
 
