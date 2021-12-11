@@ -31,7 +31,7 @@ grubu belirleyebilmek, plugin API aracılığıyla kendi eklentilerinize kolayca
 | English | [**Documentation**](./README.md) |
 | Türkçe | Dokümantasyon |
 
-## Tailwind CSS Versiyon Uyumluluğu
+## Versiyon Uyumluluğu
 | Tailwind CSS | Paket |
 |--------------|-------|
 | 2.x          | 1.x   |

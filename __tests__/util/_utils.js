@@ -39,14 +39,12 @@ module.exports = (contentFile) => {
     if (!ext) {
       ext = 'html'
     }
-    let content;
-    if (filename) {
-      content = path.resolve(__dirname, '../' + path.parse(filename).name + '.test.' + ext)
-    } else {
-      content = path.resolve(__dirname, '../' + path.parse(contentFile).name + '.' + ext)
-    }
 
-    return content;
+    if (filename) {
+      return path.resolve(__dirname, '../' + path.parse(filename).name + '.test.' + ext)
+    } else {
+      return path.resolve(__dirname, '../' + path.parse(contentFile).name + '.' + ext)
+    }
   }
 
   return utils
