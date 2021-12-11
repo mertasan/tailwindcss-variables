@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ['./index.html'],
+  content: ['./index.html'],
   corePlugins: process.env.CLEAN ? [] : {},
   darkMode: 'class',
   theme: {
@@ -26,7 +26,6 @@ module.exports = {
       },
     }),
   },
-  variants: {},
   plugins: [
     require('../../src/index')({
       variablePrefix: '--prefix',

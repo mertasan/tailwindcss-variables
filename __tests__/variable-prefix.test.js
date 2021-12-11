@@ -4,7 +4,7 @@ const utils = require('./util/_utils')(__filename)
 test('variable prefix', async () => {
   expect(
     await utils.diffOnly({
-      purge: [utils.content()],
+      content: [utils.content()],
       darkMode: false,
       theme: {
         variables: {
@@ -33,7 +33,6 @@ test('variable prefix', async () => {
       + :root {
       +   --prefix-colors-primary: #ffffff
       + }
-      +
       + .container {
       +   --prefix-colors-secondary: #000000
       + }
@@ -45,7 +44,7 @@ test('variable prefix', async () => {
 test('formatted variable prefix', async () => {
   expect(
     await utils.diffOnly({
-      purge: [utils.content()],
+      content: [utils.content()],
       darkMode: false,
       theme: {
         variables: {
@@ -74,7 +73,6 @@ test('formatted variable prefix', async () => {
       + :root {
       +   --hello-world1tail-wind-colors-primary: #ffffff
       + }
-      +
       + .container {
       +   --hello-world1tail-wind-colors-secondary: #000000
       + }

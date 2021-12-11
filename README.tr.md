@@ -1127,7 +1127,6 @@ module.exports = {
       }
     },
   },
-  variants: {},
   plugins: [require('my-plugin')],
 }
 ```

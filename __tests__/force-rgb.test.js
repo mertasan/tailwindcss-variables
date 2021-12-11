@@ -6,10 +6,7 @@ test('forceRGB option (enabled)', async () => {
   expect(
     await utils.diffOnly({
       corePlugins: ['textColor', 'textOpacity', 'backgroundColor', 'backgroundOpacity'],
-      purge: {
-        enabled: true,
-        content: [utils.content()],
-      },
+      content: [utils.content()],
 
       darkMode: false,
       theme: {
@@ -62,61 +59,49 @@ test('forceRGB option (enabled)', async () => {
       +   --colors-red: 254,0,0;
       +   --sizes-small: 1rem
       + }
-      +
-      + .text-black {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(0, 0, 0, var(--tw-text-opacity))
-      + }
-      +
-      + .text-white {
-      +   color: var(--colors-white)
-      + }
-      +
-      + .text-red-400 {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-red-400), var(--tw-text-opacity))
-      + }
-      +
-      + .text-red-500 {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-red-500), var(--tw-text-opacity))
-      + }
-      +
-      + .text-red {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-red), var(--tw-text-opacity))
-      + }
-      +
-      + .text-opacity-50 {
-      +   --tw-text-opacity: 0.5
-      + }
-      +
-      + .bg-black {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgba(0, 0, 0, var(--tw-bg-opacity))
-      + }
-      +
-      + .bg-white {
-      +   background-color: var(--colors-white)
-      + }
-      +
-      + .bg-red-400 {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgba(var(--colors-red-400), var(--tw-bg-opacity))
-      + }
-      +
-      + .bg-red-500 {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgba(var(--colors-red-500), var(--tw-bg-opacity))
-      + }
-      +
       + .bg-red {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-red), var(--tw-bg-opacity))
       + }
-      +
+      + .bg-red-400 {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-red-400), var(--tw-bg-opacity))
+      + }
+      + .bg-red-500 {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-red-500), var(--tw-bg-opacity))
+      + }
+      + .bg-white {
+      +   background-color: var(--colors-white)
+      + }
+      + .bg-black {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgb(0 0 0 / var(--tw-bg-opacity))
+      + }
       + .bg-opacity-50 {
       +   --tw-bg-opacity: 0.5
+      + }
+      + .text-red {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-red), var(--tw-text-opacity))
+      + }
+      + .text-red-400 {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-red-400), var(--tw-text-opacity))
+      + }
+      + .text-red-500 {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-red-500), var(--tw-text-opacity))
+      + }
+      + .text-white {
+      +   color: var(--colors-white)
+      + }
+      + .text-black {
+      +   --tw-text-opacity: 1;
+      +   color: rgb(0 0 0 / var(--tw-text-opacity))
+      + }
+      + .text-opacity-50 {
+      +   --tw-text-opacity: 0.5
       + }
 
     "
@@ -127,10 +112,7 @@ test('forceRGB option (disabled)', async () => {
   expect(
     await utils.diffOnly({
       corePlugins: ['textColor', 'textOpacity', 'backgroundColor', 'backgroundOpacity'],
-      purge: {
-        enabled: true,
-        content: [utils.content()],
-      },
+      content: [utils.content()],
 
       darkMode: false,
       theme: {
@@ -181,51 +163,41 @@ test('forceRGB option (disabled)', async () => {
       +   --colors-white-rgb: 255,255,255;
       +   --sizes-small: 1rem
       + }
-      +
-      + .text-black {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(0, 0, 0, var(--tw-text-opacity))
-      + }
-      +
-      + .text-white {
-      +   color: var(--colors-white)
-      + }
-      +
-      + .text-red-400 {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-red-400-rgb), var(--tw-text-opacity))
-      + }
-      +
-      + .text-red-500 {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(255, 0, 0, var(--tw-text-opacity))
-      + }
-      +
-      + .text-opacity-50 {
-      +   --tw-text-opacity: 0.5
-      + }
-      +
-      + .bg-black {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgba(0, 0, 0, var(--tw-bg-opacity))
-      + }
-      +
-      + .bg-white {
-      +   background-color: var(--colors-white)
-      + }
-      +
       + .bg-red-400 {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-red-400-rgb), var(--tw-bg-opacity))
       + }
-      +
       + .bg-red-500 {
       +   --tw-bg-opacity: 1;
-      +   background-color: rgba(255, 0, 0, var(--tw-bg-opacity))
+      +   background-color: rgb(255 0 0 / var(--tw-bg-opacity))
       + }
-      +
+      + .bg-white {
+      +   background-color: var(--colors-white)
+      + }
+      + .bg-black {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgb(0 0 0 / var(--tw-bg-opacity))
+      + }
       + .bg-opacity-50 {
       +   --tw-bg-opacity: 0.5
+      + }
+      + .text-red-400 {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-red-400-rgb), var(--tw-text-opacity))
+      + }
+      + .text-red-500 {
+      +   --tw-text-opacity: 1;
+      +   color: rgb(255 0 0 / var(--tw-text-opacity))
+      + }
+      + .text-white {
+      +   color: var(--colors-white)
+      + }
+      + .text-black {
+      +   --tw-text-opacity: 1;
+      +   color: rgb(0 0 0 / var(--tw-text-opacity))
+      + }
+      + .text-opacity-50 {
+      +   --tw-text-opacity: 0.5
       + }
 
     "
@@ -236,10 +208,7 @@ test('forceRGB option with extendColors', async () => {
   expect(
     await utils.diffOnly({
       corePlugins: ['textColor', 'textOpacity', 'backgroundColor', 'backgroundOpacity'],
-      purge: {
-        enabled: true,
-        content: [utils.content()],
-      },
+      content: [utils.content()],
 
       darkMode: false,
       theme: {
@@ -298,73 +267,59 @@ test('forceRGB option with extendColors', async () => {
       +   --colors-red: 254,0,0;
       +   --sizes-small: 1rem
       + }
-      +
-      + .text-indigo {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(236, 72, 153, var(--tw-text-opacity))
-      + }
-      +
-      + .text-black {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(0, 0, 0, var(--tw-text-opacity))
-      + }
-      +
-      + .text-white {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-white), var(--tw-text-opacity))
-      + }
-      +
-      + .text-red-400 {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-red-400), var(--tw-text-opacity))
-      + }
-      +
-      + .text-red-500 {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-red-500), var(--tw-text-opacity))
-      + }
-      +
-      + .text-red {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-red), var(--tw-text-opacity))
-      + }
-      +
-      + .text-opacity-50 {
-      +   --tw-text-opacity: 0.5
-      + }
-      +
-      + .bg-indigo {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgba(236, 72, 153, var(--tw-bg-opacity))
-      + }
-      +
-      + .bg-black {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgba(0, 0, 0, var(--tw-bg-opacity))
-      + }
-      +
-      + .bg-white {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgba(var(--colors-white), var(--tw-bg-opacity))
-      + }
-      +
-      + .bg-red-400 {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgba(var(--colors-red-400), var(--tw-bg-opacity))
-      + }
-      +
-      + .bg-red-500 {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgba(var(--colors-red-500), var(--tw-bg-opacity))
-      + }
-      +
       + .bg-red {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-red), var(--tw-bg-opacity))
       + }
-      +
+      + .bg-red-400 {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-red-400), var(--tw-bg-opacity))
+      + }
+      + .bg-red-500 {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-red-500), var(--tw-bg-opacity))
+      + }
+      + .bg-white {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-white), var(--tw-bg-opacity))
+      + }
+      + .bg-black {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgb(0 0 0 / var(--tw-bg-opacity))
+      + }
+      + .bg-indigo {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgb(236 72 153 / var(--tw-bg-opacity))
+      + }
       + .bg-opacity-50 {
       +   --tw-bg-opacity: 0.5
+      + }
+      + .text-red {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-red), var(--tw-text-opacity))
+      + }
+      + .text-red-400 {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-red-400), var(--tw-text-opacity))
+      + }
+      + .text-red-500 {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-red-500), var(--tw-text-opacity))
+      + }
+      + .text-white {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-white), var(--tw-text-opacity))
+      + }
+      + .text-black {
+      +   --tw-text-opacity: 1;
+      +   color: rgb(0 0 0 / var(--tw-text-opacity))
+      + }
+      + .text-indigo {
+      +   --tw-text-opacity: 1;
+      +   color: rgb(236 72 153 / var(--tw-text-opacity))
+      + }
+      + .text-opacity-50 {
+      +   --tw-text-opacity: 0.5
       + }
 
     "
@@ -375,10 +330,7 @@ test('extendColors (readme)', async () => {
   expect(
     await utils.diffOnly({
       corePlugins: ['textColor', 'textOpacity', 'backgroundColor', 'backgroundOpacity'],
-      purge: {
-        enabled: true,
-        content: [utils.content()],
-      },
+      content: [utils.content()],
 
       darkMode: false,
       theme: {
@@ -421,41 +373,33 @@ test('extendColors (readme)', async () => {
       +   --colors-red-rgb: 255,0,0;
       +   --colors-green-rgb: 17,255,0
       + }
-      +
-      + .text-white {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(255, 255, 255, var(--tw-text-opacity))
-      + }
-      +
-      + .text-green {
-      +   color: var(--colors-green)
-      + }
-      +
-      + .text-red {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-red-rgb), var(--tw-text-opacity))
-      + }
-      +
-      + .text-opacity-50 {
-      +   --tw-text-opacity: 0.5
-      + }
-      +
-      + .bg-white {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgba(255, 255, 255, var(--tw-bg-opacity))
-      + }
-      +
       + .bg-green {
       +   background-color: var(--colors-green)
       + }
-      +
       + .bg-red {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-red-rgb), var(--tw-bg-opacity))
       + }
-      +
+      + .bg-white {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+      + }
       + .bg-opacity-50 {
       +   --tw-bg-opacity: 0.5
+      + }
+      + .text-green {
+      +   color: var(--colors-green)
+      + }
+      + .text-red {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-red-rgb), var(--tw-text-opacity))
+      + }
+      + .text-white {
+      +   --tw-text-opacity: 1;
+      +   color: rgb(255 255 255 / var(--tw-text-opacity))
+      + }
+      + .text-opacity-50 {
+      +   --tw-text-opacity: 0.5
       + }
 
     "
@@ -466,10 +410,7 @@ test('forceRGB for docs', async () => {
   expect(
     await utils.diffOnly({
       corePlugins: ['textColor', 'textOpacity', 'backgroundColor', 'backgroundOpacity'],
-      purge: {
-        enabled: true,
-        content: [utils.content()],
-      },
+      content: [utils.content()],
 
       darkMode: false,
       theme: {
@@ -502,33 +443,27 @@ test('forceRGB for docs', async () => {
       + :root {
       +   --colors-green: 17,255,0
       + }
-      +
-      + .text-white {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(255, 255, 255, var(--tw-text-opacity))
-      + }
-      +
-      + .text-green {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-green), var(--tw-text-opacity))
-      + }
-      +
-      + .text-opacity-50 {
-      +   --tw-text-opacity: 0.5
-      + }
-      +
-      + .bg-white {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgba(255, 255, 255, var(--tw-bg-opacity))
-      + }
-      +
       + .bg-green {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-green), var(--tw-bg-opacity))
       + }
-      +
+      + .bg-white {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+      + }
       + .bg-opacity-50 {
       +   --tw-bg-opacity: 0.5
+      + }
+      + .text-green {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-green), var(--tw-text-opacity))
+      + }
+      + .text-white {
+      +   --tw-text-opacity: 1;
+      +   color: rgb(255 255 255 / var(--tw-text-opacity))
+      + }
+      + .text-opacity-50 {
+      +   --tw-text-opacity: 0.5
       + }
 
     "
@@ -539,10 +474,7 @@ test('forceRGB (disabled) for docs', async () => {
   expect(
     await utils.diffOnly({
       corePlugins: ['textColor', 'textOpacity', 'backgroundColor', 'backgroundOpacity'],
-      purge: {
-        enabled: true,
-        content: [utils.content()],
-      },
+      content: [utils.content()],
 
       darkMode: false,
       theme: {
@@ -576,33 +508,27 @@ test('forceRGB (disabled) for docs', async () => {
       +   --colors-green: #11ff00;
       +   --colors-green-rgb: 17,255,0
       + }
-      +
-      + .text-white {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(255, 255, 255, var(--tw-text-opacity))
-      + }
-      +
-      + .text-green {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-green-rgb), var(--tw-text-opacity))
-      + }
-      +
-      + .text-opacity-50 {
-      +   --tw-text-opacity: 0.5
-      + }
-      +
-      + .bg-white {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgba(255, 255, 255, var(--tw-bg-opacity))
-      + }
-      +
       + .bg-green {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-green-rgb), var(--tw-bg-opacity))
       + }
-      +
+      + .bg-white {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+      + }
       + .bg-opacity-50 {
       +   --tw-bg-opacity: 0.5
+      + }
+      + .text-green {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-green-rgb), var(--tw-text-opacity))
+      + }
+      + .text-white {
+      +   --tw-text-opacity: 1;
+      +   color: rgb(255 255 255 / var(--tw-text-opacity))
+      + }
+      + .text-opacity-50 {
+      +   --tw-text-opacity: 0.5
       + }
 
     "

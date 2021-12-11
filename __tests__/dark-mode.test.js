@@ -4,7 +4,10 @@ const utils = require('./util/_utils')(__filename)
 test('only dark variables with default options and `class` mode', async () => {
   expect(
     await utils.diffOnly({
-      purge: [utils.content()],
+      purge: {
+        enabled: true,
+        content: [utils.content()],
+      },
       darkMode: 'class',
       theme: {
         darkVariables: {
@@ -21,7 +24,7 @@ test('only dark variables with default options and `class` mode', async () => {
         },
       },
       plugins: [tailwindcssVariables()],
-    }),
+    })
   ).toMatchInlineSnapshot(`
     "
 
@@ -29,7 +32,6 @@ test('only dark variables with default options and `class` mode', async () => {
       + :root.dark {
       +   --colors-primary: #ffffff
       + }
-      +
       + :root.dark .container {
       +   --colors-secondary: #000000
       + }
@@ -41,7 +43,7 @@ test('only dark variables with default options and `class` mode', async () => {
 test('only dark variables with default options and `media` mode', async () => {
   expect(
     await utils.diffOnly({
-      purge: [utils.content()],
+      content: [utils.content()],
       darkMode: 'media',
       theme: {
         darkVariables: {
@@ -50,6 +52,7 @@ test('only dark variables with default options and `media` mode', async () => {
               primary: '#ffffff',
             },
           },
+
           '.container': {
             colors: {
               secondary: '#000000',
@@ -57,19 +60,19 @@ test('only dark variables with default options and `media` mode', async () => {
           },
         },
       },
+
       plugins: [tailwindcssVariables()],
-    }),
+    })
   ).toMatchInlineSnapshot(`
     "
 
       
       + @media (prefers-color-scheme: dark) {
       +   :root {
-      +     --colors-primary: #ffffff
+      +       --colors-primary: #ffffff
       +   }
-      +
       +   .container {
-      +     --colors-secondary: #000000
+      +       --colors-secondary: #000000
       +   }
       + }
 
@@ -80,7 +83,7 @@ test('only dark variables with default options and `media` mode', async () => {
 test('if the `darkMode` is set to `media`, the `darkSelector` and `darkToRoot` options should not work', async () => {
   expect(
     await utils.diffOnly({
-      purge: [utils.content()],
+      content: [utils.content()],
       darkMode: 'media',
       theme: {
         darkVariables: {
@@ -89,6 +92,7 @@ test('if the `darkMode` is set to `media`, the `darkSelector` and `darkToRoot` o
               primary: '#ffffff',
             },
           },
+
           '.container': {
             colors: {
               secondary: '#000000',
@@ -96,24 +100,24 @@ test('if the `darkMode` is set to `media`, the `darkSelector` and `darkToRoot` o
           },
         },
       },
+
       plugins: [
         tailwindcssVariables({
           darkSelector: '.custom-dark-selector',
           darkToRoot: true,
         }),
       ],
-    }),
+    })
   ).toMatchInlineSnapshot(`
     "
 
       
       + @media (prefers-color-scheme: dark) {
       +   :root {
-      +     --colors-primary: #ffffff
+      +       --colors-primary: #ffffff
       +   }
-      +
       +   .container {
-      +     --colors-secondary: #000000
+      +       --colors-secondary: #000000
       +   }
       + }
 
@@ -124,7 +128,7 @@ test('if the `darkMode` is set to `media`, the `darkSelector` and `darkToRoot` o
 test('only dark variables with darkToRoot option and `class` mode', async () => {
   expect(
     await utils.diffOnly({
-      purge: [utils.content('dark-mode-to-root')],
+      content: [utils.content('dark-mode-to-root')],
       darkMode: 'class',
       theme: {
         darkVariables: {
@@ -145,7 +149,7 @@ test('only dark variables with darkToRoot option and `class` mode', async () => 
           darkToRoot: true,
         }),
       ],
-    }),
+    })
   ).toMatchInlineSnapshot(`
     "
 
@@ -153,7 +157,6 @@ test('only dark variables with darkToRoot option and `class` mode', async () => 
       + :root.dark {
       +   --colors-primary: #ffffff
       + }
-      +
       + :root.dark .container {
       +   --colors-secondary: #000000
       + }
@@ -165,7 +168,7 @@ test('only dark variables with darkToRoot option and `class` mode', async () => 
 test('only dark variables with custom options and `class` mode', async () => {
   expect(
     await utils.diffOnly({
-      purge: [utils.content('dark-mode-to-root')],
+      content: [utils.content('dark-mode-to-root')],
       darkMode: 'class',
       theme: {
         darkVariables: {
@@ -188,7 +191,7 @@ test('only dark variables with custom options and `class` mode', async () => {
           darkToRoot: true,
         }),
       ],
-    }),
+    })
   ).toMatchInlineSnapshot(`
     "
 
@@ -196,7 +199,6 @@ test('only dark variables with custom options and `class` mode', async () => {
       + :root.custom-dark-selector {
       +   --my-prefix-colors-primary: #ffffff
       + }
-      +
       + :root.custom-dark-selector .container {
       +   --my-prefix-colors-secondary: #000000
       + }
@@ -208,7 +210,7 @@ test('only dark variables with custom options and `class` mode', async () => {
 test('only dark variables with variablePrefix and `media` mode', async () => {
   expect(
     await utils.diffOnly({
-      purge: [utils.content('dark-mode-to-root')],
+      content: [utils.content('dark-mode-to-root')],
       darkMode: 'media',
       theme: {
         darkVariables: {
@@ -217,6 +219,7 @@ test('only dark variables with variablePrefix and `media` mode', async () => {
               primary: '#ffffff',
             },
           },
+
           '.container': {
             colors: {
               secondary: '#000000',
@@ -224,23 +227,23 @@ test('only dark variables with variablePrefix and `media` mode', async () => {
           },
         },
       },
+
       plugins: [
         tailwindcssVariables({
           variablePrefix: '.my-prefix',
         }),
       ],
-    }),
+    })
   ).toMatchInlineSnapshot(`
     "
 
       
       + @media (prefers-color-scheme: dark) {
       +   :root {
-      +     --my-prefix-colors-primary: #ffffff
+      +       --my-prefix-colors-primary: #ffffff
       +   }
-      +
       +   .container {
-      +     --my-prefix-colors-secondary: #000000
+      +       --my-prefix-colors-secondary: #000000
       +   }
       + }
 
@@ -251,7 +254,7 @@ test('only dark variables with variablePrefix and `media` mode', async () => {
 test('variables and dark variables with default options and `class` mode', async () => {
   expect(
     await utils.diffOnly({
-      purge: [utils.content()],
+      content: [utils.content()],
       darkMode: 'class',
       theme: {
         variables: {
@@ -280,7 +283,7 @@ test('variables and dark variables with default options and `class` mode', async
         },
       },
       plugins: [tailwindcssVariables()],
-    }),
+    })
   ).toMatchInlineSnapshot(`
     "
 
@@ -288,15 +291,12 @@ test('variables and dark variables with default options and `class` mode', async
       + :root {
       +   --colors-primary: #ffffff
       + }
-      +
       + .container {
       +   --colors-secondary: #000000
       + }
-      +
       + :root.dark {
       +   --colors-primary: #ffffff
       + }
-      +
       + :root.dark .container {
       +   --colors-secondary: #000000
       + }
@@ -308,7 +308,7 @@ test('variables and dark variables with default options and `class` mode', async
 test('variables and dark variables with default options and `media` mode', async () => {
   expect(
     await utils.diffOnly({
-      purge: [utils.content()],
+      content: [utils.content()],
       darkMode: 'media',
       theme: {
         variables: {
@@ -317,18 +317,21 @@ test('variables and dark variables with default options and `media` mode', async
               primary: '#ffffff',
             },
           },
+
           '.container': {
             colors: {
               secondary: '#000000',
             },
           },
         },
+
         darkVariables: {
           DEFAULT: {
             colors: {
               primary: '#ffffff',
             },
           },
+
           '.container': {
             colors: {
               secondary: '#000000',
@@ -336,8 +339,9 @@ test('variables and dark variables with default options and `media` mode', async
           },
         },
       },
+
       plugins: [tailwindcssVariables()],
-    }),
+    })
   ).toMatchInlineSnapshot(`
     "
 
@@ -345,18 +349,15 @@ test('variables and dark variables with default options and `media` mode', async
       + :root {
       +   --colors-primary: #ffffff
       + }
-      +
       + .container {
       +   --colors-secondary: #000000
       + }
-      +
       + @media (prefers-color-scheme: dark) {
       +   :root {
-      +     --colors-primary: #ffffff
+      +       --colors-primary: #ffffff
       +   }
-      +
       +   .container {
-      +     --colors-secondary: #000000
+      +       --colors-secondary: #000000
       +   }
       + }
 
@@ -367,7 +368,7 @@ test('variables and dark variables with default options and `media` mode', async
 test('variables and dark variables with custom darkSelector and `class` mode', async () => {
   expect(
     await utils.diffOnly({
-      purge: [utils.content()],
+      content: [utils.content()],
       darkMode: 'class',
       theme: {
         variables: {
@@ -400,7 +401,7 @@ test('variables and dark variables with custom darkSelector and `class` mode', a
           darkSelector: '.custom-dark-selector',
         }),
       ],
-    }),
+    })
   ).toMatchInlineSnapshot(`
     "
 
@@ -408,15 +409,12 @@ test('variables and dark variables with custom darkSelector and `class` mode', a
       + :root {
       +   --colors-primary: #ffffff
       + }
-      +
       + .container {
       +   --colors-secondary: #000000
       + }
-      +
       + :root.custom-dark-selector {
       +   --colors-primary: #ffffff
       + }
-      +
       + :root.custom-dark-selector .container {
       +   --colors-secondary: #000000
       + }
@@ -428,7 +426,7 @@ test('variables and dark variables with custom darkSelector and `class` mode', a
 test('variables and dark variables with darkToRoot option and `class` mode', async () => {
   expect(
     await utils.diffOnly({
-      purge: [utils.content('dark-mode-to-root')],
+      content: [utils.content('dark-mode-to-root')],
       darkMode: 'class',
       theme: {
         variables: {
@@ -461,7 +459,7 @@ test('variables and dark variables with darkToRoot option and `class` mode', asy
           darkToRoot: true,
         }),
       ],
-    }),
+    })
   ).toMatchInlineSnapshot(`
     "
 
@@ -469,15 +467,12 @@ test('variables and dark variables with darkToRoot option and `class` mode', asy
       + :root {
       +   --colors-primary: #ffffff
       + }
-      +
       + .container {
       +   --colors-secondary: #000000
       + }
-      +
       + :root.dark {
       +   --colors-primary: #ffffff
       + }
-      +
       + :root.dark .container {
       +   --colors-secondary: #000000
       + }
@@ -489,7 +484,7 @@ test('variables and dark variables with darkToRoot option and `class` mode', asy
 test('variables and dark variables with custom options and `class` mode', async () => {
   expect(
     await utils.diffOnly({
-      purge: [utils.content('dark-mode-to-root')],
+      content: [utils.content('dark-mode-to-root')],
       darkMode: 'class',
       theme: {
         variables: {
@@ -524,7 +519,7 @@ test('variables and dark variables with custom options and `class` mode', async 
           darkToRoot: true,
         }),
       ],
-    }),
+    })
   ).toMatchInlineSnapshot(`
     "
 
@@ -532,15 +527,12 @@ test('variables and dark variables with custom options and `class` mode', async 
       + :root {
       +   --my-prefix-colors-primary: #ffffff
       + }
-      +
       + .container {
       +   --my-prefix-colors-secondary: #000000
       + }
-      +
       + :root.custom-dark-selector {
       +   --my-prefix-colors-primary: #ffffff
       + }
-      +
       + :root.custom-dark-selector .container {
       +   --my-prefix-colors-secondary: #000000
       + }

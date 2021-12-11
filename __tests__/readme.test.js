@@ -6,7 +6,7 @@ const utils = require('./util/_utils')(__filename)
 test('basic usage', async () => {
   expect(
     await utils.diffOnly({
-      purge: [utils.content()],
+      content: [utils.content()],
       darkMode: false,
       theme: {
         variables: {
@@ -41,7 +41,6 @@ test('basic usage', async () => {
       +   --sizes-button-size: 2rem;
       +   --colors-red-50: #ff3232
       + }
-      +
       + .container {
       +   --sizes-medium: 1.5rem
       + }
@@ -53,7 +52,7 @@ test('basic usage', async () => {
 test('dark mode with `class`', async () => {
   expect(
     await utils.diffOnly({
-      purge: [utils.content()],
+      content: [utils.content()],
       darkMode: 'class',
       theme: {
         variables: {
@@ -102,15 +101,12 @@ test('dark mode with `class`', async () => {
       +   --sizes-small: 1rem;
       +   --colors-red-50: red
       + }
-      +
       + .container {
       +   --colors-red-50: indigo
       + }
-      +
       + :root.dark {
       +   --colors-red-50: blue
       + }
-      +
       + :root.dark .container {
       +   --colors-red-50: green
       + }
@@ -122,7 +118,7 @@ test('dark mode with `class`', async () => {
 test('dark mode with `class` and custom options', async () => {
   expect(
     await utils.diffOnly({
-      purge: [utils.content()],
+      content: [utils.content()],
       darkMode: 'class',
       theme: {
         variables: {
@@ -176,15 +172,12 @@ test('dark mode with `class` and custom options', async () => {
       +   --sizes-small: 1rem;
       +   --colors-red-50: red
       + }
-      +
       + .container {
       +   --colors-red-50: indigo
       + }
-      +
       + .custom-dark-selector {
       +   --colors-red-50: blue
       + }
-      +
       + .custom-dark-selector .container {
       +   --colors-red-50: green
       + }
@@ -196,7 +189,7 @@ test('dark mode with `class` and custom options', async () => {
 test('dark mode with `media`', async () => {
   expect(
     await utils.diffOnly({
-      purge: [utils.content()],
+      content: [utils.content()],
       darkMode: 'media',
       theme: {
         variables: {
@@ -204,12 +197,14 @@ test('dark mode with `media`', async () => {
             sizes: {
               small: '1rem',
             },
+
             colors: {
               red: {
                 50: 'red',
               },
             },
           },
+
           '.container': {
             colors: {
               red: {
@@ -218,6 +213,7 @@ test('dark mode with `media`', async () => {
             },
           },
         },
+
         darkVariables: {
           DEFAULT: {
             colors: {
@@ -226,6 +222,7 @@ test('dark mode with `media`', async () => {
               },
             },
           },
+
           '.container': {
             colors: {
               red: {
@@ -235,6 +232,7 @@ test('dark mode with `media`', async () => {
           },
         },
       },
+
       plugins: [tailwindcssVariables],
     })
   ).toMatchInlineSnapshot(`
@@ -245,18 +243,15 @@ test('dark mode with `media`', async () => {
       +   --sizes-small: 1rem;
       +   --colors-red-50: red
       + }
-      +
       + .container {
       +   --colors-red-50: indigo
       + }
-      +
       + @media (prefers-color-scheme: dark) {
       +   :root {
-      +     --colors-red-50: blue
+      +       --colors-red-50: blue
       +   }
-      +
       +   .container {
-      +     --colors-red-50: green
+      +       --colors-red-50: green
       +   }
       + }
 
@@ -267,7 +262,7 @@ test('dark mode with `media`', async () => {
 test('variable prefix', async () => {
   expect(
     await utils.diffOnly({
-      purge: [utils.content()],
+      content: [utils.content()],
       darkMode: false,
       theme: {
         variables: {
@@ -306,7 +301,6 @@ test('variable prefix', async () => {
       +   --admin-sizes-button-size: 2rem;
       +   --admin-colors-red-50: #ff3232
       + }
-      +
       + .container {
       +   --admin-sizes-medium: 1.5rem
       + }
@@ -318,7 +312,7 @@ test('variable prefix', async () => {
 test('variables with nested objects', async () => {
   expect(
     await utils.diffOnly({
-      purge: [utils.content()],
+      content: [utils.content()],
       darkMode: false,
       theme: {
         variables: {
@@ -359,7 +353,7 @@ test('naming conventions for variable keys', async () => {
   expect(
     /* eslint-disable camelcase */
     await utils.diffOnly({
-      purge: [utils.content()],
+      content: [utils.content()],
       darkMode: false,
       theme: {
         variables: {
@@ -394,7 +388,6 @@ test('naming conventions for variable keys', async () => {
       +   --colors-underscore-to-dash-with-dash: 100%;
       +   --colors-auto-dash: 100%
       + }
-      +
       + [type='button'] {
       +   --hello-world: 100%;
       +   --underscore-to-dash: 100%;
@@ -432,7 +425,7 @@ test('example api', async () => {
   }
   expect(
     await utils.diffOnly({
-      purge: [utils.content()],
+      content: [utils.content()],
       darkMode: 'class',
       theme: {},
       plugins: [
@@ -452,7 +445,6 @@ test('example api', async () => {
       +   --myplugin-colors-secondary: white;
       +   --myplugin-colors-warning: orange
       + }
-      +
       + :root.dark {
       +   --myplugin-colors-primary: red;
       +   --myplugin-colors-secondary: yellow;
@@ -488,7 +480,7 @@ test('example api with components helper', async () => {
   }
   expect(
     await utils.diffOnly({
-      purge: [utils.content()],
+      content: [utils.content()],
       darkMode: 'class',
       theme: {},
       plugins: [
@@ -527,21 +519,17 @@ test('example api with components helper', async () => {
       +   --myplugin-colors-secondary: white;
       +   --myplugin-colors-warning: orange;
       + }
-      +
       + :root.dark {
       +   --myplugin-colors-primary: red;
       +   --myplugin-colors-secondary: yellow;
       +   --myplugin-colors-warning: green;
       + }
-      +
       + .form-select {
       +   background-color: var(--myplugin-colors-primary);
       + }
-      +
       + .form-select.default-multi {
       +   background-color: var(--myplugin-colors-secondary);
       + }
-      +
       + .form-select.other-multi {
       +   background-color: var(--myplugin-colors-warning);
       + }
@@ -555,7 +543,7 @@ test('detailed example api', async () => {
     await utils.diffOnly(
       ...[
         {
-          purge: [utils.content()],
+          content: [utils.content()],
           darkMode: 'class',
           ...require('../examples/api-examples/readme-source/tailwind.config'),
         },
@@ -570,15 +558,12 @@ test('detailed example api', async () => {
       +   --forms-colors-secondary: white;
       +   --forms-colors-warning: orange;
       + }
-      +
       + .form-select {
       +   background-color: var(--forms-colors-primary);
       + }
-      +
       + .form-select .default-multi {
       +   background-color: var(--forms-colors-secondary);
       + }
-      +
       + .form-select .other-multi {
       +   background-color: var(--forms-colors-warning);
       + }

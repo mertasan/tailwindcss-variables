@@ -4,7 +4,7 @@ const utils = require('../jest/_utils')(__filename)
 it('test', async () => {
     expect(
         await utils.diffOnly({
-            purge: [utils.content()],
+            content: [utils.content()],
             darkMode: false,
             theme: {
                 variables: {

@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ['./index.html'],
+  content: ['./index.html'],
   corePlugins: process.env.CLEAN ? [] : {},
   darkMode: 'media',
   theme: {
@@ -44,6 +44,5 @@ module.exports = {
       },
     }),
   },
-  variants: {},
   plugins: [require('../../src/index')],
 }

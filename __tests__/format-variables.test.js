@@ -5,7 +5,7 @@ test('format variables [special characters must be removed from variable names]'
   expect(
     /* eslint-disable camelcase */
     await utils.diffOnly({
-      purge: [utils.content()],
+      content: [utils.content()],
       darkMode: false,
       theme: {
         variables: {
@@ -40,7 +40,6 @@ test('format variables [special characters must be removed from variable names]'
       +   --colors-underscore-to-dash-with-dash: 100%;
       +   --colors-auto-dash: 100%
       + }
-      +
       + [type='button'] {
       +   --hello-world: 100%;
       +   --underscore-to-dash: 100%;

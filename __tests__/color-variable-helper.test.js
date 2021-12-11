@@ -6,10 +6,7 @@ test('colorVariable helper', async () => {
   expect(
     await utils.diffOnly({
       corePlugins: ['textColor', 'textOpacity', 'backgroundColor', 'backgroundOpacity'],
-      purge: {
-        enabled: true,
-        content: [utils.content()],
-      },
+      content: [utils.content()],
       darkMode: false,
       theme: {
         screens: false,
@@ -41,12 +38,14 @@ test('colorVariable helper', async () => {
                 400: 'rgba(254,0,0,0.5)',
                 500: 'rgba(254,0,0,1)',
               },
+
               green: 'rgb(0,255,0)',
               yellow: {
                 400: 'rgb(255,255,0)',
                 DEFAULT: 'rgb(255,255,0)',
               },
             },
+
             sizes: {
               small: '10px',
               medium: '2rem',
@@ -55,6 +54,7 @@ test('colorVariable helper', async () => {
           },
         },
       },
+
       plugins: [
         tailwindcssVariables({
           colorVariables: true,
@@ -88,60 +88,48 @@ test('colorVariable helper', async () => {
       +   --sizes-medium: 2rem;
       +   --sizes-large: 100%
       + }
-      +
-      + .text-primary {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-primary-rgb), var(--tw-text-opacity))
-      + }
-      +
-      + .text-blue {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-blue-rgb), var(--tw-text-opacity))
-      + }
-      +
-      + .text-opacity-50 {
-      +   --tw-text-opacity: 0.5
-      + }
-      +
       + .bg-secondary {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-secondary-rgb), var(--tw-bg-opacity))
       + }
-      +
-      + .bg-white {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgba(255, 255, 255, var(--tw-bg-opacity))
+      + .bg-gray {
+      +   background-color: var(--colors-gray)
       + }
-      +
-      + .bg-yellow {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgba(var(--colors-yellow-rgb), var(--tw-bg-opacity))
-      + }
-      +
       + .bg-red-400 {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-red-400-rgb), var(--tw-bg-opacity))
       + }
-      +
       + .bg-red-500 {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-red-500-rgb), var(--tw-bg-opacity))
       + }
-      +
       + .bg-red-600 {
       +   background-color: var(--colors-red-500)
       + }
-      +
-      + .bg-gray {
-      +   background-color: var(--colors-gray)
-      + }
-      +
       + .bg-green {
       +   background-color: var(--colors-green)
       + }
-      +
+      + .bg-white {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+      + }
+      + .bg-yellow {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-yellow-rgb), var(--tw-bg-opacity))
+      + }
       + .bg-opacity-50 {
       +   --tw-bg-opacity: 0.5
+      + }
+      + .text-primary {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-primary-rgb), var(--tw-text-opacity))
+      + }
+      + .text-blue {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-blue-rgb), var(--tw-text-opacity))
+      + }
+      + .text-opacity-50 {
+      +   --tw-text-opacity: 0.5
       + }
 
     "
@@ -152,10 +140,7 @@ test('colorVariable - background and text color', async () => {
   expect(
     await utils.diffOnly({
       corePlugins: ['textColor', 'textOpacity', 'backgroundColor', 'backgroundOpacity'],
-      purge: {
-        enabled: true,
-        content: [utils.content()],
-      },
+      content: [utils.content()],
       darkMode: false,
       theme: {
         screens: false,
@@ -166,6 +151,7 @@ test('colorVariable - background and text color', async () => {
             600: colorVariable('var(--colors-indigo-600)', true), // HEX
           },
         },
+
         variables: {
           DEFAULT: {
             colors: {
@@ -190,42 +176,35 @@ test('colorVariable - background and text color', async () => {
     "
 
       
-      + .text-indigo-400 {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-indigo-400), var(--tw-text-opacity))
-      + }
-      +
-      + .text-indigo-500 {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-indigo-500), var(--tw-text-opacity))
-      + }
-      +
-      + .text-indigo-600 {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-indigo-600), var(--tw-text-opacity))
-      + }
-      +
-      + .text-opacity-50 {
-      +   --tw-text-opacity: 0.5
-      + }
-      +
       + .bg-indigo-400 {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-indigo-400), var(--tw-bg-opacity))
       + }
-      +
       + .bg-indigo-500 {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-indigo-500), var(--tw-bg-opacity))
       + }
-      +
       + .bg-indigo-600 {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-indigo-600), var(--tw-bg-opacity))
       + }
-      +
       + .bg-opacity-50 {
       +   --tw-bg-opacity: 0.5
+      + }
+      + .text-indigo-400 {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-indigo-400), var(--tw-text-opacity))
+      + }
+      + .text-indigo-500 {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-indigo-500), var(--tw-text-opacity))
+      + }
+      + .text-indigo-600 {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-indigo-600), var(--tw-text-opacity))
+      + }
+      + .text-opacity-50 {
+      +   --tw-text-opacity: 0.5
       + }
 
     "
@@ -239,10 +218,7 @@ test('colorVariable - background and text color 2', async () => {
   expect(
     await utils.diffOnly({
       corePlugins: ['textColor', 'textOpacity', 'backgroundColor', 'backgroundOpacity'],
-      purge: {
-        enabled: true,
-        content: [utils.content('color-variable-helper2')],
-      },
+      content: [utils.content('color-variable-helper2')],
 
       darkMode: false,
       theme: {
@@ -279,34 +255,29 @@ test('colorVariable - background and text color 2', async () => {
     "
 
       
-      + .text-indigo-400 {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-indigo-400), var(--tw-text-opacity))
-      + }
-      +
-      + .text-indigo-500 {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-indigo-500), var(--tw-text-opacity))
-      + }
-      +
-      + .text-indigo-600 {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-indigo-600), var(--tw-text-opacity))
-      + }
-      +
       + .bg-indigo-400 {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-indigo-400), var(--tw-bg-opacity))
       + }
-      +
       + .bg-indigo-500 {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-indigo-500), var(--tw-bg-opacity))
       + }
-      +
       + .bg-indigo-600 {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-indigo-600), var(--tw-bg-opacity))
+      + }
+      + .text-indigo-400 {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-indigo-400), var(--tw-text-opacity))
+      + }
+      + .text-indigo-500 {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-indigo-500), var(--tw-text-opacity))
+      + }
+      + .text-indigo-600 {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-indigo-600), var(--tw-text-opacity))
       + }
 
     "
@@ -317,10 +288,7 @@ test('colorVariable with gradient color stops', async () => {
   expect(
     await utils.diffOnly({
       corePlugins: ['textColor', 'textOpacity', 'gradientColorStops'],
-      purge: {
-        enabled: true,
-        content: [utils.content()],
-      },
+      content: [utils.content()],
 
       darkMode: false,
       theme: {
@@ -364,24 +332,20 @@ test('colorVariable with gradient color stops', async () => {
       +   --colors-red-500-rgb: 254,0,0;
       +   --colors-red-600-rgb: 162,6,6
       + }
-      +
-      + .text-opacity-50 {
-      +   --tw-text-opacity: 0.5
-      + }
-      +
       + .from-red-400 {
       +   --tw-gradient-from: rgb(var(--colors-red-400-rgb));
       +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-400-rgb), 0))
       + }
-      +
       + .from-red-500 {
       +   --tw-gradient-from: rgb(var(--colors-red-500-rgb));
       +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-500-rgb), 0))
       + }
-      +
       + .from-red-600 {
       +   --tw-gradient-from: rgb(var(--colors-red-600-rgb));
       +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-600-rgb), 0))
+      + }
+      + .text-opacity-50 {
+      +   --tw-text-opacity: 0.5
       + }
 
     "
@@ -392,10 +356,7 @@ test('colorVariable with gradient color stops (forceRGB)', async () => {
   expect(
     await utils.diffOnly({
       corePlugins: ['textColor', 'textOpacity', 'gradientColorStops'],
-      purge: {
-        enabled: true,
-        content: [utils.content()],
-      },
+      content: [utils.content()],
 
       darkMode: false,
       theme: {
@@ -437,24 +398,20 @@ test('colorVariable with gradient color stops (forceRGB)', async () => {
       +   --colors-red-500: 254,0,0;
       +   --colors-red-600: 162,6,6
       + }
-      +
-      + .text-opacity-50 {
-      +   --tw-text-opacity: 0.5
-      + }
-      +
       + .from-red-400 {
       +   --tw-gradient-from: rgb(var(--colors-red-400));
       +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-400), 0))
       + }
-      +
       + .from-red-500 {
       +   --tw-gradient-from: rgb(var(--colors-red-500));
       +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-500), 0))
       + }
-      +
       + .from-red-600 {
       +   --tw-gradient-from: rgb(var(--colors-red-600));
       +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-600), 0))
+      + }
+      + .text-opacity-50 {
+      +   --tw-text-opacity: 0.5
       + }
 
     "

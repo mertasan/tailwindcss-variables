@@ -4,7 +4,7 @@ const utils = require('./util/_utils')(__filename)
 test('nested variables', async () => {
   expect(
     await utils.diffOnly({
-      purge: [utils.content()],
+      content: [utils.content()],
       darkMode: false,
       theme: {
         variables: {
@@ -66,7 +66,6 @@ test('nested variables', async () => {
       +   --colors-buttons-moon-inverse: #444444;
       +   --colors-buttons-moon-inverse-white: black
       + }
-      +
       + .container>.card {
       +   --colors: #555555;
       +   --colors-black: rgb(0, 0, 0);
@@ -77,7 +76,6 @@ test('nested variables', async () => {
       +   --colors-buttons-moon-inverse: #888888;
       +   --colors-buttons-moon-inverse-white: black
       + }
-      +
       + .card-body {
       +   --colors: #555555;
       +   --colors-black: rgb(0, 0, 0);

@@ -12,7 +12,7 @@ function buildDistFile(examplePath, message) {
   return postcss([
     tailwind({
       ...require('../' + examplePath + '/tailwind.config'),
-      purge: ['./' + examplePath + '/*.html'],
+      content: ['./' + examplePath + '/*.html'],
     }),
     require('autoprefixer'),
   ])

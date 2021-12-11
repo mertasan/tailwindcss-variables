@@ -2,13 +2,18 @@ const tailwind = require('tailwindcss')
 const snapshotDiff = require('snapshot-diff')
 const postcss = require('postcss')
 const path = require('path')
+const { ray } = require('node-ray')
 
 module.exports = (contentFile) => {
   let utils = {}
 
-  utils.run = (config = {}) => {
-    return postcss([tailwind({corePlugins: [], ...config})])
-      .process(['@tailwind base;', '@tailwind components;', '@tailwind utilities;'].join('\n'), {from: undefined})
+  utils.run = function(config = {}) {
+    let { currentTestName } = expect.getState();
+    return postcss([tailwind({ corePlugins: [], ...config })])
+      .process(['@tailwind base;', '@tailwind components;', '@tailwind utilities;'].join('\n'), {
+        // from: `${path.resolve(__filename)}?test=${currentTestName}`
+        from: undefined
+      })
       .then((result) => result.css)
   }
 
@@ -23,6 +28,7 @@ module.exports = (contentFile) => {
       .replace(/\n\n@@([^@@]*)@@/g, '') // Top level @@ signs
       .replace(/@@([^@@]*)@@/g, '\n---\n') // In between @@ signs
       .replace(/[-+] __REMOVE_ME__\n/g, '')
+      .replace(/\+  /g, '\+')
       .replace(/Snapshot Diff:\n/g, '')
       .replace(/"/g, '\'')
       .split('\n')
@@ -34,13 +40,19 @@ module.exports = (contentFile) => {
     if (!ext) {
       ext = 'html'
     }
-
+    let content;
     if (filename) {
-      return path.resolve(__dirname, '../' + path.parse(filename).name + '.test.' + ext)
+      content = path.resolve(__dirname, '../' + path.parse(filename).name + '.test.' + ext)
     } else {
-      return path.resolve(__dirname, '../' + path.parse(contentFile).name + '.' + ext)
+      content = path.resolve(__dirname, '../' + path.parse(contentFile).name + '.' + ext)
     }
+
+    return content;
   }
+
+  utils.css = String.raw;
+  utils.html = String.raw;
+  utils.javascript = String.raw;
 
   return utils
 }

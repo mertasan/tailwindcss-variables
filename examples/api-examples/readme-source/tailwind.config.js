@@ -8,7 +8,6 @@ module.exports = {
       }
     },
   },
-  variants: {},
   // plugins: [require('my-plugin')],
   plugins: [require('./index')],
 }

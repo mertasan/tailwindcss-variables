@@ -5,11 +5,7 @@ test('extendColors', async () => {
   expect(
     await utils.diffOnly({
       corePlugins: ['textColor', 'textOpacity', 'backgroundColor', 'backgroundOpacity'],
-      purge: {
-        enabled: true,
-        content: [utils.content()],
-      },
-
+      content: [utils.content()],
       darkMode: false,
       theme: {
         screens: false,
@@ -74,79 +70,63 @@ test('extendColors', async () => {
       +   --colors-white-rgb: 255,255,255;
       +   --sizes-small: 1rem
       + }
-      +
-      + .text-red-400 {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-red-400-rgb), var(--tw-text-opacity))
-      + }
-      +
-      + .text-red-500 {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-red-500-rgb), var(--tw-text-opacity))
-      + }
-      +
-      + .text-red-600 {
-      +   color: var(--colors-red-600)
-      + }
-      +
-      + .text-red-700 {
-      +   color: var(--colors-red-700)
-      + }
-      +
-      + .text-red {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-red-rgb), var(--tw-text-opacity))
-      + }
-      +
-      + .text-black {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(0, 0, 0, var(--tw-text-opacity))
-      + }
-      +
-      + .text-white {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-white-rgb), var(--tw-text-opacity))
-      + }
-      +
-      + .text-opacity-50 {
-      +   --tw-text-opacity: 0.5
-      + }
-      +
-      + .bg-red-400 {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgba(var(--colors-red-400-rgb), var(--tw-bg-opacity))
-      + }
-      +
-      + .bg-red-500 {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgba(var(--colors-red-500-rgb), var(--tw-bg-opacity))
-      + }
-      +
-      + .bg-red-600 {
-      +   background-color: var(--colors-red-600)
-      + }
-      +
-      + .bg-red-700 {
-      +   background-color: var(--colors-red-700)
-      + }
-      +
       + .bg-red {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-red-rgb), var(--tw-bg-opacity))
       + }
-      +
-      + .bg-black {
+      + .bg-red-400 {
       +   --tw-bg-opacity: 1;
-      +   background-color: rgba(0, 0, 0, var(--tw-bg-opacity))
+      +   background-color: rgba(var(--colors-red-400-rgb), var(--tw-bg-opacity))
       + }
-      +
+      + .bg-red-500 {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-red-500-rgb), var(--tw-bg-opacity))
+      + }
+      + .bg-red-600 {
+      +   background-color: var(--colors-red-600)
+      + }
+      + .bg-red-700 {
+      +   background-color: var(--colors-red-700)
+      + }
       + .bg-white {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-white-rgb), var(--tw-bg-opacity))
       + }
-      +
+      + .bg-black {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgb(0 0 0 / var(--tw-bg-opacity))
+      + }
       + .bg-opacity-50 {
       +   --tw-bg-opacity: 0.5
+      + }
+      + .text-red {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-red-rgb), var(--tw-text-opacity))
+      + }
+      + .text-red-400 {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-red-400-rgb), var(--tw-text-opacity))
+      + }
+      + .text-red-500 {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-red-500-rgb), var(--tw-text-opacity))
+      + }
+      + .text-red-600 {
+      +   color: var(--colors-red-600)
+      + }
+      + .text-red-700 {
+      +   color: var(--colors-red-700)
+      + }
+      + .text-white {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-white-rgb), var(--tw-text-opacity))
+      + }
+      + .text-black {
+      +   --tw-text-opacity: 1;
+      +   color: rgb(0 0 0 / var(--tw-text-opacity))
+      + }
+      + .text-opacity-50 {
+      +   --tw-text-opacity: 0.5
       + }
 
     "
@@ -171,6 +151,7 @@ test('extendColors with forceRGB', async () => {
             700: 'var(--colors-red-700)',
           },
         },
+
         variables: {
           DEFAULT: {
             colors: {
@@ -220,79 +201,63 @@ test('extendColors with forceRGB', async () => {
       +   --colors-red: 254,0,0;
       +   --sizes-small: 1rem
       + }
-      +
-      + .text-red-400 {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-red-400), var(--tw-text-opacity))
-      + }
-      +
-      + .text-red-500 {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-red-500), var(--tw-text-opacity))
-      + }
-      +
-      + .text-red-600 {
-      +   color: var(--colors-red-600)
-      + }
-      +
-      + .text-red-700 {
-      +   color: var(--colors-red-700)
-      + }
-      +
-      + .text-red {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-red), var(--tw-text-opacity))
-      + }
-      +
-      + .text-black {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(0, 0, 0, var(--tw-text-opacity))
-      + }
-      +
-      + .text-white {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-white), var(--tw-text-opacity))
-      + }
-      +
-      + .text-opacity-50 {
-      +   --tw-text-opacity: 0.5
-      + }
-      +
-      + .bg-red-400 {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgba(var(--colors-red-400), var(--tw-bg-opacity))
-      + }
-      +
-      + .bg-red-500 {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgba(var(--colors-red-500), var(--tw-bg-opacity))
-      + }
-      +
-      + .bg-red-600 {
-      +   background-color: var(--colors-red-600)
-      + }
-      +
-      + .bg-red-700 {
-      +   background-color: var(--colors-red-700)
-      + }
-      +
       + .bg-red {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-red), var(--tw-bg-opacity))
       + }
-      +
-      + .bg-black {
+      + .bg-red-400 {
       +   --tw-bg-opacity: 1;
-      +   background-color: rgba(0, 0, 0, var(--tw-bg-opacity))
+      +   background-color: rgba(var(--colors-red-400), var(--tw-bg-opacity))
       + }
-      +
+      + .bg-red-500 {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-red-500), var(--tw-bg-opacity))
+      + }
+      + .bg-red-600 {
+      +   background-color: var(--colors-red-600)
+      + }
+      + .bg-red-700 {
+      +   background-color: var(--colors-red-700)
+      + }
       + .bg-white {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-white), var(--tw-bg-opacity))
       + }
-      +
+      + .bg-black {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgb(0 0 0 / var(--tw-bg-opacity))
+      + }
       + .bg-opacity-50 {
       +   --tw-bg-opacity: 0.5
+      + }
+      + .text-red {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-red), var(--tw-text-opacity))
+      + }
+      + .text-red-400 {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-red-400), var(--tw-text-opacity))
+      + }
+      + .text-red-500 {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-red-500), var(--tw-text-opacity))
+      + }
+      + .text-red-600 {
+      +   color: var(--colors-red-600)
+      + }
+      + .text-red-700 {
+      +   color: var(--colors-red-700)
+      + }
+      + .text-white {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-white), var(--tw-text-opacity))
+      + }
+      + .text-black {
+      +   --tw-text-opacity: 1;
+      +   color: rgb(0 0 0 / var(--tw-text-opacity))
+      + }
+      + .text-opacity-50 {
+      +   --tw-text-opacity: 0.5
       + }
 
     "
@@ -349,51 +314,41 @@ test('extendColors (readme)', async () => {
       +   --colors-red-rgb: 255,0,0;
       +   --colors-green-rgb: 17,255,0
       + }
-      +
-      + .text-white {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(255, 255, 255, var(--tw-text-opacity))
-      + }
-      +
-      + .text-green {
-      +   color: var(--colors-green)
-      + }
-      +
-      + .text-blue {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-blue-rgb), var(--tw-text-opacity))
-      + }
-      +
-      + .text-red {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-red-rgb), var(--tw-text-opacity))
-      + }
-      +
-      + .text-opacity-50 {
-      +   --tw-text-opacity: 0.5
-      + }
-      +
-      + .bg-white {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgba(255, 255, 255, var(--tw-bg-opacity))
-      + }
-      +
       + .bg-green {
       +   background-color: var(--colors-green)
       + }
-      +
       + .bg-blue {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-blue-rgb), var(--tw-bg-opacity))
       + }
-      +
       + .bg-red {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-red-rgb), var(--tw-bg-opacity))
       + }
-      +
+      + .bg-white {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+      + }
       + .bg-opacity-50 {
       +   --tw-bg-opacity: 0.5
+      + }
+      + .text-green {
+      +   color: var(--colors-green)
+      + }
+      + .text-blue {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-blue-rgb), var(--tw-text-opacity))
+      + }
+      + .text-red {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-red-rgb), var(--tw-text-opacity))
+      + }
+      + .text-white {
+      +   --tw-text-opacity: 1;
+      +   color: rgb(255 255 255 / var(--tw-text-opacity))
+      + }
+      + .text-opacity-50 {
+      +   --tw-text-opacity: 0.5
       + }
 
     "
@@ -448,51 +403,41 @@ test('extendColors with forceRGB (readme)', async () => {
       +   --colors-red: 255,0,0;
       +   --colors-green: 17,255,0
       + }
-      +
-      + .text-white {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(255, 255, 255, var(--tw-text-opacity))
-      + }
-      +
-      + .text-green {
-      +   color: var(--colors-green)
-      + }
-      +
-      + .text-blue {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-blue), var(--tw-text-opacity))
-      + }
-      +
-      + .text-red {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-red), var(--tw-text-opacity))
-      + }
-      +
-      + .text-opacity-50 {
-      +   --tw-text-opacity: 0.5
-      + }
-      +
-      + .bg-white {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgba(255, 255, 255, var(--tw-bg-opacity))
-      + }
-      +
       + .bg-green {
       +   background-color: var(--colors-green)
       + }
-      +
       + .bg-blue {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-blue), var(--tw-bg-opacity))
       + }
-      +
       + .bg-red {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-red), var(--tw-bg-opacity))
       + }
-      +
+      + .bg-white {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+      + }
       + .bg-opacity-50 {
       +   --tw-bg-opacity: 0.5
+      + }
+      + .text-green {
+      +   color: var(--colors-green)
+      + }
+      + .text-blue {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-blue), var(--tw-text-opacity))
+      + }
+      + .text-red {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-red), var(--tw-text-opacity))
+      + }
+      + .text-white {
+      +   --tw-text-opacity: 1;
+      +   color: rgb(255 255 255 / var(--tw-text-opacity))
+      + }
+      + .text-opacity-50 {
+      +   --tw-text-opacity: 0.5
       + }
 
     "

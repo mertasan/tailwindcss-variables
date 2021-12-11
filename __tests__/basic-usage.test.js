@@ -4,7 +4,7 @@ const utils = require('./util/_utils')(__filename)
 test('basic usage', async () => {
   expect(
     await utils.diffOnly({
-      purge: [utils.content()],
+      content: [utils.content()],
       darkMode: false,
       theme: {
         variables: {
@@ -40,7 +40,6 @@ test('basic usage', async () => {
       +   --sizes-medium: 2rem;
       +   --sizes-large: 100%
       + }
-      +
       + .container {
       +   --colors-primary: red;
       +   --colors-secondary: var(--colors-primary)

@@ -9,10 +9,7 @@ const colorVariable = require('../../colorVariable')
  */
 module.exports = {
   corePlugins: process.env.CLEAN ? ['textColor', 'textOpacity', 'backgroundColor', 'backgroundOpacity'] : {},
-  purge: {
-    enabled: true,
-    content: ['./index.html'],
-  },
+  content: ['./index.html'],
   darkMode: 'class',
   theme: {screens: false,
     colors: {
@@ -49,7 +46,6 @@ module.exports = {
       },
     },
   },
-  variants: {},
   plugins: [
     require('../../src/index')({
       colorVariables: true
