@@ -48,6 +48,6 @@ module.exports = (contentFile) => {
 
     return content;
   }
-  
+
   return utils
 }
