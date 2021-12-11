@@ -30,6 +30,12 @@ Similar to the tailwindcss configurations you are used to. It is also possible t
 | English | Documentation |
 | Turkish | [**Dökümantasyon**](./README.tr.md) |
 
+## Tailwind CSS Version Compatibility
+| Tailwind CSS | Package |
+|--------------|----------------|
+| 2.x          | 1.x            |
+| 3.x          | 2.x            |
+
 ## Installation
 
 ```cli
