@@ -27,7 +27,7 @@ module.exports = (contentFile) => {
       .replace(/\n\n@@([^@@]*)@@/g, '') // Top level @@ signs
       .replace(/@@([^@@]*)@@/g, '\n---\n') // In between @@ signs
       .replace(/[-+] __REMOVE_ME__\n/g, '')
-      // .replace(/\+  /g, '\+')
+      .replace(/\+     /g, '+   ')
       .replace(/Snapshot Diff:\n/g, '')
       .replace(/"/g, '\'')
       .split('\n')
