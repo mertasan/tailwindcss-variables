@@ -14,28 +14,33 @@ test('css selectors', async () => {
               white: '#ffffff',
             },
           },
+
           'input[type="text"]': {
             colors: {
               primary: 'red',
               secondary: 'yellow',
             },
           },
+
           '.container': {
             sizes: {
               medium: '3rem',
             },
           },
+
           '.container.card': {
             sizes: {
               medium: '4rem',
             },
           },
+
           '*,\n*::before,\n*::after': {
             hello: {
               world: '100%',
             },
           },
-          '[type=\'button\'],\n[type=\'reset\']': {
+
+          "[type='button'],\n[type='reset']": {
             colors: {
               primary: 'blue',
               secondary: 'green',
@@ -43,35 +48,36 @@ test('css selectors', async () => {
           },
         },
       },
+
       plugins: [tailwindcssVariables],
-    }),
+    })
   ).toMatchInlineSnapshot(`
     "
 
       
       + #app {
-      +   --colors-black: rgb(0, 0, 0);
-      +   --colors-white: #ffffff
+      +     --colors-black: rgb(0, 0, 0);
+      +     --colors-white: #ffffff
       + }
       + input[type='text'] {
-      +   --colors-primary: red;
-      +   --colors-secondary: yellow
+      +     --colors-primary: red;
+      +     --colors-secondary: yellow
       + }
       + .container {
-      +   --sizes-medium: 3rem
+      +     --sizes-medium: 3rem
       + }
       + .container.card {
-      +   --sizes-medium: 4rem
+      +     --sizes-medium: 4rem
       + }
       + *,
       + *::before,
       + *::after {
-      +   --hello-world: 100%
+      +     --hello-world: 100%
       + }
       + [type='button'],
       + [type='reset'] {
-      +   --colors-primary: blue;
-      +   --colors-secondary: green
+      +     --colors-primary: blue;
+      +     --colors-secondary: green
       + }
 
     "
