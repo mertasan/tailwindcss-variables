@@ -2,7 +2,6 @@ const tailwind = require('tailwindcss')
 const snapshotDiff = require('snapshot-diff')
 const postcss = require('postcss')
 const path = require('path')
-const { ray } = require('node-ray')
 
 module.exports = (contentFile) => {
   let utils = {}
@@ -49,10 +48,6 @@ module.exports = (contentFile) => {
 
     return content;
   }
-
-  utils.css = String.raw;
-  utils.html = String.raw;
-  utils.javascript = String.raw;
-
+  
   return utils
 }
