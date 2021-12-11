@@ -4,10 +4,7 @@ const utils = require('./util/_utils')(__filename)
 test('only dark variables with default options and `class` mode', async () => {
   expect(
     await utils.diffOnly({
-      purge: {
-        enabled: true,
-        content: [utils.content()],
-      },
+      content: [utils.content()],
 
       darkMode: 'class',
       theme: {

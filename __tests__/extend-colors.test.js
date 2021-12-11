@@ -137,10 +137,7 @@ test('extendColors with forceRGB', async () => {
   expect(
     await utils.diffOnly({
       corePlugins: ['textColor', 'textOpacity', 'backgroundColor', 'backgroundOpacity'],
-      purge: {
-        enabled: true,
-        content: [utils.content()],
-      },
+      content: [utils.content()],
 
       darkMode: false,
       theme: {
@@ -268,11 +265,7 @@ test('extendColors (readme)', async () => {
   expect(
     await utils.diffOnly({
       corePlugins: ['textColor', 'textOpacity', 'backgroundColor', 'backgroundOpacity'],
-      purge: {
-        enabled: true,
-        content: [utils.content()],
-      },
-
+      content: [utils.content()],
       darkMode: false,
       theme: {
         screens: false,
@@ -359,11 +352,7 @@ test('extendColors with forceRGB (readme)', async () => {
   expect(
     await utils.diffOnly({
       corePlugins: ['textColor', 'textOpacity', 'backgroundColor', 'backgroundOpacity'],
-      purge: {
-        enabled: true,
-        content: [utils.content()],
-      },
-
+      content: [utils.content()],
       darkMode: false,
       theme: {
         screens: false,

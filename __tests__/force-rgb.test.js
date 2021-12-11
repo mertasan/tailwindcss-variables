@@ -7,7 +7,6 @@ test('forceRGB option (enabled)', async () => {
     await utils.diffOnly({
       corePlugins: ['textColor', 'textOpacity', 'backgroundColor', 'backgroundOpacity'],
       content: [utils.content()],
-
       darkMode: false,
       theme: {
         screens: false,
