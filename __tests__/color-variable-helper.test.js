@@ -66,70 +66,70 @@ test('colorVariable helper', async () => {
 
       
       + :root {
-      +     --colors-primary: #ff0;
-      +     --colors-secondary: #000000;
-      +     --colors-gray: #6B7280;
-      +     --colors-blue: rgb(0,0,254);
-      +     --colors-red-400: rgba(254,0,0,0.5);
-      +     --colors-red-500: rgba(254,0,0,1);
-      +     --colors-red-400-rgb: 254,0,0;
-      +     --colors-red-500-rgb: 254,0,0;
-      +     --colors-green: rgb(0,255,0);
-      +     --colors-yellow-400: rgb(255,255,0);
-      +     --colors-yellow: rgb(255,255,0);
-      +     --colors-yellow-400-rgb: 255,255,0;
-      +     --colors-yellow-rgb: 255,255,0;
-      +     --colors-primary-rgb: 255,255,0;
-      +     --colors-secondary-rgb: 0,0,0;
-      +     --colors-gray-rgb: 107,114,128;
-      +     --colors-blue-rgb: 0,0,254;
-      +     --colors-green-rgb: 0,255,0;
-      +     --sizes-small: 10px;
-      +     --sizes-medium: 2rem;
-      +     --sizes-large: 100%
+      +   --colors-primary: #ff0;
+      +   --colors-secondary: #000000;
+      +   --colors-gray: #6B7280;
+      +   --colors-blue: rgb(0,0,254);
+      +   --colors-red-400: rgba(254,0,0,0.5);
+      +   --colors-red-500: rgba(254,0,0,1);
+      +   --colors-red-400-rgb: 254,0,0;
+      +   --colors-red-500-rgb: 254,0,0;
+      +   --colors-green: rgb(0,255,0);
+      +   --colors-yellow-400: rgb(255,255,0);
+      +   --colors-yellow: rgb(255,255,0);
+      +   --colors-yellow-400-rgb: 255,255,0;
+      +   --colors-yellow-rgb: 255,255,0;
+      +   --colors-primary-rgb: 255,255,0;
+      +   --colors-secondary-rgb: 0,0,0;
+      +   --colors-gray-rgb: 107,114,128;
+      +   --colors-blue-rgb: 0,0,254;
+      +   --colors-green-rgb: 0,255,0;
+      +   --sizes-small: 10px;
+      +   --sizes-medium: 2rem;
+      +   --sizes-large: 100%
       + }
       + .bg-secondary {
-      +     --tw-bg-opacity: 1;
-      +     background-color: rgba(var(--colors-secondary-rgb), var(--tw-bg-opacity))
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-secondary-rgb), var(--tw-bg-opacity))
       + }
       + .bg-gray {
-      +     background-color: var(--colors-gray)
+      +   background-color: var(--colors-gray)
       + }
       + .bg-red-400 {
-      +     --tw-bg-opacity: 1;
-      +     background-color: rgba(var(--colors-red-400-rgb), var(--tw-bg-opacity))
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-red-400-rgb), var(--tw-bg-opacity))
       + }
       + .bg-red-500 {
-      +     --tw-bg-opacity: 1;
-      +     background-color: rgba(var(--colors-red-500-rgb), var(--tw-bg-opacity))
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-red-500-rgb), var(--tw-bg-opacity))
       + }
       + .bg-red-600 {
-      +     background-color: var(--colors-red-500)
+      +   background-color: var(--colors-red-500)
       + }
       + .bg-green {
-      +     background-color: var(--colors-green)
+      +   background-color: var(--colors-green)
       + }
       + .bg-white {
-      +     --tw-bg-opacity: 1;
-      +     background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgb(255 255 255 / var(--tw-bg-opacity))
       + }
       + .bg-yellow {
-      +     --tw-bg-opacity: 1;
-      +     background-color: rgba(var(--colors-yellow-rgb), var(--tw-bg-opacity))
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-yellow-rgb), var(--tw-bg-opacity))
       + }
       + .bg-opacity-50 {
-      +     --tw-bg-opacity: 0.5
+      +   --tw-bg-opacity: 0.5
       + }
       + .text-primary {
-      +     --tw-text-opacity: 1;
-      +     color: rgba(var(--colors-primary-rgb), var(--tw-text-opacity))
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-primary-rgb), var(--tw-text-opacity))
       + }
       + .text-blue {
-      +     --tw-text-opacity: 1;
-      +     color: rgba(var(--colors-blue-rgb), var(--tw-text-opacity))
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-blue-rgb), var(--tw-text-opacity))
       + }
       + .text-opacity-50 {
-      +     --tw-text-opacity: 0.5
+      +   --tw-text-opacity: 0.5
       + }
 
     "
@@ -177,34 +177,34 @@ test('colorVariable - background and text color', async () => {
 
       
       + .bg-indigo-400 {
-      +     --tw-bg-opacity: 1;
-      +     background-color: rgba(var(--colors-indigo-400), var(--tw-bg-opacity))
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-indigo-400), var(--tw-bg-opacity))
       + }
       + .bg-indigo-500 {
-      +     --tw-bg-opacity: 1;
-      +     background-color: rgba(var(--colors-indigo-500), var(--tw-bg-opacity))
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-indigo-500), var(--tw-bg-opacity))
       + }
       + .bg-indigo-600 {
-      +     --tw-bg-opacity: 1;
-      +     background-color: rgba(var(--colors-indigo-600), var(--tw-bg-opacity))
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-indigo-600), var(--tw-bg-opacity))
       + }
       + .bg-opacity-50 {
-      +     --tw-bg-opacity: 0.5
+      +   --tw-bg-opacity: 0.5
       + }
       + .text-indigo-400 {
-      +     --tw-text-opacity: 1;
-      +     color: rgba(var(--colors-indigo-400), var(--tw-text-opacity))
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-indigo-400), var(--tw-text-opacity))
       + }
       + .text-indigo-500 {
-      +     --tw-text-opacity: 1;
-      +     color: rgba(var(--colors-indigo-500), var(--tw-text-opacity))
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-indigo-500), var(--tw-text-opacity))
       + }
       + .text-indigo-600 {
-      +     --tw-text-opacity: 1;
-      +     color: rgba(var(--colors-indigo-600), var(--tw-text-opacity))
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-indigo-600), var(--tw-text-opacity))
       + }
       + .text-opacity-50 {
-      +     --tw-text-opacity: 0.5
+      +   --tw-text-opacity: 0.5
       + }
 
     "
@@ -256,28 +256,28 @@ test('colorVariable - background and text color 2', async () => {
 
       
       + .bg-indigo-400 {
-      +     --tw-bg-opacity: 1;
-      +     background-color: rgba(var(--colors-indigo-400), var(--tw-bg-opacity))
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-indigo-400), var(--tw-bg-opacity))
       + }
       + .bg-indigo-500 {
-      +     --tw-bg-opacity: 1;
-      +     background-color: rgba(var(--colors-indigo-500), var(--tw-bg-opacity))
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-indigo-500), var(--tw-bg-opacity))
       + }
       + .bg-indigo-600 {
-      +     --tw-bg-opacity: 1;
-      +     background-color: rgba(var(--colors-indigo-600), var(--tw-bg-opacity))
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-indigo-600), var(--tw-bg-opacity))
       + }
       + .text-indigo-400 {
-      +     --tw-text-opacity: 1;
-      +     color: rgba(var(--colors-indigo-400), var(--tw-text-opacity))
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-indigo-400), var(--tw-text-opacity))
       + }
       + .text-indigo-500 {
-      +     --tw-text-opacity: 1;
-      +     color: rgba(var(--colors-indigo-500), var(--tw-text-opacity))
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-indigo-500), var(--tw-text-opacity))
       + }
       + .text-indigo-600 {
-      +     --tw-text-opacity: 1;
-      +     color: rgba(var(--colors-indigo-600), var(--tw-text-opacity))
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-indigo-600), var(--tw-text-opacity))
       + }
 
     "
@@ -325,27 +325,27 @@ test('colorVariable with gradient color stops', async () => {
 
       
       + :root {
-      +     --colors-red-400: rgba(254,0,0,1);
-      +     --colors-red-500: rgba(254,0,0,0.5);
-      +     --colors-red-600: #a20606;
-      +     --colors-red-400-rgb: 254,0,0;
-      +     --colors-red-500-rgb: 254,0,0;
-      +     --colors-red-600-rgb: 162,6,6
+      +   --colors-red-400: rgba(254,0,0,1);
+      +   --colors-red-500: rgba(254,0,0,0.5);
+      +   --colors-red-600: #a20606;
+      +   --colors-red-400-rgb: 254,0,0;
+      +   --colors-red-500-rgb: 254,0,0;
+      +   --colors-red-600-rgb: 162,6,6
       + }
       + .from-red-400 {
-      +     --tw-gradient-from: rgb(var(--colors-red-400-rgb));
-      +     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-400-rgb), 0))
+      +   --tw-gradient-from: rgb(var(--colors-red-400-rgb));
+      +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-400-rgb), 0))
       + }
       + .from-red-500 {
-      +     --tw-gradient-from: rgb(var(--colors-red-500-rgb));
-      +     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-500-rgb), 0))
+      +   --tw-gradient-from: rgb(var(--colors-red-500-rgb));
+      +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-500-rgb), 0))
       + }
       + .from-red-600 {
-      +     --tw-gradient-from: rgb(var(--colors-red-600-rgb));
-      +     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-600-rgb), 0))
+      +   --tw-gradient-from: rgb(var(--colors-red-600-rgb));
+      +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-600-rgb), 0))
       + }
       + .text-opacity-50 {
-      +     --tw-text-opacity: 0.5
+      +   --tw-text-opacity: 0.5
       + }
 
     "
@@ -394,24 +394,24 @@ test('colorVariable with gradient color stops (forceRGB)', async () => {
 
       
       + :root {
-      +     --colors-red-400: 254,0,0;
-      +     --colors-red-500: 254,0,0;
-      +     --colors-red-600: 162,6,6
+      +   --colors-red-400: 254,0,0;
+      +   --colors-red-500: 254,0,0;
+      +   --colors-red-600: 162,6,6
       + }
       + .from-red-400 {
-      +     --tw-gradient-from: rgb(var(--colors-red-400));
-      +     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-400), 0))
+      +   --tw-gradient-from: rgb(var(--colors-red-400));
+      +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-400), 0))
       + }
       + .from-red-500 {
-      +     --tw-gradient-from: rgb(var(--colors-red-500));
-      +     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-500), 0))
+      +   --tw-gradient-from: rgb(var(--colors-red-500));
+      +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-500), 0))
       + }
       + .from-red-600 {
-      +     --tw-gradient-from: rgb(var(--colors-red-600));
-      +     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-600), 0))
+      +   --tw-gradient-from: rgb(var(--colors-red-600));
+      +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-600), 0))
       + }
       + .text-opacity-50 {
-      +     --tw-text-opacity: 0.5
+      +   --tw-text-opacity: 0.5
       + }
 
     "
