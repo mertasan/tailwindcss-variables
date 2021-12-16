@@ -43,7 +43,7 @@ npm install -D @mertasan/tailwindcss-variables
 ```
 
 ## Playground
-Simple example: https://play.tailwindcss.com/og38aGxa8a
+Simple example: https://play.tailwindcss.com/hCpcvnGsPx?file=config
 
 ## Usage
 
