@@ -13,12 +13,14 @@ test('basic usage', async () => {
               black: 'rgb(0, 0, 0)',
               white: '#ffffff',
             },
+
             sizes: {
               small: '10px',
               medium: '2rem',
               large: '100%',
             },
           },
+
           '.container': {
             colors: {
               primary: 'red',
@@ -27,23 +29,19 @@ test('basic usage', async () => {
           },
         },
       },
+
       plugins: [tailwindcssVariables],
-    }),
+    })
   ).toMatchInlineSnapshot(`
     "
 
       
       + :root {
-      +   --colors-black: rgb(0, 0, 0);
-      +   --colors-white: #ffffff;
-      +   --sizes-small: 10px;
-      +   --sizes-medium: 2rem;
-      +   --sizes-large: 100%
-      + }
-      +
-      + .container {
-      +   --colors-primary: red;
-      +   --colors-secondary: var(--colors-primary)
+      +     --colors-black: rgb(0, 0, 0);
+      +     --colors-white: #ffffff;
+      +     --sizes-small: 10px;
+      +     --sizes-medium: 2rem;
+      +     --sizes-large: 100%
       + }
 
     "

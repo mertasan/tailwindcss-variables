@@ -76,7 +76,7 @@ const parseVariables = (object, varPrefix) => {
       if (hasOwn(object, key) && isPlainObject(object[key])) {
         newObject = recurse(object[key], formattedKey ? pre + formattedKey : pre.slice(0, -1))
       } else {
-        newObject[formattedKey ? pre + formattedKey : pre.slice(0, -1)] = object[key]
+        newObject[formattedKey ? pre + formattedKey : pre.slice(0, -1)] = `${object[key]}`
       }
     }
     return newObject
