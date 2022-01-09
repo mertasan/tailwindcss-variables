@@ -14,8 +14,10 @@ test('issue 23', async () => {
             'body-bg': '#fff',
             'body-font-family': 'var(--font-primary)',
             'body-font-size': '1rem',
-            'body-font-weight': '400',
-            'body-line-height': '1.5',
+            'body-font-weight': 400,
+            'body-line-height': 1.5,
+            'body-font-weight2': '400',
+            'body-line-height2': '1.5',
           },
         },
       },
@@ -32,7 +34,9 @@ test('issue 23', async () => {
       +   --body-font-family: var(--font-primary);
       +   --body-font-size: 1rem;
       +   --body-font-weight: 400;
-      +   --body-line-height: 1.5
+      +   --body-line-height: 1.5;
+      +   --body-font-weight2: 400;
+      +   --body-line-height2: 1.5
       + }
 
     "
