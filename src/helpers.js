@@ -9,7 +9,7 @@ const withRgb = (variable, forceRGB) => {
   return startsWith(variable, 'var') ? variable.replace(')', '-rgb)') : 'var(' + variable + '-rgb)'
 }
 
-const colorVariable = (variable, forceRGB) => {
+const colorVariable = (variable, forceRGB = false) => {
   return function ({ opacityVariable, opacityValue }) {
     if (opacityValue !== undefined) {
       return `rgba(${withRgb(variable, forceRGB)}, ${opacityValue})`
