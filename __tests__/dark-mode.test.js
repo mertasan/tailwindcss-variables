@@ -69,11 +69,11 @@ test('only dark variables with default options and `media` mode', async () => {
       
       + @media (prefers-color-scheme: dark) {
       +   :root {
-      +   --colors-primary: #ffffff
+      +     --colors-primary: #ffffff
       +   }
       +
       +   .container {
-      +   --colors-secondary: #000000
+      +     --colors-secondary: #000000
       +   }
       + }
 
@@ -115,11 +115,11 @@ test('if the `darkMode` is set to `media`, the `darkSelector` and `darkToRoot` o
       
       + @media (prefers-color-scheme: dark) {
       +   :root {
-      +   --colors-primary: #ffffff
+      +     --colors-primary: #ffffff
       +   }
       +
       +   .container {
-      +   --colors-secondary: #000000
+      +     --colors-secondary: #000000
       +   }
       + }
 
@@ -248,11 +248,11 @@ test('only dark variables with variablePrefix and `media` mode', async () => {
       
       + @media (prefers-color-scheme: dark) {
       +   :root {
-      +   --my-prefix-colors-primary: #ffffff
+      +     --my-prefix-colors-primary: #ffffff
       +   }
       +
       +   .container {
-      +   --my-prefix-colors-secondary: #000000
+      +     --my-prefix-colors-secondary: #000000
       +   }
       + }
 
@@ -372,11 +372,11 @@ test('variables and dark variables with default options and `media` mode', async
       +
       + @media (prefers-color-scheme: dark) {
       +   :root {
-      +   --colors-primary: #ffffff
+      +     --colors-primary: #ffffff
       +   }
       +
       +   .container {
-      +   --colors-secondary: #000000
+      +     --colors-secondary: #000000
       +   }
       + }
 

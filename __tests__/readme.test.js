@@ -270,11 +270,11 @@ test('dark mode with `media`', async () => {
       +
       + @media (prefers-color-scheme: dark) {
       +   :root {
-      +   --colors-red-50: blue
+      +     --colors-red-50: blue
       +   }
       +
       +   .container {
-      +   --colors-red-50: green
+      +     --colors-red-50: green
       +   }
       + }
 
