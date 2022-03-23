@@ -15,6 +15,7 @@
   },
   "scripts": {
     "test": "jest",
+    "test:update-snapshots": "jest -u",
     "test:coverage": "jest --coverage",
     "build": "env NODE_ENV=production node scripts/build.js",
     "build:clean": "env NODE_ENV=production CLEAN=true node scripts/build.js",
