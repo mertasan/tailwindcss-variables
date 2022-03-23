@@ -53,7 +53,7 @@ test('forceRGB option (enabled)', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --colors-white: 255,255,255;
       +   --colors-red-400: 254,0,0;
@@ -171,7 +171,7 @@ test('forceRGB option (disabled)', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --colors-white: #ffffff;
       +   --colors-red-400: rgba(254,0,0,0.5);
@@ -290,7 +290,7 @@ test('forceRGB option with extendColors', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --colors-white: 255,255,255;
       +   --colors-red-400: 254,0,0;
@@ -412,7 +412,7 @@ test('extendColors (readme)', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --colors-blue: #0065ff;
       +   --colors-red: #ff0000;
@@ -498,7 +498,7 @@ test('forceRGB for docs', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --colors-green: 17,255,0
       + }
@@ -571,7 +571,7 @@ test('forceRGB (disabled) for docs', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --colors-green: #11ff00;
       +   --colors-green-rgb: 17,255,0

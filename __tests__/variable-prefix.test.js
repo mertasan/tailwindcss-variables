@@ -31,7 +31,7 @@ test('variable prefix', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --prefix-colors-primary: #ffffff
       + }
@@ -74,7 +74,7 @@ test('formatted variable prefix', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --hello-world1tail-wind-colors-primary: #ffffff
       + }

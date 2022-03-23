@@ -51,8 +51,8 @@ module.exports = (contentFile) => {
       .replace(/Snapshot Diff:\n/g, '')
       .replace(/"/g, '\'')
       .split('\n')
-      .map((line) => `  ${line}`)
-      .join('\n')}\n\n`
+      .map(line => `  ${line}`.trimEnd())
+      .join('\n')}\n\n`;
   }
 
   utils.content = (filename, ext) => {

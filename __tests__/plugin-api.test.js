@@ -20,7 +20,7 @@ test('simple example with dark mode set to `media`', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --prefix2-colors-primary: indigo;
       +   --prefix2-colors-secondary: white;
@@ -71,7 +71,7 @@ test('simple example with dark mode set to `class`', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --prefix2-colors-primary: indigo;
       +   --prefix2-colors-secondary: white;
@@ -111,7 +111,7 @@ test('with-components example with dark mode set to `class`', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --prefix2-colors-primary: black;
       +   --prefix2-colors-secondary: white;
@@ -163,7 +163,7 @@ test('with-components example with dark mode set to `media`', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --prefix2-colors-primary: black;
       +   --prefix2-colors-secondary: white;
@@ -217,7 +217,7 @@ test('with-components-null-selector example with dark mode set to `class`', asyn
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --prefix2-colors-primary: black;
       +   --prefix2-colors-secondary: white;
@@ -269,7 +269,7 @@ test('with-components-null-selector example with dark mode set to `media`', asyn
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --prefix2-colors-primary: black;
       +   --prefix2-colors-secondary: white;
@@ -323,7 +323,7 @@ test('with-themes example with dark mode set to `media`', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --prefix2-colors-primary: black;
       +   --prefix2-colors-secondary: white;
@@ -374,7 +374,7 @@ test('with-themes example with dark mode set to `class`', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --prefix2-colors-primary: indigo;
       +   --prefix2-colors-secondary: white;
@@ -423,7 +423,7 @@ test('advanced example with dark mode set to `media`', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --prefix2-colors-primary: indigo;
       +   --prefix2-colors-secondary: white;
@@ -486,7 +486,7 @@ test('advanced example with dark mode set to `class`', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --prefix2-colors-primary: indigo;
       +   --prefix2-colors-secondary: white;

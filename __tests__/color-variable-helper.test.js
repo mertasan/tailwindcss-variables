@@ -68,7 +68,7 @@ test('colorVariable helper', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --colors-primary: #ff0;
       +   --colors-secondary: #000000;
@@ -195,7 +195,7 @@ test('colorVariable - background and text color', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + .bg-indigo-400 {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-indigo-400), var(--tw-bg-opacity))
@@ -284,7 +284,7 @@ test('colorVariable - background and text color 2', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + .bg-indigo-400 {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-indigo-400), var(--tw-bg-opacity))
@@ -361,7 +361,7 @@ test('colorVariable with gradient color stops', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --colors-red-400: rgba(254,0,0,1);
       +   --colors-red-500: rgba(254,0,0,0.5);
@@ -437,7 +437,7 @@ test('colorVariable with gradient color stops (forceRGB)', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --colors-red-400: 254,0,0;
       +   --colors-red-500: 254,0,0;

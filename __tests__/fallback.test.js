@@ -81,9 +81,9 @@ test('fallback', async () => {
       + .bg-gray {
       +   background-color: var(--header-color, blue)
       + }
-      
+
       ---
-      
+
       + .bg-opacity-50 {
       +   --tw-bg-opacity: 0.5
       + }

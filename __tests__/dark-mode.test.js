@@ -27,7 +27,7 @@ test('only dark variables with default options and `class` mode', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root.dark {
       +   --colors-primary: #ffffff
       + }
@@ -66,7 +66,7 @@ test('only dark variables with default options and `media` mode', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + @media (prefers-color-scheme: dark) {
       +   :root {
       +     --colors-primary: #ffffff
@@ -112,7 +112,7 @@ test('if the `darkMode` is set to `media`, the `darkSelector` and `darkToRoot` o
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + @media (prefers-color-scheme: dark) {
       +   :root {
       +     --colors-primary: #ffffff
@@ -157,7 +157,7 @@ test('only dark variables with darkToRoot option and `class` mode', async () => 
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root.dark {
       +   --colors-primary: #ffffff
       + }
@@ -202,7 +202,7 @@ test('only dark variables with custom options and `class` mode', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root.custom-dark-selector {
       +   --my-prefix-colors-primary: #ffffff
       + }
@@ -245,7 +245,7 @@ test('only dark variables with variablePrefix and `media` mode', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + @media (prefers-color-scheme: dark) {
       +   :root {
       +     --my-prefix-colors-primary: #ffffff
@@ -300,7 +300,7 @@ test('variables and dark variables with default options and `class` mode', async
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --colors-primary: #ffffff
       + }
@@ -361,7 +361,7 @@ test('variables and dark variables with default options and `media` mode', async
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --colors-primary: #ffffff
       + }
@@ -428,7 +428,7 @@ test('variables and dark variables with custom darkSelector and `class` mode', a
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --colors-primary: #ffffff
       + }
@@ -493,7 +493,7 @@ test('variables and dark variables with darkToRoot option and `class` mode', asy
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --colors-primary: #ffffff
       + }
@@ -560,7 +560,7 @@ test('variables and dark variables with custom options and `class` mode', async 
   ).toMatchInlineSnapshot(`
     "
 
-      
+
       + :root {
       +   --my-prefix-colors-primary: #ffffff
       + }
