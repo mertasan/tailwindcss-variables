@@ -52,45 +52,45 @@ test('fallback', async () => {
     "
 
       + :root {
-      +     --header-color: #ffffff;
-      +     --header-color-rgb: 255,255,255;
-      +     --colors-red-400: #ff3f3f;
-      +     --colors-red: #ff0000;
-      +     --colors-red-400-rgb: 255,63,63;
-      +     --colors-red-rgb: 255,0,0
+      +   --header-color: #ffffff;
+      +   --header-color-rgb: 255,255,255;
+      +   --colors-red-400: #ff3f3f;
+      +   --colors-red: #ff0000;
+      +   --colors-red-400-rgb: 255,63,63;
+      +   --colors-red-rgb: 255,0,0
       + }
       +
       + .bg-red-400 {
-      +     background-color: var(--colors-red-400 red)
+      +   background-color: var(--colors-red-400 red)
       + }
       +
       + .bg-red-500 {
-      +     background-color: var(--colors-red red)
+      +   background-color: var(--colors-red red)
       + }
       +
       + .bg-red-600 {
-      +     --tw-bg-opacity: 1;
-      +     background-color: rgba(var(--header-color-rgb, black), var(--tw-bg-opacity))
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--header-color-rgb, black), var(--tw-bg-opacity))
       + }
       +
       + .bg-red-700 {
-      +     --tw-bg-opacity: 1;
-      +     background-color: rgba(var(--header-color, black), var(--tw-bg-opacity))
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--header-color, black), var(--tw-bg-opacity))
       + }
       +
       + .bg-gray {
-      +     background-color: var(--header-color, blue)
+      +   background-color: var(--header-color, blue)
       + }
       
       ---
       
       + .bg-opacity-50 {
-      +     --tw-bg-opacity: 0.5
+      +   --tw-bg-opacity: 0.5
       + }
       +
       + .text-red-800 {
-      +     --tw-text-opacity: 1;
-      +     color: rgba(var(--header-color-rgb, black), var(--tw-text-opacity))
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--header-color-rgb, black), var(--tw-text-opacity))
       + }
 
     "

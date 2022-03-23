@@ -29,11 +29,11 @@ test('only dark variables with default options and `class` mode', async () => {
 
       
       + :root.dark {
-      +     --colors-primary: #ffffff
+      +   --colors-primary: #ffffff
       + }
       +
       + :root.dark .container {
-      +     --colors-secondary: #000000
+      +   --colors-secondary: #000000
       + }
 
     "
@@ -68,13 +68,13 @@ test('only dark variables with default options and `media` mode', async () => {
 
       
       + @media (prefers-color-scheme: dark) {
-      +     :root {
+      +   :root {
       +     --colors-primary: #ffffff
-      +     }
+      +   }
       +
-      +     .container {
+      +   .container {
       +     --colors-secondary: #000000
-      +     }
+      +   }
       + }
 
     "
@@ -114,13 +114,13 @@ test('if the `darkMode` is set to `media`, the `darkSelector` and `darkToRoot` o
 
       
       + @media (prefers-color-scheme: dark) {
-      +     :root {
+      +   :root {
       +     --colors-primary: #ffffff
-      +     }
+      +   }
       +
-      +     .container {
+      +   .container {
       +     --colors-secondary: #000000
-      +     }
+      +   }
       + }
 
     "
@@ -159,11 +159,11 @@ test('only dark variables with darkToRoot option and `class` mode', async () => 
 
       
       + :root.dark {
-      +     --colors-primary: #ffffff
+      +   --colors-primary: #ffffff
       + }
       +
       + :root.dark .container {
-      +     --colors-secondary: #000000
+      +   --colors-secondary: #000000
       + }
 
     "
@@ -204,11 +204,11 @@ test('only dark variables with custom options and `class` mode', async () => {
 
       
       + :root.custom-dark-selector {
-      +     --my-prefix-colors-primary: #ffffff
+      +   --my-prefix-colors-primary: #ffffff
       + }
       +
       + :root.custom-dark-selector .container {
-      +     --my-prefix-colors-secondary: #000000
+      +   --my-prefix-colors-secondary: #000000
       + }
 
     "
@@ -247,13 +247,13 @@ test('only dark variables with variablePrefix and `media` mode', async () => {
 
       
       + @media (prefers-color-scheme: dark) {
-      +     :root {
+      +   :root {
       +     --my-prefix-colors-primary: #ffffff
-      +     }
+      +   }
       +
-      +     .container {
+      +   .container {
       +     --my-prefix-colors-secondary: #000000
-      +     }
+      +   }
       + }
 
     "
@@ -302,19 +302,19 @@ test('variables and dark variables with default options and `class` mode', async
 
       
       + :root {
-      +     --colors-primary: #ffffff
+      +   --colors-primary: #ffffff
       + }
       +
       + .container {
-      +     --colors-secondary: #000000
+      +   --colors-secondary: #000000
       + }
       +
       + :root.dark {
-      +     --colors-primary: #ffffff
+      +   --colors-primary: #ffffff
       + }
       +
       + :root.dark .container {
-      +     --colors-secondary: #000000
+      +   --colors-secondary: #000000
       + }
 
     "
@@ -363,21 +363,21 @@ test('variables and dark variables with default options and `media` mode', async
 
       
       + :root {
-      +     --colors-primary: #ffffff
+      +   --colors-primary: #ffffff
       + }
       +
       + .container {
-      +     --colors-secondary: #000000
+      +   --colors-secondary: #000000
       + }
       +
       + @media (prefers-color-scheme: dark) {
-      +     :root {
+      +   :root {
       +     --colors-primary: #ffffff
-      +     }
+      +   }
       +
-      +     .container {
+      +   .container {
       +     --colors-secondary: #000000
-      +     }
+      +   }
       + }
 
     "
@@ -430,19 +430,19 @@ test('variables and dark variables with custom darkSelector and `class` mode', a
 
       
       + :root {
-      +     --colors-primary: #ffffff
+      +   --colors-primary: #ffffff
       + }
       +
       + .container {
-      +     --colors-secondary: #000000
+      +   --colors-secondary: #000000
       + }
       +
       + :root.custom-dark-selector {
-      +     --colors-primary: #ffffff
+      +   --colors-primary: #ffffff
       + }
       +
       + :root.custom-dark-selector .container {
-      +     --colors-secondary: #000000
+      +   --colors-secondary: #000000
       + }
 
     "
@@ -495,19 +495,19 @@ test('variables and dark variables with darkToRoot option and `class` mode', asy
 
       
       + :root {
-      +     --colors-primary: #ffffff
+      +   --colors-primary: #ffffff
       + }
       +
       + .container {
-      +     --colors-secondary: #000000
+      +   --colors-secondary: #000000
       + }
       +
       + :root.dark {
-      +     --colors-primary: #ffffff
+      +   --colors-primary: #ffffff
       + }
       +
       + :root.dark .container {
-      +     --colors-secondary: #000000
+      +   --colors-secondary: #000000
       + }
 
     "
@@ -562,19 +562,19 @@ test('variables and dark variables with custom options and `class` mode', async 
 
       
       + :root {
-      +     --my-prefix-colors-primary: #ffffff
+      +   --my-prefix-colors-primary: #ffffff
       + }
       +
       + .container {
-      +     --my-prefix-colors-secondary: #000000
+      +   --my-prefix-colors-secondary: #000000
       + }
       +
       + :root.custom-dark-selector {
-      +     --my-prefix-colors-primary: #ffffff
+      +   --my-prefix-colors-primary: #ffffff
       + }
       +
       + :root.custom-dark-selector .container {
-      +     --my-prefix-colors-secondary: #000000
+      +   --my-prefix-colors-secondary: #000000
       + }
 
     "

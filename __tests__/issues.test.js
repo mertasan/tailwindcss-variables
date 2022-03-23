@@ -29,14 +29,14 @@ test('issue 23', async () => {
 
       
       + :root {
-      +     --body-color: #000;
-      +     --body-bg: #fff;
-      +     --body-font-family: var(--font-primary);
-      +     --body-font-size: 1rem;
-      +     --body-font-weight: 400;
-      +     --body-line-height: 1.5;
-      +     --body-font-weight2: 400;
-      +     --body-line-height2: 1.5
+      +   --body-color: #000;
+      +   --body-bg: #fff;
+      +   --body-font-family: var(--font-primary);
+      +   --body-font-size: 1rem;
+      +   --body-font-weight: 400;
+      +   --body-line-height: 1.5;
+      +   --body-font-weight2: 400;
+      +   --body-line-height2: 1.5
       + }
 
     "

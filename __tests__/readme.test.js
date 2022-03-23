@@ -40,13 +40,13 @@ test('basic usage', async () => {
 
       
       + :root {
-      +     --sizes-small: 1rem;
-      +     --sizes-button-size: 2rem;
-      +     --colors-red-50: #ff3232
+      +   --sizes-small: 1rem;
+      +   --sizes-button-size: 2rem;
+      +   --colors-red-50: #ff3232
       + }
       +
       + .container {
-      +     --sizes-medium: 1.5rem
+      +   --sizes-medium: 1.5rem
       + }
 
     "
@@ -107,20 +107,20 @@ test('dark mode with `class`', async () => {
 
       
       + :root {
-      +     --sizes-small: 1rem;
-      +     --colors-red-50: red
+      +   --sizes-small: 1rem;
+      +   --colors-red-50: red
       + }
       +
       + .container {
-      +     --colors-red-50: indigo
+      +   --colors-red-50: indigo
       + }
       +
       + :root.dark {
-      +     --colors-red-50: blue
+      +   --colors-red-50: blue
       + }
       +
       + :root.dark .container {
-      +     --colors-red-50: green
+      +   --colors-red-50: green
       + }
 
     "
@@ -186,20 +186,20 @@ test('dark mode with `class` and custom options', async () => {
 
       
       + :root {
-      +     --sizes-small: 1rem;
-      +     --colors-red-50: red
+      +   --sizes-small: 1rem;
+      +   --colors-red-50: red
       + }
       +
       + .container {
-      +     --colors-red-50: indigo
+      +   --colors-red-50: indigo
       + }
       +
       + .custom-dark-selector {
-      +     --colors-red-50: blue
+      +   --colors-red-50: blue
       + }
       +
       + .custom-dark-selector .container {
-      +     --colors-red-50: green
+      +   --colors-red-50: green
       + }
 
     "
@@ -260,22 +260,22 @@ test('dark mode with `media`', async () => {
 
       
       + :root {
-      +     --sizes-small: 1rem;
-      +     --colors-red-50: red
+      +   --sizes-small: 1rem;
+      +   --colors-red-50: red
       + }
       +
       + .container {
-      +     --colors-red-50: indigo
+      +   --colors-red-50: indigo
       + }
       +
       + @media (prefers-color-scheme: dark) {
-      +     :root {
+      +   :root {
       +     --colors-red-50: blue
-      +     }
+      +   }
       +
-      +     .container {
+      +   .container {
       +     --colors-red-50: green
-      +     }
+      +   }
       + }
 
     "
@@ -323,13 +323,13 @@ test('variable prefix', async () => {
 
       
       + :root {
-      +     --admin-sizes-small: 1rem;
-      +     --admin-sizes-button-size: 2rem;
-      +     --admin-colors-red-50: #ff3232
+      +   --admin-sizes-small: 1rem;
+      +   --admin-sizes-button-size: 2rem;
+      +   --admin-colors-red-50: #ff3232
       + }
       +
       + .container {
-      +     --admin-sizes-medium: 1.5rem
+      +   --admin-sizes-medium: 1.5rem
       + }
 
     "
@@ -368,9 +368,9 @@ test('variables with nested objects', async () => {
 
       
       + :root {
-      +     --sizes-small: 1rem;
-      +     --sizes-admin-buttons-colors-red-500: #ff0000;
-      +     --sizes-admin-buttons-colors-red-600: #e60000
+      +   --sizes-small: 1rem;
+      +   --sizes-admin-buttons-colors-red-500: #ff0000;
+      +   --sizes-admin-buttons-colors-red-600: #e60000
       + }
 
     "
@@ -413,18 +413,18 @@ test('naming conventions for variable keys', async () => {
 
       
       + :root {
-      +     --colors-hello-world: 100%;
-      +     --colors-underscore-to-dash: 100%;
-      +     --colors-underscore-to-dash-with-dash: 100%;
-      +     --colors-auto-dash: 100%
+      +   --colors-hello-world: 100%;
+      +   --colors-underscore-to-dash: 100%;
+      +   --colors-underscore-to-dash-with-dash: 100%;
+      +   --colors-auto-dash: 100%
       + }
       +
       + [type='button'] {
-      +     --hello-world: 100%;
-      +     --underscore-to-dash: 100%;
-      +     --underscore-to-dash-with-dash: 100%;
-      +     --auto-dash: 100%;
-      +     --nested-auto-dash-color-primary: 100%
+      +   --hello-world: 100%;
+      +   --underscore-to-dash: 100%;
+      +   --underscore-to-dash-with-dash: 100%;
+      +   --auto-dash: 100%;
+      +   --nested-auto-dash-color-primary: 100%
       + }
 
     "
@@ -472,15 +472,15 @@ test('example api', async () => {
 
       
       + :root {
-      +     --myplugin-colors-primary: black;
-      +     --myplugin-colors-secondary: white;
-      +     --myplugin-colors-warning: orange
+      +   --myplugin-colors-primary: black;
+      +   --myplugin-colors-secondary: white;
+      +   --myplugin-colors-warning: orange
       + }
       +
       + :root.dark {
-      +     --myplugin-colors-primary: red;
-      +     --myplugin-colors-secondary: yellow;
-      +     --myplugin-colors-warning: green
+      +   --myplugin-colors-primary: red;
+      +   --myplugin-colors-secondary: yellow;
+      +   --myplugin-colors-warning: green
       + }
 
     "
@@ -549,27 +549,27 @@ test('example api with components helper', async () => {
 
       
       + :root {
-      +     --myplugin-colors-primary: black;
-      +     --myplugin-colors-secondary: white;
-      +     --myplugin-colors-warning: orange;
+      +   --myplugin-colors-primary: black;
+      +   --myplugin-colors-secondary: white;
+      +   --myplugin-colors-warning: orange;
       + }
       +
       + :root.dark {
-      +     --myplugin-colors-primary: red;
-      +     --myplugin-colors-secondary: yellow;
-      +     --myplugin-colors-warning: green;
+      +   --myplugin-colors-primary: red;
+      +   --myplugin-colors-secondary: yellow;
+      +   --myplugin-colors-warning: green;
       + }
       +
       + .form-select {
-      +     background-color: var(--myplugin-colors-primary);
+      +   background-color: var(--myplugin-colors-primary);
       + }
       +
       + .form-select.default-multi {
-      +     background-color: var(--myplugin-colors-secondary);
+      +   background-color: var(--myplugin-colors-secondary);
       + }
       +
       + .form-select.other-multi {
-      +     background-color: var(--myplugin-colors-warning);
+      +   background-color: var(--myplugin-colors-warning);
       + }
 
     "
@@ -592,21 +592,21 @@ test('detailed example api', async () => {
 
       
       + :root {
-      +     --forms-colors-primary: indigo;
-      +     --forms-colors-secondary: white;
-      +     --forms-colors-warning: orange;
+      +   --forms-colors-primary: indigo;
+      +   --forms-colors-secondary: white;
+      +   --forms-colors-warning: orange;
       + }
       +
       + .form-select {
-      +     background-color: var(--forms-colors-primary);
+      +   background-color: var(--forms-colors-primary);
       + }
       +
       + .form-select .default-multi {
-      +     background-color: var(--forms-colors-secondary);
+      +   background-color: var(--forms-colors-secondary);
       + }
       +
       + .form-select .other-multi {
-      +     background-color: var(--forms-colors-warning);
+      +   background-color: var(--forms-colors-warning);
       + }
 
     "

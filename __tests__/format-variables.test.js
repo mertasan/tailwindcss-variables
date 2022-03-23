@@ -37,18 +37,18 @@ test('format variables [special characters must be removed from variable names]'
 
       
       + :root {
-      +     --colors-hello-world: 100%;
-      +     --colors-underscore-to-dash: 100%;
-      +     --colors-underscore-to-dash-with-dash: 100%;
-      +     --colors-auto-dash: 100%
+      +   --colors-hello-world: 100%;
+      +   --colors-underscore-to-dash: 100%;
+      +   --colors-underscore-to-dash-with-dash: 100%;
+      +   --colors-auto-dash: 100%
       + }
       +
       + [type='button'] {
-      +     --hello-world: 100%;
-      +     --underscore-to-dash: 100%;
-      +     --underscore-to-dash-with-dash: 100%;
-      +     --auto-dash: 100%;
-      +     --nested-auto-dash-color--primary: 100%
+      +   --hello-world: 100%;
+      +   --underscore-to-dash: 100%;
+      +   --underscore-to-dash-with-dash: 100%;
+      +   --auto-dash: 100%;
+      +   --nested-auto-dash-color--primary: 100%
       + }
 
     "

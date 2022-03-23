@@ -37,16 +37,16 @@ test('basic usage', async () => {
 
       
       + :root {
-      +     --colors-black: rgb(0, 0, 0);
-      +     --colors-white: #ffffff;
-      +     --sizes-small: 10px;
-      +     --sizes-medium: 2rem;
-      +     --sizes-large: 100%
+      +   --colors-black: rgb(0, 0, 0);
+      +   --colors-white: #ffffff;
+      +   --sizes-small: 10px;
+      +   --sizes-medium: 2rem;
+      +   --sizes-large: 100%
       + }
       +
       + .container {
-      +     --colors-primary: red;
-      +     --colors-secondary: var(--colors-primary)
+      +   --colors-primary: red;
+      +   --colors-secondary: var(--colors-primary)
       + }
 
     "

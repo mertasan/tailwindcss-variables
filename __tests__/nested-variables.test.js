@@ -61,36 +61,36 @@ test('nested variables', async () => {
 
       
       + :root {
-      +     --colors: #111111;
-      +     --colors-black: #000000;
-      +     --colors-buttons: #222222;
-      +     --colors-buttons-light: #333333;
-      +     --colors-buttons-light-white: #ffffff;
-      +     --colors-buttons-moon-white: white;
-      +     --colors-buttons-moon-inverse: #444444;
-      +     --colors-buttons-moon-inverse-white: black
+      +   --colors: #111111;
+      +   --colors-black: #000000;
+      +   --colors-buttons: #222222;
+      +   --colors-buttons-light: #333333;
+      +   --colors-buttons-light-white: #ffffff;
+      +   --colors-buttons-moon-white: white;
+      +   --colors-buttons-moon-inverse: #444444;
+      +   --colors-buttons-moon-inverse-white: black
       + }
       +
       + .container>.card {
-      +     --colors: #555555;
-      +     --colors-black: rgb(0, 0, 0);
-      +     --colors-buttons: #666666;
-      +     --colors-buttons-light: #777777;
-      +     --colors-buttons-light-white: #ffffff;
-      +     --colors-buttons-moon-white: white;
-      +     --colors-buttons-moon-inverse: #888888;
-      +     --colors-buttons-moon-inverse-white: black
+      +   --colors: #555555;
+      +   --colors-black: rgb(0, 0, 0);
+      +   --colors-buttons: #666666;
+      +   --colors-buttons-light: #777777;
+      +   --colors-buttons-light-white: #ffffff;
+      +   --colors-buttons-moon-white: white;
+      +   --colors-buttons-moon-inverse: #888888;
+      +   --colors-buttons-moon-inverse-white: black
       + }
       +
       + .card-body {
-      +     --colors: #555555;
-      +     --colors-black: rgb(0, 0, 0);
-      +     --colors-buttons: #666666;
-      +     --colors-buttons-light: #777777;
-      +     --colors-buttons-light-white: #ffffff;
-      +     --colors-buttons-moon-white: white;
-      +     --colors-buttons-moon-inverse: #888888;
-      +     --colors-buttons-moon-inverse-white: black
+      +   --colors: #555555;
+      +   --colors-black: rgb(0, 0, 0);
+      +   --colors-buttons: #666666;
+      +   --colors-buttons-light: #777777;
+      +   --colors-buttons-light-white: #ffffff;
+      +   --colors-buttons-moon-white: white;
+      +   --colors-buttons-moon-inverse: #888888;
+      +   --colors-buttons-moon-inverse-white: black
       + }
 
     "
