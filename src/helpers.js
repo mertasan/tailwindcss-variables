@@ -2,8 +2,6 @@ const startsWith = require('lodash/startsWith')
 const mapValues = require('lodash/mapValues')
 const isPlainObject = require('lodash/isPlainObject')
 const includes = require('lodash/includes')
-const split = require('lodash/split')
-const trim = require('lodash/trim')
 
 const withFallback = (variable, startsWithVar = false) => {
   if (includes(variable, ',')) {
