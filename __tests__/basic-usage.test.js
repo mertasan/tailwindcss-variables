@@ -43,6 +43,11 @@ test('basic usage', async () => {
       +     --sizes-medium: 2rem;
       +     --sizes-large: 100%
       + }
+      +
+      + .container {
+      +     --colors-primary: red;
+      +     --colors-secondary: var(--colors-primary)
+      + }
 
     "
   `)

@@ -59,21 +59,26 @@ test('css selectors', async () => {
       +     --colors-black: rgb(0, 0, 0);
       +     --colors-white: #ffffff
       + }
+      +
       + input[type='text'] {
       +     --colors-primary: red;
       +     --colors-secondary: yellow
       + }
+      +
       + .container {
       +     --sizes-medium: 3rem
       + }
+      +
       + .container.card {
       +     --sizes-medium: 4rem
       + }
+      +
       + *,
       + *::before,
       + *::after {
       +     --hello-world: 100%
       + }
+      +
       + [type='button'],
       + [type='reset'] {
       +     --colors-primary: blue;

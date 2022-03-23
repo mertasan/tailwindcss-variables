@@ -12,12 +12,11 @@ on:
     - cron: '0 0 * * *'
 
 jobs:
-  build:
+  tests:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
-        node-version: [12.x, 15.x]
+        node-version: [12, 14, 16]
 
     steps:
       - uses: actions/checkout@v2
@@ -28,16 +27,21 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Use cached node_modules
-        id: cache
+        id: cache-tests
         uses: actions/cache@v2
         with:
           path: node_modules
-          key: nodeModules-${{ hashFiles('**/package-lock.json') }}-${{ matrix.node-version }}
+          key: nodeModules-${{ hashFiles('**/package-lock.json') }}-${{ matrix.node-version }}-tests
           restore-keys: |
             nodeModules-
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
+        if: steps.cache-tests.outputs.cache-hit != 'true'
         run: npm install
+        env:
+          CI: true
+
+      - name: Lint
+        run: npm run lint
         env:
           CI: true
 
