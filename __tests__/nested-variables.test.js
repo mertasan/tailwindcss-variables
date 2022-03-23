@@ -59,7 +59,7 @@ test('nested variables', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --colors: #111111;
       +   --colors-black: #000000;

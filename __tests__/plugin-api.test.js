@@ -20,7 +20,7 @@ test('simple example with dark mode set to `media`', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --prefix2-colors-primary: indigo;
       +   --prefix2-colors-secondary: white;
@@ -35,15 +35,15 @@ test('simple example with dark mode set to `media`', async () => {
       +
       + @media (prefers-color-scheme: dark) {
       +   :root {
-      +     --prefix2-colors-primary: yellow;
-      +     --prefix2-colors-secondary: white;
-      +     --prefix2-colors-warning: pink
+      +   --prefix2-colors-primary: yellow;
+      +   --prefix2-colors-secondary: white;
+      +   --prefix2-colors-warning: pink
       +   }
       +
       +   .admin {
-      +     --prefix2-colors-primary: blue;
-      +     --prefix2-colors-secondary: green;
-      +     --prefix2-colors-warning: gray
+      +   --prefix2-colors-primary: blue;
+      +   --prefix2-colors-secondary: green;
+      +   --prefix2-colors-warning: gray
       +   }
       + }
 
@@ -71,7 +71,7 @@ test('simple example with dark mode set to `class`', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --prefix2-colors-primary: indigo;
       +   --prefix2-colors-secondary: white;
@@ -111,7 +111,7 @@ test('with-components example with dark mode set to `class`', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --prefix2-colors-primary: black;
       +   --prefix2-colors-secondary: white;
@@ -163,7 +163,7 @@ test('with-components example with dark mode set to `media`', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --prefix2-colors-primary: black;
       +   --prefix2-colors-secondary: white;
@@ -178,15 +178,15 @@ test('with-components example with dark mode set to `media`', async () => {
       +
       + @media (prefers-color-scheme: dark) {
       +   :root {
-      +     --prefix2-colors-primary: yellow;
-      +     --prefix2-colors-secondary: white;
-      +     --prefix2-colors-warning: pink;
+      +   --prefix2-colors-primary: yellow;
+      +   --prefix2-colors-secondary: white;
+      +   --prefix2-colors-warning: pink;
       +   }
       +
       +   .admin {
-      +     --prefix2-colors-primary: blue;
-      +     --prefix2-colors-secondary: green;
-      +     --prefix2-colors-warning: gray;
+      +   --prefix2-colors-primary: blue;
+      +   --prefix2-colors-secondary: green;
+      +   --prefix2-colors-warning: gray;
       +   }
       + }
       +
@@ -217,7 +217,7 @@ test('with-components-null-selector example with dark mode set to `class`', asyn
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --prefix2-colors-primary: black;
       +   --prefix2-colors-secondary: white;
@@ -269,7 +269,7 @@ test('with-components-null-selector example with dark mode set to `media`', asyn
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --prefix2-colors-primary: black;
       +   --prefix2-colors-secondary: white;
@@ -284,15 +284,15 @@ test('with-components-null-selector example with dark mode set to `media`', asyn
       +
       + @media (prefers-color-scheme: dark) {
       +   :root {
-      +     --prefix2-colors-primary: yellow;
-      +     --prefix2-colors-secondary: white;
-      +     --prefix2-colors-warning: pink;
+      +   --prefix2-colors-primary: yellow;
+      +   --prefix2-colors-secondary: white;
+      +   --prefix2-colors-warning: pink;
       +   }
       +
       +   .admin {
-      +     --prefix2-colors-primary: blue;
-      +     --prefix2-colors-secondary: green;
-      +     --prefix2-colors-warning: gray;
+      +   --prefix2-colors-primary: blue;
+      +   --prefix2-colors-secondary: green;
+      +   --prefix2-colors-warning: gray;
       +   }
       + }
       +
@@ -323,7 +323,7 @@ test('with-themes example with dark mode set to `media`', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --prefix2-colors-primary: black;
       +   --prefix2-colors-secondary: white;
@@ -338,15 +338,15 @@ test('with-themes example with dark mode set to `media`', async () => {
       +
       + @media (prefers-color-scheme: dark) {
       +   :root {
-      +     --prefix2-colors-primary: yellow;
-      +     --prefix2-colors-secondary: red;
-      +     --prefix2-colors-warning: purple
+      +   --prefix2-colors-primary: yellow;
+      +   --prefix2-colors-secondary: red;
+      +   --prefix2-colors-warning: purple
       +   }
       +
       +   .admin {
-      +     --prefix2-colors-primary: green;
-      +     --prefix2-colors-secondary: orange;
-      +     --prefix2-colors-warning: teal
+      +   --prefix2-colors-primary: green;
+      +   --prefix2-colors-secondary: orange;
+      +   --prefix2-colors-warning: teal
       +   }
       + }
 
@@ -374,7 +374,7 @@ test('with-themes example with dark mode set to `class`', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --prefix2-colors-primary: indigo;
       +   --prefix2-colors-secondary: white;
@@ -423,7 +423,7 @@ test('advanced example with dark mode set to `media`', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --prefix2-colors-primary: indigo;
       +   --prefix2-colors-secondary: white;
@@ -438,15 +438,15 @@ test('advanced example with dark mode set to `media`', async () => {
       +
       + @media (prefers-color-scheme: dark) {
       +   :root {
-      +     --prefix2-colors-primary: yellow;
-      +     --prefix2-colors-secondary: red;
-      +     --prefix2-colors-warning: purple;
+      +   --prefix2-colors-primary: yellow;
+      +   --prefix2-colors-secondary: red;
+      +   --prefix2-colors-warning: purple;
       +   }
       +
       +   .admin {
-      +     --prefix2-colors-primary: green;
-      +     --prefix2-colors-secondary: orange;
-      +     --prefix2-colors-warning: teal;
+      +   --prefix2-colors-primary: green;
+      +   --prefix2-colors-secondary: orange;
+      +   --prefix2-colors-warning: teal;
       +   }
       + }
       +
@@ -486,7 +486,7 @@ test('advanced example with dark mode set to `class`', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --prefix2-colors-primary: indigo;
       +   --prefix2-colors-secondary: white;

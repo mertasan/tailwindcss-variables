@@ -54,7 +54,7 @@ test('css selectors', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + #app {
       +   --colors-black: rgb(0, 0, 0);
       +   --colors-white: #ffffff

@@ -35,7 +35,7 @@ test('basic usage', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --colors-black: rgb(0, 0, 0);
       +   --colors-white: #ffffff;

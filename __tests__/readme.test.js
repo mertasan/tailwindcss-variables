@@ -38,7 +38,7 @@ test('basic usage', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --sizes-small: 1rem;
       +   --sizes-button-size: 2rem;
@@ -105,7 +105,7 @@ test('dark mode with `class`', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --sizes-small: 1rem;
       +   --colors-red-50: red
@@ -184,7 +184,7 @@ test('dark mode with `class` and custom options', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --sizes-small: 1rem;
       +   --colors-red-50: red
@@ -258,7 +258,7 @@ test('dark mode with `media`', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --sizes-small: 1rem;
       +   --colors-red-50: red
@@ -270,11 +270,11 @@ test('dark mode with `media`', async () => {
       +
       + @media (prefers-color-scheme: dark) {
       +   :root {
-      +     --colors-red-50: blue
+      +   --colors-red-50: blue
       +   }
       +
       +   .container {
-      +     --colors-red-50: green
+      +   --colors-red-50: green
       +   }
       + }
 
@@ -321,7 +321,7 @@ test('variable prefix', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --admin-sizes-small: 1rem;
       +   --admin-sizes-button-size: 2rem;
@@ -366,7 +366,7 @@ test('variables with nested objects', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --sizes-small: 1rem;
       +   --sizes-admin-buttons-colors-red-500: #ff0000;
@@ -411,7 +411,7 @@ test('naming conventions for variable keys', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --colors-hello-world: 100%;
       +   --colors-underscore-to-dash: 100%;
@@ -470,7 +470,7 @@ test('example api', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --myplugin-colors-primary: black;
       +   --myplugin-colors-secondary: white;
@@ -547,7 +547,7 @@ test('example api with components helper', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --myplugin-colors-primary: black;
       +   --myplugin-colors-secondary: white;
@@ -590,7 +590,7 @@ test('detailed example api', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --forms-colors-primary: indigo;
       +   --forms-colors-secondary: white;

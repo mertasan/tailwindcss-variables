@@ -58,7 +58,7 @@ test('extendColors', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --colors-white: #ffffff;
       +   --colors-red-400: rgba(254,0,0,0.5);
@@ -211,7 +211,7 @@ test('extendColors with forceRGB', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --colors-white: 255,255,255;
       +   --colors-red-400: 254,0,0;
@@ -341,7 +341,7 @@ test('extendColors (readme)', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --colors-blue: #0065ff;
       +   --colors-red: #ff0000;
@@ -443,7 +443,7 @@ test('extendColors with forceRGB (readme)', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --colors-blue: 0,101,255;
       +   --colors-red: 255,0,0;

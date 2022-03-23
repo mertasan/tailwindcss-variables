@@ -27,7 +27,7 @@ test('issue 23', async () => {
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --body-color: #000;
       +   --body-bg: #fff;

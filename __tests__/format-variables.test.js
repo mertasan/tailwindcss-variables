@@ -35,7 +35,7 @@ test('format variables [special characters must be removed from variable names]'
   ).toMatchInlineSnapshot(`
     "
 
-
+      
       + :root {
       +   --colors-hello-world: 100%;
       +   --colors-underscore-to-dash: 100%;
