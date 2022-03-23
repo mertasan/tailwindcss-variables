@@ -28,15 +28,15 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Use cached node_modules
-        id: cache
+        id: cache-build
         uses: actions/cache@v2
         with:
           path: node_modules
-          key: nodeModules-${{ hashFiles('**/package-lock.json') }}-${{ matrix.node-version }}
+          key: nodeModules-${{ hashFiles('**/package-lock.json') }}-${{ matrix.node-version }}-build
           restore-keys: |
             nodeModules-
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
+        if: steps.cache-build.outputs.cache-hit != 'true'
         run: npm install
         env:
           CI: true
