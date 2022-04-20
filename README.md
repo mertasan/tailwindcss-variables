@@ -1151,7 +1151,7 @@ module.exports = {
 }
 ```
 
-Based on these examples, it won't be necessary to publish extra .css flies for your plugin styles and also, it won't be necessary for the users to sort out your style files to compile your packages.
+Based on these examples, it won't be necessary to publish extra .css files for your plugin styles and also, it won't be necessary for the users to sort out your style files to compile your packages.
 
 
 
