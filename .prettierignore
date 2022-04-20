@@ -16,7 +16,6 @@ __tests__/*
 !__tests__/util/*
 examples/*
 !examples/**/*.config.js
-.travis.yml
 .run
 .editorconfig
 cache/

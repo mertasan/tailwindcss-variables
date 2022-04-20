@@ -1165,7 +1165,6 @@ I have prepared examples on both helping with the usage and for testing all of t
 | [Examples](https://github.com/mertasan/tailwindcss-variables/tree/master/examples/examples) | ![Examples](https://img.shields.io/github/workflow/status/mertasan/tailwindcss-variables/build?label=examples)	|
 | [Plugin API Examples](https://github.com/mertasan/tailwindcss-variables/tree/master/examples/api-examples) | ![API Examples](https://img.shields.io/github/workflow/status/mertasan/tailwindcss-variables/build?label=api-examples) |
 | [Tests](https://github.com/mertasan/tailwindcss-variables/tree/master/__tests__) | ![Tests](https://img.shields.io/github/workflow/status/mertasan/tailwindcss-variables/tests?label=tests) |
-| [Travis CI](https://travis-ci.com/mertasan/tailwindcss-variables) | ![Tests](https://img.shields.io/travis/mertasan/tailwindcss-variables/master.svg?label=travis-ci) |
 
 > Documents on examples and tests are re-organized on pull-request, push, release and etc. events.
 > For this reason, file paths like `require(../index)` have been used on the example files. If you were to use the examples, you need to change the relevant lines as `require('@mertasan/tailwindcss-variables')`.
