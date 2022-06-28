@@ -334,15 +334,18 @@ test('colorVariable with gradient color stops', async () => {
       + }
       + .from-red-400 {
       +   --tw-gradient-from: rgb(var(--colors-red-400-rgb));
-      +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-400-rgb), 0))
+      +   --tw-gradient-to: rgba(var(--colors-red-400-rgb), 0);
+      +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
       + }
       + .from-red-500 {
       +   --tw-gradient-from: rgb(var(--colors-red-500-rgb));
-      +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-500-rgb), 0))
+      +   --tw-gradient-to: rgba(var(--colors-red-500-rgb), 0);
+      +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
       + }
       + .from-red-600 {
       +   --tw-gradient-from: rgb(var(--colors-red-600-rgb));
-      +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-600-rgb), 0))
+      +   --tw-gradient-to: rgba(var(--colors-red-600-rgb), 0);
+      +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
       + }
       + .text-opacity-50 {
       +   --tw-text-opacity: 0.5
@@ -400,15 +403,18 @@ test('colorVariable with gradient color stops (forceRGB)', async () => {
       + }
       + .from-red-400 {
       +   --tw-gradient-from: rgb(var(--colors-red-400));
-      +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-400), 0))
+      +   --tw-gradient-to: rgba(var(--colors-red-400), 0);
+      +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
       + }
       + .from-red-500 {
       +   --tw-gradient-from: rgb(var(--colors-red-500));
-      +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-500), 0))
+      +   --tw-gradient-to: rgba(var(--colors-red-500), 0);
+      +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
       + }
       + .from-red-600 {
       +   --tw-gradient-from: rgb(var(--colors-red-600));
-      +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--colors-red-600), 0))
+      +   --tw-gradient-to: rgba(var(--colors-red-600), 0);
+      +   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
       + }
       + .text-opacity-50 {
       +   --tw-text-opacity: 0.5
