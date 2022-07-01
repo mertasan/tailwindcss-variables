@@ -11,8 +11,8 @@ const { convertColorVariables } = require('./helpers')
  */
 
 module.exports = plugin.withOptions(
-  function(options) {
-    return function({ addBase, addComponents, theme, config }) {
+  function (options) {
+    return function ({ addBase, addComponents, theme, config }) {
       let darkMode = config('darkMode')
       let variables = theme('variables', {})
       let darkVariables = theme('darkVariables', {})
@@ -36,5 +36,5 @@ module.exports = plugin.withOptions(
           : {},
       },
     },
-  }),
+  })
 )
