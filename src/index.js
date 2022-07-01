@@ -2,6 +2,7 @@ const plugin = require('tailwindcss/plugin')
 const isEmpty = require('lodash/isEmpty')
 const api = require('./pluginApi')
 const has = require('lodash/has')
+const get = require('lodash/get')
 const { convertColorVariables } = require('./helpers')
 
 /**
@@ -10,17 +11,20 @@ const { convertColorVariables } = require('./helpers')
  */
 
 module.exports = plugin.withOptions(
-  function (options) {
-    return function ({ addBase, theme, config }) {
+  function(options) {
+    return function({ addBase, addComponents, theme, config }) {
       let darkMode = config('darkMode')
       let variables = theme('variables', {})
       let darkVariables = theme('darkVariables', {})
+      let toBase = get(options, 'toBase', true)
       if (!isEmpty(variables)) {
-        addBase(api.variables(variables, options))
+        let getVariables = api.variables(variables, options)
+        toBase ? addBase(getVariables) : addComponents(getVariables)
       }
 
       if (!isEmpty(darkVariables) && (darkMode === 'class' || darkMode === 'media')) {
-        addBase(api.darkVariables(darkVariables, options, darkMode))
+        let getDarkVariables = api.darkVariables(darkVariables, options, darkMode)
+        toBase ? addBase(getDarkVariables) : addComponents(getDarkVariables)
       }
     }
   },
@@ -32,5 +36,5 @@ module.exports = plugin.withOptions(
           : {},
       },
     },
-  })
+  }),
 )
