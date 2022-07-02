@@ -879,6 +879,23 @@ module.exports = {
 }
 ```
 
+### toBase
+
+By default, variables are added to `@tailwind base;` styles.
+If you don't include `@tailwind base;` styles in your `css`, set the `toBase` option to `false`. In this case, the variables will be added to the `@tailwind components;` styles.
+
+```js
+//...
+plugins: [
+  require('@mertasan/tailwindcss-variables')({
+    toBase: false, // default: true
+  })
+]
+//...
+```
+
+- [tailwindcss.com - Functions and directives](https://tailwindcss.com/docs/functions-and-directives#tailwind)
+
 ## API example for your own plugins
 
 - [Detailed Explanation](#gerçek-kullanım-örneği-detaylı)

@@ -879,6 +879,24 @@ module.exports = {
 }
 ```
 
+### toBase
+
+Varsayılan olarak, değişkenler `@tailwind base;` stillerine eklenir.
+Eğer projenizin `css` dosyasına `@tailwind base;` stillerini dahil etmiyorsanız, `toBase` seçeneğini `false` durumuna getirebilirsiniz.
+Bu durumda değişkenler `@tailwind components;` stillerine dahil edilecektir.
+
+```js
+//...
+plugins: [
+  require('@mertasan/tailwindcss-variables')({
+    toBase: false, // varsayılan: true
+  })
+]
+//...
+```
+
+- [tailwindcss.com - Functions and directives](https://tailwindcss.com/docs/functions-and-directives#tailwind)
+
 
 ## Kendi eklentileriniz için API örneği
 
