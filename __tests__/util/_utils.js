@@ -3,24 +3,30 @@ const snapshotDiff = require('snapshot-diff')
 const postcss = require('postcss')
 const path = require('path')
 const fs = require('fs')
-const atImport = require("postcss-import")
+const atImport = require('postcss-import')
 
 module.exports = (contentFile) => {
   let utils = {}
 
-  utils.run = function(config = {}) {
+  utils.run = function(config = {}, toBase = true) {
     let { currentTestName } = expect.getState()
     let filename = currentTestName + '.test.css'
     if (fs.existsSync(path.resolve(__dirname, '../' + filename))) {
       return this.runFromFile(filename, config)
     }
 
-    return this.runInline(config)
+    return this.runInline(config, toBase)
   }
 
-  utils.runInline = (config) => {
+  utils.runInline = (config, toBase) => {
+    let styles
+    if (toBase) {
+      styles = ['@tailwind base;', '@tailwind components;', '@tailwind utilities;']
+    } else {
+      styles = ['@tailwind components;', '@tailwind utilities;']
+    }
     return postcss([tailwind({ corePlugins: [], ...config })])
-      .process(['@tailwind base;', '@tailwind components;', '@tailwind utilities;'].join('\n'), {
+      .process(styles.join('\n'), {
         from: undefined,
       })
       .then((result) => result.css)
@@ -37,8 +43,8 @@ module.exports = (contentFile) => {
       .then((result) => result.css)
   }
 
-  utils.diffOnly = async function(options = {}) {
-    const [before, after] = await Promise.all([utils.run(), utils.run(options)])
+  utils.diffOnly = async function(options = {}, toBase = true) {
+    const [before, after] = await Promise.all([utils.run({}, toBase), utils.run(options, toBase)])
 
     return `\n\n${snapshotDiff(before, after, {
       aAnnotation: '__REMOVE_ME__',
