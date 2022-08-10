@@ -36,7 +36,6 @@ jobs:
             nodeModules-
 
       - name: Install dependencies
-        if: steps.cache-tests.outputs.cache-hit != 'true'
         run: npm install
         env:
           CI: true
