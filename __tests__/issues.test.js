@@ -114,3 +114,42 @@ test('issue 25', async () => {
     "
   `)
 })
+
+test('issue 37', async () => {
+  expect(
+    await utils.diffOnly({
+      content: [utils.content()],
+      darkMode: 'class',
+      theme: {
+        variables: {
+          DEFAULT: {
+            ONE: 'red',
+            TWO: {
+              DEFAULT: 'black',
+              FOObar: 'green',
+              THREE: {
+                FOUR: 'white',
+                five: 'blue',
+              },
+            },
+          },
+        },
+      },
+
+      plugins: [tailwindcssVariables()],
+    })
+  ).toMatchInlineSnapshot(`
+    "
+
+      
+      + :root {
+      +   --ONE: red;
+      +   --TWO: black;
+      +   --TWO-FOObar: green;
+      +   --TWO-THREE-FOUR: white;
+      +   --TWO-THREE-five: blue
+      + }
+
+    "
+  `)
+})

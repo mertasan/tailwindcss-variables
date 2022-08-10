@@ -42,10 +42,10 @@ const formatVariableKey = (key) => {
   if (key === 'DEFAULT') {
     return ''
   }
-  key = key.toLowerCase()
+  key = key.toString()
   return key
     .replace(/_/g, '-')
-    .replace(/[^a-z0-9\-]+/gi, '')
+    .replace(/[^a-zA-Z0-9\-]+/gi, '')
     .replace('---', '--')
 }
 
