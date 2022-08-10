@@ -28,7 +28,7 @@ jobs:
 
       - name: Use cached node_modules
         id: cache-tests
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: node_modules
           key: nodeModules-${{ hashFiles('./package-lock.json') }}-${{ matrix.node-version }}-tests
@@ -36,6 +36,7 @@ jobs:
             nodeModules-
 
       - name: Install dependencies
+        if: steps.cache-tests.outputs.cache-hit != 'true'
         run: npm install
         env:
           CI: true
