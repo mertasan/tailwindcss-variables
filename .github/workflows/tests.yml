@@ -31,7 +31,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: node_modules
-          key: nodeModules-${{ hashFiles('**/package-lock.json') }}-${{ matrix.node-version }}-tests
+          key: nodeModules-${{ hashFiles('./package-lock.json') }}-${{ matrix.node-version }}-tests
           restore-keys: |
             nodeModules-
 
