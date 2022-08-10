@@ -19,24 +19,30 @@ jobs:
         node-version: [12, 14, 16]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Use Node ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Get npm cache directory
+        id: npm-cache-dir
+        run: |
+          echo "::set-output name=dir::$(npm config get cache)"
+
       - name: Use cached node_modules
-        id: cache-tests
+        id: npm-cache
         uses: actions/cache@v3
         with:
-          path: node_modules
-          key: nodeModules-${{ hashFiles('./package-lock.json') }}-${{ matrix.node-version }}-tests
+          path: ${{ steps.npm-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ matrix.node-version }-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            nodeModules-
+            ${{ runner.os }}-node-${{ matrix.node-version }-
+            ${{ runner.os }}-node-
 
       - name: Install dependencies
-        if: steps.cache-tests.outputs.cache-hit != 'true'
+        if: steps.npm-cache.outputs.cache-hit != 'true'
         run: npm install
         env:
           CI: true
