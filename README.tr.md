@@ -60,7 +60,7 @@ module.exports = {
         red: {
             50: 'var(--colors-red-50)'
         }
-    }
+    },
     variables: {
       DEFAULT: {
         sizes: {
@@ -366,7 +366,7 @@ module.exports = {
   },
   plugins: [
     require('@mertasan/tailwindcss-variables')({
-      variablePrefix: '--admin'
+      variablePrefix: 'admin'
     })
   ]
 }
@@ -439,14 +439,15 @@ Objelerde alt tire (_) kullanımı mümkün olduğundan, alt tireler de orta çi
 
 Rule:
 ````jsregexp
-/[^a-z0-9\-]+/gi
+/[^a-zA-Z0-9-.]+/gi
 ````
 
-| öncesi        | sonrası |
-|--------------	|--------	|
-| hello[$&+,:;=?@#'<>.-^*()%!]world   | hello-world                     	|
-| hello__world                       	| hello-world   	                  |
-| css_variables_for-tailwindcss   	  | css-variables-for-tailwindcss   	|
+| öncesi                               | sonrası                           |
+|--------------------------------------|-----------------------------------|
+| hello[$&+,:;=?@#'<>-^*()%!]WORLD     | hello-WORLD                     	 |
+| hello__world                       	 | hello-world   	                   |
+| css_variables_for-tailwindcss   	    | css-variables-for-tailwindcss   	 |
+| foo-bar-1.0   	                      | foo-bar-1\\.0   	                 |
 
 İşte bir örnek:
 
@@ -458,14 +459,20 @@ module.exports = {
     variables: {
       DEFAULT: {
         colors: {
-          'hello[$&+,:;=?@#|\'<>.-^*()%!]world': '100%',
+          'hello[$&+,:;=?@#|\'<>-^*()%!]WORLD': '100%',
           underscore_to_dash: '100%',
           'underscore_to_dash-with-dash': '100%',
           auto_dash: '100%',
         },
+        sizes: {
+          1.5: '1rem',
+          xl: {
+            '3.0': '2rem',
+          },
+        },
       },
       '[type=\'button\']': {
-        'hello[$&+,:;=?@#|\'<>.-^*()%!]world': '100%',
+        'hello[$&+,:;=?@#|\'<>-^*()%!]WORLD': '100%',
         underscore_to_dash: '100%',
         'underscore_to_dash-with-dash': '100%',
         auto_dash: '100%',
@@ -485,14 +492,16 @@ module.exports = {
 
 ```css
 :root {
-  --colors-hello-world: 100%;
+  --colors-hello-WORLD: 100%;
   --colors-underscore-to-dash: 100%;
   --colors-underscore-to-dash-with-dash: 100%;
-  --colors-auto-dash: 100%
+  --colors-auto-dash: 100%;
+  --sizes-1\.5: 1rem;
+  --sizes-xl-3\.0: 2rem
 }
 
 [type='button'] {
-  --hello-world: 100%;
+  --hello-WORLD: 100%;
   --underscore-to-dash: 100%;
   --underscore-to-dash-with-dash: 100%;
   --auto-dash: 100%;
@@ -908,7 +917,7 @@ const plugin = require('tailwindcss/plugin')
 const variablesApi = require('@mertasan/tailwindcss-variables/api')
 
 let variableOptions = {
-  variablePrefix: '--myplugin'
+  variablePrefix: 'myplugin'
 }
 
 const pluginVariables = {
@@ -970,7 +979,7 @@ const plugin = require('tailwindcss/plugin')
 const variablesApi = require('@mertasan/tailwindcss-variables/api')
 
 let variableOptions = {
-  variablePrefix: '--myplugin'
+  variablePrefix: 'myplugin'
 }
 
 const pluginVariables = {
@@ -1123,7 +1132,7 @@ module.exports = plugin.withOptions(
     return function ({addComponents, theme, config}) {
 
       let variableOptions = {
-        variablePrefix: theme('myPlugin.prefix', '--forms')
+        variablePrefix: theme('myPlugin.prefix', 'forms')
       };
 
       addComponents(variablesApi.variables(_.merge(pluginThemes(theme).themes, {DEFAULT: theme('myPlugin.options', {})}), variableOptions))
