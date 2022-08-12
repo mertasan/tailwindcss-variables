@@ -136,7 +136,7 @@ test('issue 37', async () => {
         },
       },
 
-      plugins: [tailwindcssVariables()],
+      plugins: [tailwindcssVariables],
     })
   ).toMatchInlineSnapshot(`
     "
@@ -148,6 +148,45 @@ test('issue 37', async () => {
       +   --TWO-FOObar: green;
       +   --TWO-THREE-FOUR: white;
       +   --TWO-THREE-five: blue
+      + }
+
+    "
+  `)
+})
+
+test('issue 39', async () => {
+  expect(
+    await utils.diffOnly({
+      content: [utils.content()],
+      darkMode: 'class',
+      theme: {
+        variables: {
+          DEFAULT: {
+            sizes: {
+              0.5: '2px',
+              3.5: '14px',
+              6.5: '18px',
+              '1.0': {
+                foo: '1rem',
+                2.4: '2rem',
+              },
+            },
+          },
+        },
+      },
+
+      plugins: [tailwindcssVariables],
+    })
+  ).toMatchInlineSnapshot(`
+    "
+
+      
+      + :root {
+      +   --sizes-0\\\\.5: 2px;
+      +   --sizes-3\\\\.5: 14px;
+      +   --sizes-6\\\\.5: 18px;
+      +   --sizes-1\\\\.0-foo: 1rem;
+      +   --sizes-1\\\\.0-2\\\\.4: 2rem
       + }
 
     "

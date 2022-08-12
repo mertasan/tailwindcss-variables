@@ -9,6 +9,11 @@ module.exports = {
           small: '1rem',
           medium: '2rem',
           large: '3rem',
+          '0.5': '2px',
+          '1.0': {
+            foo: '1rem',
+            2.4: '2rem',
+          },
         },
         colors: {
           red: {
