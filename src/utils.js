@@ -45,7 +45,8 @@ const formatVariableKey = (key) => {
   key = key.toString()
   return key
     .replace(/_/g, '-')
-    .replace(/[^a-zA-Z0-9\-]+/gi, '')
+    .replace(/[^a-zA-Z0-9-.]+/gi, '')
+    .replace(/\./gi, '\\.')
     .replace('---', '--')
 }
 
