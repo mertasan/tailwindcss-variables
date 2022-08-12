@@ -376,15 +376,22 @@ test('naming conventions for variable keys', async () => {
         variables: {
           DEFAULT: {
             colors: {
-              "hello[$&+,:;=?@#|'<>.-^*()%!]world": '100%',
+              "hello[$&+,:;=?@#|'<>-^*()%!]WORLD": '100%',
               underscore_to_dash: '100%',
               'underscore_to_dash-with-dash': '100%',
               auto_dash: '100%',
             },
+
+            sizes: {
+              1.5: '1rem',
+              xl: {
+                '3.0': '2rem',
+              },
+            },
           },
 
           "[type='button']": {
-            "hello[$&+,:;=?@#|'<>.-^*()%!]world": '100%',
+            "hello[$&+,:;=?@#|'<>-^*()%!]world": '100%',
             underscore_to_dash: '100%',
             'underscore_to_dash-with-dash': '100%',
             auto_dash: '100%',
@@ -402,10 +409,12 @@ test('naming conventions for variable keys', async () => {
 
       
       + :root {
-      +   --colors-hello-world: 100%;
+      +   --colors-hello-WORLD: 100%;
       +   --colors-underscore-to-dash: 100%;
       +   --colors-underscore-to-dash-with-dash: 100%;
-      +   --colors-auto-dash: 100%
+      +   --colors-auto-dash: 100%;
+      +   --sizes-1\\\\.5: 1rem;
+      +   --sizes-xl-3\\\\.0: 2rem
       + }
       + [type='button'] {
       +   --hello-world: 100%;

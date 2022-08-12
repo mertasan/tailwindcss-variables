@@ -23,7 +23,7 @@ test('only dark variables with default options and `class` mode', async () => {
         },
       },
 
-      plugins: [tailwindcssVariables()],
+      plugins: [tailwindcssVariables],
     })
   ).toMatchInlineSnapshot(`
     "
@@ -61,7 +61,7 @@ test('only dark variables with default options and `media` mode', async () => {
         },
       },
 
-      plugins: [tailwindcssVariables()],
+      plugins: [tailwindcssVariables],
     })
   ).toMatchInlineSnapshot(`
     "
@@ -190,7 +190,7 @@ test('only dark variables with custom options and `class` mode', async () => {
 
       plugins: [
         tailwindcssVariables({
-          variablePrefix: '.my-prefix',
+          variablePrefix: 'my-prefix',
           darkSelector: '.custom-dark-selector',
           darkToRoot: true,
         }),
@@ -234,7 +234,7 @@ test('only dark variables with variablePrefix and `media` mode', async () => {
 
       plugins: [
         tailwindcssVariables({
-          variablePrefix: '.my-prefix',
+          variablePrefix: 'my-prefix',
         }),
       ],
     })
@@ -290,7 +290,7 @@ test('variables and dark variables with default options and `class` mode', async
         },
       },
 
-      plugins: [tailwindcssVariables()],
+      plugins: [tailwindcssVariables],
     })
   ).toMatchInlineSnapshot(`
     "
@@ -348,7 +348,7 @@ test('variables and dark variables with default options and `media` mode', async
         },
       },
 
-      plugins: [tailwindcssVariables()],
+      plugins: [tailwindcssVariables],
     })
   ).toMatchInlineSnapshot(`
     "
@@ -534,7 +534,7 @@ test('variables and dark variables with custom options and `class` mode', async 
 
       plugins: [
         tailwindcssVariables({
-          variablePrefix: '.my-prefix',
+          variablePrefix: 'my-prefix',
           darkSelector: '.custom-dark-selector',
           darkToRoot: true,
         }),
