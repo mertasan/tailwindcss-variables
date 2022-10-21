@@ -1200,7 +1200,7 @@ doğru çalıştığından emin olmak için örnekler hazırladım.
 
 | Kaynak | Durum |
 | --- | --- |
-| [Örnekler](https://github.com/mertasan/tailwindcss-variables/tree/master/examples/examples) | ![Examples](https://img.shields.io/github/workflow/status/mertasan/tailwindcss-variables/build?label=examples)	|
+| [Örnekler](https://github.com/mertasan/tailwindcss-variables/tree/master/examples) | ![Examples](https://img.shields.io/github/workflow/status/mertasan/tailwindcss-variables/build?label=examples)	|
 | [Plugin API örnekleri](https://github.com/mertasan/tailwindcss-variables/tree/master/examples/api-examples) | ![API Examples](https://img.shields.io/github/workflow/status/mertasan/tailwindcss-variables/build?label=api-examples) |
 | [Testler](https://github.com/mertasan/tailwindcss-variables/tree/master/__tests__) | ![Tests](https://img.shields.io/github/workflow/status/mertasan/tailwindcss-variables/tests?label=tests) |
 
