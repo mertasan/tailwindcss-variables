@@ -1198,11 +1198,11 @@ Hem kullanım şekli konusunda yardımcı olması için, hem de sunulan tüm öz
 doğru çalıştığından emin olmak için örnekler hazırladım.
 
 
-| Kaynak | Durum |
-| --- | --- |
-| [Örnekler](https://github.com/mertasan/tailwindcss-variables/tree/master/examples) | ![Examples](https://img.shields.io/github/workflow/status/mertasan/tailwindcss-variables/build?label=examples)	|
-| [Plugin API örnekleri](https://github.com/mertasan/tailwindcss-variables/tree/master/examples/api-examples) | ![API Examples](https://img.shields.io/github/workflow/status/mertasan/tailwindcss-variables/build?label=api-examples) |
-| [Testler](https://github.com/mertasan/tailwindcss-variables/tree/master/__tests__) | ![Tests](https://img.shields.io/github/workflow/status/mertasan/tailwindcss-variables/tests?label=tests) |
+| Kaynak                                                                                                      | Durum                                                                                                                                                    |
+|-------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Örnekler](https://github.com/mertasan/tailwindcss-variables/tree/master/examples)                          | ![Örnekler](https://img.shields.io/github/actions/workflow/status/mertasan/tailwindcss-variables/build.yml?branch=master&label=examples)	                |
+| [Plugin API örnekleri](https://github.com/mertasan/tailwindcss-variables/tree/master/examples/api-examples) | ![Plugin API örnekleri](https://img.shields.io/github/actions/workflow/status/mertasan/tailwindcss-variables/build.yml?branch=master&label=api-examples) |
+| [Testler](https://github.com/mertasan/tailwindcss-variables/tree/master/__tests__)                          | ![Testler](https://img.shields.io/github/workflow/status/mertasan/tailwindcss-variables/tests?label=tests)                                               |
 
 > Örneklere ve testlere ait dosyalar pull-request, push, release vb. etkinliklerde otomatik olarak yeniden
 > derlenmektedir. Bu nedenle, örnek dosyalarda `require(../index)` gibi dosya yolları kullanıldı.

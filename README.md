@@ -1189,15 +1189,14 @@ Based on these examples, it won't be necessary to publish extra .css files for y
 I have prepared examples on both helping with the usage and for testing all of the features that's being offered to make sure it works just fine.
 
 
-| Source | State |
-| --- | --- |
-| [Examples](https://github.com/mertasan/tailwindcss-variables/tree/master/examples) | ![Examples](https://img.shields.io/github/workflow/status/mertasan/tailwindcss-variables/build?label=examples)	|
-| [Plugin API Examples](https://github.com/mertasan/tailwindcss-variables/tree/master/examples/api-examples) | ![API Examples](https://img.shields.io/github/workflow/status/mertasan/tailwindcss-variables/build?label=api-examples) |
-| [Tests](https://github.com/mertasan/tailwindcss-variables/tree/master/__tests__) | ![Tests](https://img.shields.io/github/workflow/status/mertasan/tailwindcss-variables/tests?label=tests) |
+| Source                                                                                                     | State                                                                                                                                            |
+|------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Examples](https://github.com/mertasan/tailwindcss-variables/tree/master/examples)                         | ![Examples](https://img.shields.io/github/actions/workflow/status/mertasan/tailwindcss-variables/build.yml?branch=master&label=examples)	        |
+| [Plugin API Examples](https://github.com/mertasan/tailwindcss-variables/tree/master/examples/api-examples) | ![API Examples](https://img.shields.io/github/actions/workflow/status/mertasan/tailwindcss-variables/build.yml?branch=master&label=api-examples) |
+| [Tests](https://github.com/mertasan/tailwindcss-variables/tree/master/__tests__)                           | ![Tests](https://img.shields.io/github/workflow/status/mertasan/tailwindcss-variables/tests?label=tests)                                         |
 
 > Documents on examples and tests are re-organized on pull-request, push, release and etc. events.
 > For this reason, file paths like `require(../index)` have been used on the example files. If you were to use the examples, you need to change the relevant lines as `require('@mertasan/tailwindcss-variables')`.
->
 
 
 ## If You Need Help
