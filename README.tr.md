@@ -1202,7 +1202,7 @@ doğru çalıştığından emin olmak için örnekler hazırladım.
 |-------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Örnekler](https://github.com/mertasan/tailwindcss-variables/tree/master/examples)                          | ![Örnekler](https://img.shields.io/github/actions/workflow/status/mertasan/tailwindcss-variables/build.yml?branch=master&label=examples)	                |
 | [Plugin API örnekleri](https://github.com/mertasan/tailwindcss-variables/tree/master/examples/api-examples) | ![Plugin API örnekleri](https://img.shields.io/github/actions/workflow/status/mertasan/tailwindcss-variables/build.yml?branch=master&label=api-examples) |
-| [Testler](https://github.com/mertasan/tailwindcss-variables/tree/master/__tests__)                          | ![Testler](https://img.shields.io/github/workflow/status/mertasan/tailwindcss-variables/tests?label=tests)                                               |
+| [Testler](https://github.com/mertasan/tailwindcss-variables/tree/master/__tests__)                          | ![Testler](https://img.shields.io/github/actions/workflow/status/mertasan/tailwindcss-variables/tests.yml?branch=master&label=tests)                     |
 
 > Örneklere ve testlere ait dosyalar pull-request, push, release vb. etkinliklerde otomatik olarak yeniden
 > derlenmektedir. Bu nedenle, örnek dosyalarda `require(../index)` gibi dosya yolları kullanıldı.
