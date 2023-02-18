@@ -88,12 +88,11 @@ test('colorVariable helper', async () => {
       +   --sizes-medium: 2rem;
       +   --sizes-large: 100%
       + }
-      + .bg-secondary {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgba(var(--colors-secondary-rgb), var(--tw-bg-opacity))
-      + }
       + .bg-gray {
       +   background-color: var(--colors-gray)
+      + }
+      + .bg-green {
+      +   background-color: var(--colors-green)
       + }
       + .bg-red-400 {
       +   --tw-bg-opacity: 1;
@@ -106,8 +105,9 @@ test('colorVariable helper', async () => {
       + .bg-red-600 {
       +   background-color: var(--colors-red-500)
       + }
-      + .bg-green {
-      +   background-color: var(--colors-green)
+      + .bg-secondary {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgba(var(--colors-secondary-rgb), var(--tw-bg-opacity))
       + }
       + .bg-white {
       +   --tw-bg-opacity: 1;
@@ -120,13 +120,13 @@ test('colorVariable helper', async () => {
       + .bg-opacity-50 {
       +   --tw-bg-opacity: 0.5
       + }
-      + .text-primary {
-      +   --tw-text-opacity: 1;
-      +   color: rgba(var(--colors-primary-rgb), var(--tw-text-opacity))
-      + }
       + .text-blue {
       +   --tw-text-opacity: 1;
       +   color: rgba(var(--colors-blue-rgb), var(--tw-text-opacity))
+      + }
+      + .text-primary {
+      +   --tw-text-opacity: 1;
+      +   color: rgba(var(--colors-primary-rgb), var(--tw-text-opacity))
       + }
       + .text-opacity-50 {
       +   --tw-text-opacity: 0.5

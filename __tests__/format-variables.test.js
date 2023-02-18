@@ -45,13 +45,13 @@ test('format variables [special characters must be removed from variable names]'
 
       
       + :root {
-      +   --colors-hello\\\\.-WORLD: 100%;
+      +   --colors-hello\\.-WORLD: 100%;
       +   --colors-underscore-to-dash: 100%;
       +   --colors-underscore-to-dash-with-dash: 100%;
       +   --colors-auto-dash: 100%;
-      +   --sizes-1\\\\.5: 1rem;
-      +   --sizes-foo2\\\\.0bar3\\\\.0: 2rem;
-      +   --sizes-baz-foo3\\\\.0bar4\\\\.0: 3rem
+      +   --sizes-1\\.5: 1rem;
+      +   --sizes-foo2\\.0bar3\\.0: 2rem;
+      +   --sizes-baz-foo3\\.0bar4\\.0: 3rem
       + }
       + [type='button'] {
       +   --hello-world: 100%;

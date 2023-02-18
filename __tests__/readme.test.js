@@ -413,8 +413,8 @@ test('naming conventions for variable keys', async () => {
       +   --colors-underscore-to-dash: 100%;
       +   --colors-underscore-to-dash-with-dash: 100%;
       +   --colors-auto-dash: 100%;
-      +   --sizes-1\\\\.5: 1rem;
-      +   --sizes-xl-3\\\\.0: 2rem
+      +   --sizes-1\\.5: 1rem;
+      +   --sizes-xl-3\\.0: 2rem
       + }
       + [type='button'] {
       +   --hello-world: 100%;

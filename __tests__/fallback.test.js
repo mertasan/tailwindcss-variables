@@ -59,6 +59,9 @@ test('fallback', async () => {
       + .component .header {
       +   color: var(--colors-red-400 red)
       + }
+      + .bg-gray {
+      +   background-color: var(--header-color, blue)
+      + }
       + .bg-red-400 {
       +   background-color: var(--colors-red-400 red)
       + }
@@ -72,9 +75,6 @@ test('fallback', async () => {
       + .bg-red-700 {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--header-color, black), var(--tw-bg-opacity))
-      + }
-      + .bg-gray {
-      +   background-color: var(--header-color, blue)
       + }
       + .bg-opacity-50 {
       +   --tw-bg-opacity: 0.5
