@@ -58,6 +58,10 @@ test('forceRGB option (enabled)', async () => {
       +   --colors-red: 254,0,0;
       +   --sizes-small: 1rem
       + }
+      + .bg-black {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgb(0 0 0 / var(--tw-bg-opacity))
+      + }
       + .bg-red {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-red), var(--tw-bg-opacity))
@@ -73,12 +77,12 @@ test('forceRGB option (enabled)', async () => {
       + .bg-white {
       +   background-color: var(--colors-white)
       + }
-      + .bg-black {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgb(0 0 0 / var(--tw-bg-opacity))
-      + }
       + .bg-opacity-50 {
       +   --tw-bg-opacity: 0.5
+      + }
+      + .text-black {
+      +   --tw-text-opacity: 1;
+      +   color: rgb(0 0 0 / var(--tw-text-opacity))
       + }
       + .text-red {
       +   --tw-text-opacity: 1;
@@ -94,10 +98,6 @@ test('forceRGB option (enabled)', async () => {
       + }
       + .text-white {
       +   color: var(--colors-white)
-      + }
-      + .text-black {
-      +   --tw-text-opacity: 1;
-      +   color: rgb(0 0 0 / var(--tw-text-opacity))
       + }
       + .text-opacity-50 {
       +   --tw-text-opacity: 0.5
@@ -162,6 +162,10 @@ test('forceRGB option (disabled)', async () => {
       +   --colors-white-rgb: 255,255,255;
       +   --sizes-small: 1rem
       + }
+      + .bg-black {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgb(0 0 0 / var(--tw-bg-opacity))
+      + }
       + .bg-red-400 {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-red-400-rgb), var(--tw-bg-opacity))
@@ -173,12 +177,12 @@ test('forceRGB option (disabled)', async () => {
       + .bg-white {
       +   background-color: var(--colors-white)
       + }
-      + .bg-black {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgb(0 0 0 / var(--tw-bg-opacity))
-      + }
       + .bg-opacity-50 {
       +   --tw-bg-opacity: 0.5
+      + }
+      + .text-black {
+      +   --tw-text-opacity: 1;
+      +   color: rgb(0 0 0 / var(--tw-text-opacity))
       + }
       + .text-red-400 {
       +   --tw-text-opacity: 1;
@@ -190,10 +194,6 @@ test('forceRGB option (disabled)', async () => {
       + }
       + .text-white {
       +   color: var(--colors-white)
-      + }
-      + .text-black {
-      +   --tw-text-opacity: 1;
-      +   color: rgb(0 0 0 / var(--tw-text-opacity))
       + }
       + .text-opacity-50 {
       +   --tw-text-opacity: 0.5
@@ -266,6 +266,14 @@ test('forceRGB option with extendColors', async () => {
       +   --colors-red: 254,0,0;
       +   --sizes-small: 1rem
       + }
+      + .bg-black {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgb(0 0 0 / var(--tw-bg-opacity))
+      + }
+      + .bg-indigo {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgb(236 72 153 / var(--tw-bg-opacity))
+      + }
       + .bg-red {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-red), var(--tw-bg-opacity))
@@ -282,16 +290,16 @@ test('forceRGB option with extendColors', async () => {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-white), var(--tw-bg-opacity))
       + }
-      + .bg-black {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgb(0 0 0 / var(--tw-bg-opacity))
-      + }
-      + .bg-indigo {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgb(236 72 153 / var(--tw-bg-opacity))
-      + }
       + .bg-opacity-50 {
       +   --tw-bg-opacity: 0.5
+      + }
+      + .text-black {
+      +   --tw-text-opacity: 1;
+      +   color: rgb(0 0 0 / var(--tw-text-opacity))
+      + }
+      + .text-indigo {
+      +   --tw-text-opacity: 1;
+      +   color: rgb(236 72 153 / var(--tw-text-opacity))
       + }
       + .text-red {
       +   --tw-text-opacity: 1;
@@ -308,14 +316,6 @@ test('forceRGB option with extendColors', async () => {
       + .text-white {
       +   --tw-text-opacity: 1;
       +   color: rgba(var(--colors-white), var(--tw-text-opacity))
-      + }
-      + .text-black {
-      +   --tw-text-opacity: 1;
-      +   color: rgb(0 0 0 / var(--tw-text-opacity))
-      + }
-      + .text-indigo {
-      +   --tw-text-opacity: 1;
-      +   color: rgb(236 72 153 / var(--tw-text-opacity))
       + }
       + .text-opacity-50 {
       +   --tw-text-opacity: 0.5

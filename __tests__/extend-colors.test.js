@@ -70,6 +70,10 @@ test('extendColors', async () => {
       +   --colors-white-rgb: 255,255,255;
       +   --sizes-small: 1rem
       + }
+      + .bg-black {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgb(0 0 0 / var(--tw-bg-opacity))
+      + }
       + .bg-red {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-red-rgb), var(--tw-bg-opacity))
@@ -92,12 +96,12 @@ test('extendColors', async () => {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-white-rgb), var(--tw-bg-opacity))
       + }
-      + .bg-black {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgb(0 0 0 / var(--tw-bg-opacity))
-      + }
       + .bg-opacity-50 {
       +   --tw-bg-opacity: 0.5
+      + }
+      + .text-black {
+      +   --tw-text-opacity: 1;
+      +   color: rgb(0 0 0 / var(--tw-text-opacity))
       + }
       + .text-red {
       +   --tw-text-opacity: 1;
@@ -120,10 +124,6 @@ test('extendColors', async () => {
       + .text-white {
       +   --tw-text-opacity: 1;
       +   color: rgba(var(--colors-white-rgb), var(--tw-text-opacity))
-      + }
-      + .text-black {
-      +   --tw-text-opacity: 1;
-      +   color: rgb(0 0 0 / var(--tw-text-opacity))
       + }
       + .text-opacity-50 {
       +   --tw-text-opacity: 0.5
@@ -198,6 +198,10 @@ test('extendColors with forceRGB', async () => {
       +   --colors-red: 254,0,0;
       +   --sizes-small: 1rem
       + }
+      + .bg-black {
+      +   --tw-bg-opacity: 1;
+      +   background-color: rgb(0 0 0 / var(--tw-bg-opacity))
+      + }
       + .bg-red {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-red), var(--tw-bg-opacity))
@@ -220,12 +224,12 @@ test('extendColors with forceRGB', async () => {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-white), var(--tw-bg-opacity))
       + }
-      + .bg-black {
-      +   --tw-bg-opacity: 1;
-      +   background-color: rgb(0 0 0 / var(--tw-bg-opacity))
-      + }
       + .bg-opacity-50 {
       +   --tw-bg-opacity: 0.5
+      + }
+      + .text-black {
+      +   --tw-text-opacity: 1;
+      +   color: rgb(0 0 0 / var(--tw-text-opacity))
       + }
       + .text-red {
       +   --tw-text-opacity: 1;
@@ -248,10 +252,6 @@ test('extendColors with forceRGB', async () => {
       + .text-white {
       +   --tw-text-opacity: 1;
       +   color: rgba(var(--colors-white), var(--tw-text-opacity))
-      + }
-      + .text-black {
-      +   --tw-text-opacity: 1;
-      +   color: rgb(0 0 0 / var(--tw-text-opacity))
       + }
       + .text-opacity-50 {
       +   --tw-text-opacity: 0.5
@@ -307,12 +307,12 @@ test('extendColors (readme)', async () => {
       +   --colors-red-rgb: 255,0,0;
       +   --colors-green-rgb: 17,255,0
       + }
-      + .bg-green {
-      +   background-color: var(--colors-green)
-      + }
       + .bg-blue {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-blue-rgb), var(--tw-bg-opacity))
+      + }
+      + .bg-green {
+      +   background-color: var(--colors-green)
       + }
       + .bg-red {
       +   --tw-bg-opacity: 1;
@@ -325,12 +325,12 @@ test('extendColors (readme)', async () => {
       + .bg-opacity-50 {
       +   --tw-bg-opacity: 0.5
       + }
-      + .text-green {
-      +   color: var(--colors-green)
-      + }
       + .text-blue {
       +   --tw-text-opacity: 1;
       +   color: rgba(var(--colors-blue-rgb), var(--tw-text-opacity))
+      + }
+      + .text-green {
+      +   color: var(--colors-green)
       + }
       + .text-red {
       +   --tw-text-opacity: 1;
@@ -392,12 +392,12 @@ test('extendColors with forceRGB (readme)', async () => {
       +   --colors-red: 255,0,0;
       +   --colors-green: 17,255,0
       + }
-      + .bg-green {
-      +   background-color: var(--colors-green)
-      + }
       + .bg-blue {
       +   --tw-bg-opacity: 1;
       +   background-color: rgba(var(--colors-blue), var(--tw-bg-opacity))
+      + }
+      + .bg-green {
+      +   background-color: var(--colors-green)
       + }
       + .bg-red {
       +   --tw-bg-opacity: 1;
@@ -410,12 +410,12 @@ test('extendColors with forceRGB (readme)', async () => {
       + .bg-opacity-50 {
       +   --tw-bg-opacity: 0.5
       + }
-      + .text-green {
-      +   color: var(--colors-green)
-      + }
       + .text-blue {
       +   --tw-text-opacity: 1;
       +   color: rgba(var(--colors-blue), var(--tw-text-opacity))
+      + }
+      + .text-green {
+      +   color: var(--colors-green)
       + }
       + .text-red {
       +   --tw-text-opacity: 1;

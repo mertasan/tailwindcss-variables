@@ -182,11 +182,11 @@ test('issue 39', async () => {
 
       
       + :root {
-      +   --sizes-0\\\\.5: 2px;
-      +   --sizes-3\\\\.5: 14px;
-      +   --sizes-6\\\\.5: 18px;
-      +   --sizes-1\\\\.0-foo: 1rem;
-      +   --sizes-1\\\\.0-2\\\\.4: 2rem
+      +   --sizes-0\\.5: 2px;
+      +   --sizes-3\\.5: 14px;
+      +   --sizes-6\\.5: 18px;
+      +   --sizes-1\\.0-foo: 1rem;
+      +   --sizes-1\\.0-2\\.4: 2rem
       + }
 
     "
