@@ -3,6 +3,7 @@ const toPairs = require('lodash/toPairs')
 const merge = require('lodash/merge')
 const isEmpty = require('lodash/isEmpty')
 const _forEach = require('lodash/forEach')
+const has = require('lodash/has')
 const { setVariable, setDarkMediaVariable, setComponent, build, darkBuild, flattenOptions } = require('./utils')
 
 const variables = (variables, options) => {
@@ -14,10 +15,13 @@ const variables = (variables, options) => {
   return variableList
 }
 
-const darkVariables = (variables, options, darkMode) => {
+const darkVariables = (variables, options, darkMode = 'media') => {
   let variableList = {}
 
   if (darkMode === 'class' || darkMode === 'media') {
+    if (!has(options, 'darkSelector')) {
+      options.darkSelector = '.dark'
+    }
     let data = darkBuild(options, darkMode, variables)
     _forEach(data, (value, key) =>
       merge(

@@ -80,7 +80,7 @@ test('only dark variables with default options and `media` mode', async () => {
   `)
 })
 
-test('if the `darkMode` is set to `media`, the `darkSelector` and `darkToRoot` options should not work', async () => {
+test('if the `darkMode` is set to `media`, `darkToRoot` options should not work', async () => {
   expect(
     await utils.diffOnly({
       content: [utils.content()],
@@ -103,7 +103,6 @@ test('if the `darkMode` is set to `media`, the `darkSelector` and `darkToRoot` o
 
       plugins: [
         tailwindcssVariables({
-          darkSelector: '.custom-dark-selector',
           darkToRoot: true,
         }),
       ],
@@ -171,7 +170,7 @@ test('only dark variables with custom options and `class` mode', async () => {
   expect(
     await utils.diffOnly({
       content: [utils.content('dark-mode-to-root')],
-      darkMode: 'class',
+      darkMode: ['class', '.custom-dark-selector'],
       theme: {
         darkVariables: {
           DEFAULT: {
@@ -191,7 +190,6 @@ test('only dark variables with custom options and `class` mode', async () => {
       plugins: [
         tailwindcssVariables({
           variablePrefix: 'my-prefix',
-          darkSelector: '.custom-dark-selector',
           darkToRoot: true,
         }),
       ],
@@ -373,11 +371,11 @@ test('variables and dark variables with default options and `media` mode', async
   `)
 })
 
-test('variables and dark variables with custom darkSelector and `class` mode', async () => {
+test('variables and dark variables with custom selector and `class` mode', async () => {
   expect(
     await utils.diffOnly({
       content: [utils.content()],
-      darkMode: 'class',
+      darkMode: ['class', '.custom-dark-selector'],
       theme: {
         variables: {
           DEFAULT: {
@@ -408,11 +406,7 @@ test('variables and dark variables with custom darkSelector and `class` mode', a
         },
       },
 
-      plugins: [
-        tailwindcssVariables({
-          darkSelector: '.custom-dark-selector',
-        }),
-      ],
+      plugins: [tailwindcssVariables()],
     })
   ).toMatchInlineSnapshot(`
     "
@@ -501,7 +495,7 @@ test('variables and dark variables with custom options and `class` mode', async 
   expect(
     await utils.diffOnly({
       content: [utils.content('dark-mode-to-root')],
-      darkMode: 'class',
+      darkMode: ['class', '.custom-dark-selector'],
       theme: {
         variables: {
           DEFAULT: {
@@ -535,7 +529,6 @@ test('variables and dark variables with custom options and `class` mode', async 
       plugins: [
         tailwindcssVariables({
           variablePrefix: 'my-prefix',
-          darkSelector: '.custom-dark-selector',
           darkToRoot: true,
         }),
       ],

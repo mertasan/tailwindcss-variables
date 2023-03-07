@@ -59,7 +59,7 @@ test('issue 25', async () => {
   expect(
     await utils.diffOnly({
       content: [utils.content()],
-      darkMode: 'class',
+      darkMode: ['class', '[data-mode="dark"]'],
       theme: {
         variables: {
           DEFAULT: {
@@ -77,7 +77,6 @@ test('issue 25', async () => {
       plugins: [
         tailwindcssVariables({
           darkToRoot: true,
-          darkSelector: '[data-mode="dark"]',
           colorVariables: true,
         }),
       ],
