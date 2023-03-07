@@ -127,7 +127,7 @@ test('dark mode with `class` and custom options', async () => {
   expect(
     await utils.diffOnly({
       content: [utils.content()],
-      darkMode: 'class',
+      darkMode: ['class', '.custom-dark-selector'],
       theme: {
         variables: {
           DEFAULT: {
@@ -173,7 +173,6 @@ test('dark mode with `class` and custom options', async () => {
       plugins: [
         tailwindcssVariables({
           darkToRoot: false,
-          darkSelector: '.custom-dark-selector',
         }),
       ],
     })

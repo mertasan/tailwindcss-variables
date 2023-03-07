@@ -14,7 +14,6 @@ module.exports = plugin.withOptions(
       let pluginOptions = merge(
         {
           variablePrefix: '--prefix1',
-          darkSelector: null, // default: .dark
           darkToRoot: false, // default: true ( :root.dark or .dark )
         },
         theme('myPlugin.variableOptions', {}),

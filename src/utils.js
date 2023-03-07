@@ -180,10 +180,7 @@ const darkBuild = (options, darkMode, source) => {
   if (colorVariables) {
     source = setColorVariables(source, forceRGB)
   }
-  let darkSelector = get(options, 'darkSelector', '.dark')
-  if (!darkSelector) {
-    darkSelector = '.dark'
-  }
+  let darkSelector = get(options, 'darkSelector')
   let darkToRoot = hasOwn(options, 'darkToRoot') ? options.darkToRoot : true
 
   let componentOptions = {}

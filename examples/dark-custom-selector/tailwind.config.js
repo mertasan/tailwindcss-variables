@@ -1,7 +1,7 @@
 module.exports = {
   content: ['./index.html'],
   corePlugins: process.env.CLEAN ? [] : {},
-  darkMode: 'class',
+  darkMode: ['class', '.custom-dark-selector'],
   theme: {
     variables: (theme) => ({
       DEFAULT: {
@@ -46,7 +46,6 @@ module.exports = {
   },
   plugins: [
     require('../../src/index')({
-      darkSelector: '.custom-dark-selector',
       darkToRoot: true,
     }),
   ],
