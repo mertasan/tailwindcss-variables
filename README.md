@@ -20,7 +20,7 @@ Similar to the tailwindcss configurations you are used to. It is also possible t
 - Variables can be formed through using nested object notation.
 - Different variables can be composed for the Dark Mode.
 - Dark Mode variables are set automatically through the `class` or `media` modes on your configuration.
-- If `darkMode` config are set as `class`, custom dark selector can be defined.
+- Dark Mode custom selector is inherited from [Tailwind configuration](https://tailwindcss.com/docs/dark-mode#customizing-the-class-name)
 - It allows you to add custom themes while creating your own plugin via the plugin API.
 - Prefix can be defined for variables. (It is useful when using the plugin API)
 - You can configure your own needs such as multi-themes without needing an additional plugin!
@@ -176,22 +176,70 @@ module.exports = {
 }
 ```
 
-#### with the `darkToRoot` and `darkSelector` configurations
+#### Custom dark selector
 
-If the `darkMode`configuration is set as `'class'` in your tailwindcss configuration, you can change and customize the `darkToRoot` and `darkSelector` settings.
-
-
-| Option       	| Type   	| Default 	| Description                                                             	|
-|--------------	|--------	|---------	|-------------------------------------------------------------------------	|
-| darkSelector 	| string 	| .dark   	| CSS selector used for Dark mode.                                  	|
-| darkToRoot   	| bool   	| true    	| Does the selector defined as`darkSelector` being used as :root ?  	|
+Note that the plugin will use your custom selector if [enabled in your Tailwind configuration](https://tailwindcss.com/docs/dark-mode#customizing-the-class-name).
 
 ```javascript
 // tailwind.config.js
 
 module.exports = {
 
-  darkMode: 'class',
+  darkMode: ['class', '.custom-dark-selector'],
+
+  theme: {
+    variables: {
+      DEFAULT: {
+        colors: {
+          red: {
+            50: 'red',
+          },
+        },
+      },
+    },
+    darkVariables: {
+      DEFAULT: {
+        colors: {
+          red: {
+            50: 'blue',
+          },
+        },
+      },
+    },
+  },
+  plugins: [
+    require('@mertasan/tailwindcss-variables')
+  ]
+}
+```
+
+**Output:**
+
+```css
+:root {
+  --colors-red-50: red
+}
+
+:root.custom-dark-selector {
+  --colors-red-50: blue
+}
+```
+
+#### with the `darkToRoot` configuration
+
+If the `darkMode` configuration is set as `'class'` in your tailwindcss configuration, you can change and customize the `darkToRoot` setting.
+
+
+| Option       	| Type   	| Default 	| Description                                                             	|
+|--------------	|--------	|---------	|-------------------------------------------------------------------------	|
+| darkToRoot   	| bool   	| true    	|   	|
+
+```javascript
+// tailwind.config.js
+
+module.exports = {
+
+  darkMode: ['class', '.custom-dark-selector'],
 
   theme: {
     variables: {
@@ -233,7 +281,6 @@ module.exports = {
   plugins: [
     require('@mertasan/tailwindcss-variables')({
       darkToRoot: false,
-      darkSelector: '.custom-dark-selector',
     })
   ]
 }
