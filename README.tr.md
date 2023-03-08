@@ -21,7 +21,7 @@ grubu belirleyebilmek, plugin API aracılığıyla kendi eklentilerinize kolayca
 - Değişkenler iç içe geçmiş obje notasyonu (nested object notation) kullanılarak oluşturulabilir.
 - Dark Mode için farklı değişkenler oluşturulabilir.
 - Dark Mode değişkenleri, yapılandırmanızdaki `class` ya da `media` moduna göre otomatik tanımlanır.
-- Yapılandırmadaki `darkMode` ayarı eğer `class` olarak belirtilmiş ise özel seçiciler tanımlanabilir.
+- Dark Mode özel seçicisi, [Tailwind yapılandırmasını](https://tailwindcss.com/docs/dark-mode#customizing-the-class-name) dikkate alır.
 - Plugin API aracılığıyla kendi eklentinizi oluştururken tema yapılandırması yapmanıza olanak sağlar.
 - Değişkenler için prefix tanımlaması yapılabilir. (plugin API için faydalı)
 - Değişkenler, yapılandırma dosyasında veya .css vb. stil dosyalarında kullanılabilir.
@@ -177,22 +177,65 @@ module.exports = {
 }
 ```
 
-#### `darkToRoot` ve `darkSelector` ayarları ile
+#### Özel Dark Mode Seçicisi
 
-Eğer tailwindcss yapılandırmanızda `darkMode: 'class'` olarak tanımlıysa, eklentinin `darkToRoot` ve `darkSelector`
-ayarlarını kullanarak özelleştirebilirsiniz.
-
-| option       	| type   	| default 	| description                                                             	|
-|--------------	|--------	|---------	|-------------------------------------------------------------------------	|
-| darkSelector 	| string 	| .dark   	| Dark mode için kullanılan CSS seçici.                                   	|
-| darkToRoot   	| bool   	| true    	| `darkSelector` ayarında tanımlanan seçici :root olarak mı kullanılıyor? 	|
+[Tailwind yapılandırmanızda](https://tailwindcss.com/docs/dark-mode#customizing-the-class-name) etkinleştirilmiş ise, eklentinin özel seçicinizi kullanacağını unutmayın.
 
 ```javascript
 // tailwind.config.js
 
 module.exports = {
 
-  darkMode: 'class',
+  darkMode: ['class', '.custom-dark-selector'],
+
+  theme: {
+    variables: {
+      DEFAULT: {
+        colors: {
+          red: {
+            50: 'red',
+          },
+        },
+      },
+    },
+    darkVariables: {
+      DEFAULT: {
+        colors: {
+          red: {
+            50: 'blue',
+          },
+        },
+      },
+    },
+  },
+  plugins: [
+    require('@mertasan/tailwindcss-variables')
+  ]
+}
+```
+
+**Output:**
+
+```css
+:root {
+  --colors-red-50: red
+}
+
+:root.custom-dark-selector {
+  --colors-red-50: blue
+}
+```
+
+#### `darkToRoot` ayarları ile
+
+Eğer tailwindcss yapılandırmanızda `darkMode` eğer `class` olarak tanımlıysa, eklentinin `darkToRoot` ayarını kullanarak özelleştirebilirsiniz.
+
+```javascript
+// tailwind.config.js
+
+module.exports = {
+
+  darkMode: ['class', '.custom-dark-selector'],
 
   theme: {
     variables: {
@@ -234,7 +277,6 @@ module.exports = {
   plugins: [
     require('@mertasan/tailwindcss-variables')({
       darkToRoot: false,
-      darkSelector: '.custom-dark-selector',
     })
   ]
 }

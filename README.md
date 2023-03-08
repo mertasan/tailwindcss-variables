@@ -229,11 +229,6 @@ module.exports = {
 
 If the `darkMode` configuration is set as `'class'` in your tailwindcss configuration, you can change and customize the `darkToRoot` setting.
 
-
-| Option       	| Type   	| Default 	| Description                                                             	|
-|--------------	|--------	|---------	|-------------------------------------------------------------------------	|
-| darkToRoot   	| bool   	| true    	|   	|
-
 ```javascript
 // tailwind.config.js
 
