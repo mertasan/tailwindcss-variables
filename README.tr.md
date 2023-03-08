@@ -8,8 +8,7 @@
 
 # Tailwind CSS Variables
 
-Bu eklenti, tailwindcss için CSS değişkenlerini `tailwind.config.js` dosyası aracılığıyla kolayca yapılandırmaya
-olanak sağlar.
+Bu paket, Tailwind CSS projeniz için CSS değişkenlerini tanımlamanın kolay bir yolunu sunar. Bu paketi, kuyruk rüzgarı yapılandırmanızda özel değişkenler oluşturmak için kullanabilirsiniz. Bu, CSS'nizde tutarlılığı korumanızı kolaylaştırır, tekrarlamayı azaltır, çeşitli koşullara göre değişkenleri yapılandırmanıza olanak tanır ve değişkenleri belirlemek için CSS dosyalarınızla doğrudan çalışma ihtiyacını ortadan kaldırır.
 
 Kullanım şekli, tailwindcss'in varsayılan yapılandırmaları ile benzer şekildedir. Dark Mode için ayrı değişken
 grubu belirleyebilmek, plugin API aracılığıyla kendi eklentilerinize kolayca entegre edebilmek de mümkün.

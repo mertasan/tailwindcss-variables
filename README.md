@@ -8,10 +8,9 @@
 
 # Tailwind CSS Variables
 
-This plugin allows you to configure CSS variables in the `tailwind.config.js`
+This package provides an easy way to define CSS variables for your Tailwind CSS project. You can use this package to create custom variables within your Tailwind configuration. This makes it easier to maintain consistency across your CSS, reduces repetition, allows you to configure variables based on various conditions, and eliminates the need to work directly with your CSS files to determine variables.
 
 Similar to the tailwindcss configurations you are used to. It is also possible to define a different group of variables for Dark Mode. Alternatively, it has an API that you can use for your own plugins.
-
 
 ## Highlights
 
