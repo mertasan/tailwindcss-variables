@@ -429,6 +429,246 @@ test('variables and dark variables with custom selector and `class` mode', async
   `)
 })
 
+test('deprecated custom darkSelector', async () => {
+  expect(
+    await utils.diffOnly({
+      content: [utils.content()],
+      darkMode: ['class', '.custom-dark-selector'],
+      theme: {
+        variables: {
+          DEFAULT: {
+            colors: {
+              primary: '#ffffff',
+            },
+          },
+
+          '.container': {
+            colors: {
+              secondary: '#000000',
+            },
+          },
+        },
+
+        darkVariables: {
+          DEFAULT: {
+            colors: {
+              primary: '#ffffff',
+            },
+          },
+
+          '.container': {
+            colors: {
+              secondary: '#000000',
+            },
+          },
+        },
+      },
+
+      plugins: [tailwindcssVariables({
+        darkSelector: '.foo',
+      })],
+    })
+  ).toMatchInlineSnapshot(`
+    "
+
+      
+      + :root {
+      +   --colors-primary: #ffffff
+      + }
+      + .container {
+      +   --colors-secondary: #000000
+      + }
+      + :root.custom-dark-selector {
+      +   --colors-primary: #ffffff
+      + }
+      + :root.custom-dark-selector .container {
+      +   --colors-secondary: #000000
+      + }
+
+    "
+  `)
+})
+
+test('deprecated custom darkSelector [2]', async () => {
+  expect(
+    await utils.diffOnly({
+      content: [utils.content()],
+      darkMode: ['class', '.custom-dark-selector'],
+      theme: {
+        variables: {
+          DEFAULT: {
+            colors: {
+              primary: '#ffffff',
+            },
+          },
+
+          '.container': {
+            colors: {
+              secondary: '#000000',
+            },
+          },
+        },
+
+        darkVariables: {
+          DEFAULT: {
+            colors: {
+              primary: '#ffffff',
+            },
+          },
+
+          '.container': {
+            colors: {
+              secondary: '#000000',
+            },
+          },
+        },
+      },
+
+      plugins: [tailwindcssVariables({
+        darkSelector: null,
+      })],
+    })
+  ).toMatchInlineSnapshot(`
+    "
+
+      
+      + :root {
+      +   --colors-primary: #ffffff
+      + }
+      + .container {
+      +   --colors-secondary: #000000
+      + }
+      + :root.custom-dark-selector {
+      +   --colors-primary: #ffffff
+      + }
+      + :root.custom-dark-selector .container {
+      +   --colors-secondary: #000000
+      + }
+
+    "
+  `)
+})
+
+test('deprecated custom darkSelector [3]', async () => {
+  expect(
+    await utils.diffOnly({
+      content: [utils.content()],
+      darkMode: ['class'],
+      theme: {
+        variables: {
+          DEFAULT: {
+            colors: {
+              primary: '#ffffff',
+            },
+          },
+
+          '.container': {
+            colors: {
+              secondary: '#000000',
+            },
+          },
+        },
+
+        darkVariables: {
+          DEFAULT: {
+            colors: {
+              primary: '#ffffff',
+            },
+          },
+
+          '.container': {
+            colors: {
+              secondary: '#000000',
+            },
+          },
+        },
+      },
+
+      plugins: [tailwindcssVariables({
+        darkSelector: null,
+      })],
+    })
+  ).toMatchInlineSnapshot(`
+    "
+
+      
+      + :root {
+      +   --colors-primary: #ffffff
+      + }
+      + .container {
+      +   --colors-secondary: #000000
+      + }
+      + :root.dark {
+      +   --colors-primary: #ffffff
+      + }
+      + :root.dark .container {
+      +   --colors-secondary: #000000
+      + }
+
+    "
+  `)
+})
+
+test('deprecated custom darkSelector [4]', async () => {
+  expect(
+    await utils.diffOnly({
+      content: [utils.content()],
+      darkMode: ['class'],
+      theme: {
+        variables: {
+          DEFAULT: {
+            colors: {
+              primary: '#ffffff',
+            },
+          },
+
+          '.container': {
+            colors: {
+              secondary: '#000000',
+            },
+          },
+        },
+
+        darkVariables: {
+          DEFAULT: {
+            colors: {
+              primary: '#ffffff',
+            },
+          },
+
+          '.container': {
+            colors: {
+              secondary: '#000000',
+            },
+          },
+        },
+      },
+
+      plugins: [tailwindcssVariables({
+        darkSelector: '.foo',
+      })],
+    })
+  ).toMatchInlineSnapshot(`
+    "
+
+      
+      + :root {
+      +   --colors-primary: #ffffff
+      + }
+      + .container {
+      +   --colors-secondary: #000000
+      + }
+      + :root.foo {
+      +   --colors-primary: #ffffff
+      + }
+      + :root.foo .container {
+      +   --colors-secondary: #000000
+      + }
+
+    "
+  `)
+})
+
 test('variables and dark variables with darkToRoot option and `class` mode', async () => {
   expect(
     await utils.diffOnly({
