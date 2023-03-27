@@ -1260,6 +1260,4 @@ Herhangi bir özelliği iyileştirir veya yeni özellikler eklerseniz eğer, lü
 
 ## License
 
-The GPL-3.0 License (GNU General Public License 3.0)
-
-Please see License File for more information.
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
