@@ -3,7 +3,7 @@
     <a href="https://github.com/mertasan/tailwindcss-variables/tree/master/examples"><img src="https://img.shields.io/github/actions/workflow/status/mertasan/tailwindcss-variables/build.yml?branch=master&label=examples" alt="Build Status"></a>
     <a href="https://www.npmjs.com/package/@mertasan/tailwindcss-variables"><img src="https://img.shields.io/npm/dt/@mertasan/tailwindcss-variables" alt="Total Downloads"></a>
     <a href="https://github.com/mertasan/tailwindcss-variables/releases"><img src="https://img.shields.io/npm/v/@mertasan/tailwindcss-variables.svg" alt="Latest Release"></a>
-    <a href="https://github.com/mertasan/tailwindcss-variables/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-green.svg?label=license" alt="License"></a>
+    <a href="https://github.com/mertasan/tailwindcss-variables/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?label=license" alt="License"></a>
 </p>
 
 # Tailwind CSS Variables
@@ -1250,6 +1250,4 @@ If you are to improve or/and add new features, please feel free to send pull-req
 
 ## License
 
-The GPL-3.0 License (GNU General Public License 3.0)
-
-Please see License File for more information.
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
