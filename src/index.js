@@ -9,6 +9,7 @@ const { convertColorVariables } = require('./helpers')
 /**
  * @typedef pluginOptions
  * @property {Boolean} darkToRoot
+ * @property {Boolean} useHost
  * @property {Object} extendColors
  * @property {Boolean} forceRGB
  * @property {Boolean} toBase
