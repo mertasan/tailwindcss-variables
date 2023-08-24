@@ -15,7 +15,7 @@ Similar to the tailwindcss configurations you are used to. It is also possible t
 ## Highlights
 
 - Variables are as easy as defining tailwindcss colors...
-- You can designate the variables to `:root` or custom CSS selectors.
+- You can designate the variables to `:root`, `:host` or custom CSS selectors.
 - Variables can be formed through using nested object notation.
 - Different variables can be composed for the Dark Mode.
 - Dark Mode variables are set automatically through the `class` or `media` modes on your configuration.
