@@ -15,7 +15,7 @@ Similar to the tailwindcss configurations you are used to. It is also possible t
 ## Highlights
 
 - Variables are as easy as defining tailwindcss colors...
-- You can designate the variables to `:root` or custom CSS selectors.
+- You can designate the variables to `:root`, `:host` or custom CSS selectors.
 - Variables can be formed through using nested object notation.
 - Different variables can be composed for the Dark Mode.
 - Dark Mode variables are set automatically through the `class` or `media` modes on your configuration.
@@ -608,14 +608,14 @@ module.exports = {
 **Purge:**
 
 ```html
-<div class="text-primary text-opacity-50"></div>
-<div class="bg-secondary bg-opacity-50"></div>
-<div class="bg-gray bg-opacity-50"></div>
-<div class="text-blue text-opacity-50"></div>
+<div class="text-opacity-50 text-primary"></div>
+<div class="bg-opacity-50 bg-secondary"></div>
+<div class="bg-opacity-50 bg-gray"></div>
+<div class="text-opacity-50 text-blue"></div>
 <div class="bg-red-400"></div>
 <div class="bg-red-500"></div>
 <div class="bg-red-600"></div>
-<div class="bg-green bg-opacity-50"></div>
+<div class="bg-opacity-50 bg-green"></div>
 <div class="bg-white bg-opacity-50"></div>
 ```
 **Output:**
@@ -784,6 +784,40 @@ module.exports = {
 }
 ```
 
+### useHost
+
+If `useHost` is set to `true`, `:host` is used instead of `:root` for variables injection.
+
+#### Config
+
+```javascript
+// tailwind.config.js
+
+module.exports = {
+  theme: {
+    variables: {
+      DEFAULT: {
+        colors: {
+          green: '#11ff00',
+        },
+      },
+    },
+  },
+  plugins: [
+    require('@mertasan/tailwindcss-variables')({
+      useHost: true,
+    })
+  ]
+}
+```
+
+**Output:**
+
+```css
+:host {
+  --colors-green: #11ff00;
+}
+```
 
 ### extendColors for colorVariable
 

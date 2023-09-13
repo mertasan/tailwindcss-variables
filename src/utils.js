@@ -149,6 +149,7 @@ const build = (options, source) => {
   let varPrefix = formatVariableKey(get(options, 'variablePrefix', ''))
   let colorVariables = get(options, 'colorVariables', false)
   let forceRGB = get(options, 'forceRGB', false)
+  let cssBaseKey = get(options, 'useHost', false) ? `:host` : `:root`
 
   if (colorVariables) {
     source = setColorVariables(source, forceRGB)
@@ -158,7 +159,7 @@ const build = (options, source) => {
   }
   let componentOptions = {}
   _forEach(toPairs(flattenOptions(source)), ([key, config]) => {
-    let block = key === 'DEFAULT' ? `:root` : `${key}`
+    let block = key === 'DEFAULT' ? cssBaseKey : `${key}`
 
     if (!hasOwn(componentOptions, block)) {
       componentOptions[block] = []
@@ -182,6 +183,7 @@ const darkBuild = (options, darkMode, source) => {
   }
   let darkSelector = get(options, 'darkSelector')
   let darkToRoot = hasOwn(options, 'darkToRoot') ? options.darkToRoot : true
+  let cssBaseKey = get(options, 'useHost', false) ? `:host` : `:root`
 
   let componentOptions = {}
 
@@ -190,13 +192,13 @@ const darkBuild = (options, darkMode, source) => {
 
     if (key === 'DEFAULT') {
       if (darkMode === 'class') {
-        block = darkToRoot ? `:root${darkSelector}` : `${darkSelector}`
+        block = darkToRoot ? `${cssBaseKey}${darkSelector}` : `${darkSelector}`
       } else {
-        block = `:root`
+        block = `${cssBaseKey}`
       }
     } else {
       if (darkMode === 'class') {
-        block = darkToRoot ? `:root${darkSelector} ${key}` : `${darkSelector} ${key}`
+        block = darkToRoot ? `${cssBaseKey}${darkSelector} ${key}` : `${darkSelector} ${key}`
       } else {
         block = `${key}`
       }

@@ -1,0 +1,15 @@
+{
+  "name": "use-host",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "env NODE_ENV=production npx tailwindcss build ./tailwind.css -c ./tailwind.config.js -o ./style.css",
+    "build:clean": "env NODE_ENV=production CLEAN=true npx tailwindcss build ./tailwind.css -c ./tailwind.config.js -o ./clean.css"
+  },
+  "devDependencies": {
+    "@mertasan/tailwindcss-variables": "latest",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.4",
+    "tailwindcss": "^3.0.11"
+  },
+  "license": "MIT"
+}
