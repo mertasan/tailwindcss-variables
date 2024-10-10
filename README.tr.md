@@ -2,6 +2,7 @@
     <a href="https://github.com/mertasan/tailwindcss-variables/actions"><img src="https://img.shields.io/github/actions/workflow/status/mertasan/tailwindcss-variables/tests.yml?branch=master&label=tests" alt="Test Status"></a>
     <a href="https://github.com/mertasan/tailwindcss-variables/tree/master/examples"><img src="https://img.shields.io/github/actions/workflow/status/mertasan/tailwindcss-variables/build.yml?branch=master&label=examples" alt="Build Status"></a>
     <a href="https://www.npmjs.com/package/@mertasan/tailwindcss-variables"><img src="https://img.shields.io/npm/dt/@mertasan/tailwindcss-variables" alt="Total Downloads"></a>
+    <a href="https://www.npmjs.com/package/@mertasan/tailwindcss-variables"><img src="https://img.shields.io/npm/dw/%40mertasan%2Ftailwindcss-variables" alt="Weekly Downloads"></a>
     <a href="https://github.com/mertasan/tailwindcss-variables/releases"><img src="https://img.shields.io/npm/v/@mertasan/tailwindcss-variables.svg" alt="Latest Release"></a>
     <a href="https://github.com/mertasan/tailwindcss-variables/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?label=license" alt="License"></a>
 </p>
